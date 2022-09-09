@@ -17,8 +17,8 @@ public class LaserBeam{
         this.dir = dir;
 
         this.laser = this.laserObj.AddComponent(typeof(LineRenderer)) as LineRenderer;
-        this.laser.startWidth = 0.05f;
-        this.laser.endWidth = 0.05f;
+        this.laser.startWidth = 0.08f;
+        this.laser.endWidth = 0.08f;
         this.laser.material = material;
         this.laser.startColor = Color.red;
         this.laser.endColor = Color.red;
@@ -57,6 +57,7 @@ public class LaserBeam{
         Debug.Log("Hit tag: " + hitInfo.collider.gameObject.tag);
         Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
 
+        // TO DO: update tag for tiles, as tiles increase in number this condition will be hard to maintain
         if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" || hitInfo.collider.gameObject.tag == "Mirror")
         {
             Vector3 pos = hitInfo.point;
