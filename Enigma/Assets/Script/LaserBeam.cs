@@ -25,11 +25,11 @@ public class LaserBeam
         this.dir = dir;
 
         this.laser = this.laserObj.AddComponent(typeof(LineRenderer)) as LineRenderer;
-        this.laser.startWidth = 0.1f;
-        this.laser.endWidth = 0.1f;
+        this.laser.startWidth = 0.05f;
+        this.laser.endWidth = 0.05f;
         this.laser.material = material;
-        this.laser.startColor = Color.green;
-        this.laser.endColor = Color.green;
+        this.laser.startColor = Color.red;
+        this.laser.endColor = Color.red;
 
         CastRay(this.pos,this.dir,this.laser);
     }
@@ -69,6 +69,8 @@ public class LaserBeam
         {
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction,hitInfo.normal);
+            this.laser.startWidth = this.laser.startWidth/1.25f;
+            this.laser.endWidth = this.laser.endWidth/1.25f;
 
             CastRay(pos,dir,laser);
         }
