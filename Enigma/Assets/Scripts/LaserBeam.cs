@@ -31,8 +31,9 @@ public class LaserBeam{
 
         Ray ray = new Ray(pos,dir);
         RaycastHit hit;
+        int layerMask = 1 << 7;
 
-        if (Physics.Raycast(ray, out hit, 30,1)){
+        if (Physics.Raycast(ray, out hit, 30, ~layerMask)){
             CheckHit(hit,dir,laser);
         }
         else{
@@ -53,7 +54,10 @@ public class LaserBeam{
 
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser)
     {
-        if(hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" || hitInfo.collider.gameObject.tag == "Mirror")
+        Debug.Log("Hit tag: " + hitInfo.collider.gameObject.tag);
+        Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
+
+        if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" || hitInfo.collider.gameObject.tag == "Mirror")
         {
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction,hitInfo.normal);
