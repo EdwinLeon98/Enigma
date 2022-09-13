@@ -8,6 +8,7 @@ public class LaserBeam{
     GameObject laserObj;
     LineRenderer laser;
     List<Vector3> laserIndices = new List<Vector3>();
+    public int endpoint;
 
     public LaserBeam(Vector3 pos, Vector3 dir, Material material){
         this.laser = new LineRenderer();
@@ -15,6 +16,7 @@ public class LaserBeam{
         this.laserObj.name = "Laser Beam";
         this.pos = pos;
         this.dir = dir;
+        this.endpoint = 0;
 
         this.laser = this.laserObj.AddComponent(typeof(LineRenderer)) as LineRenderer;
         this.laser.startWidth = 0.08f;
@@ -31,15 +33,17 @@ public class LaserBeam{
 
         Ray ray = new Ray(pos,dir);
         RaycastHit hit;
-        int layerMask = 1 << 7;
+        int layerMask = 320;
 
-        if (Physics.Raycast(ray, out hit, 30, ~layerMask)){
+        if (Physics.Raycast(ray, out hit, 30, layerMask)){
             CheckHit(hit,dir,laser);
         }
         else{
             laserIndices.Add(ray.GetPoint(30));
             UpdateLaser();
         }
+
+        CheckEndpoint(hit, dir, laser);
     }
 
     void UpdateLaser(){
@@ -54,8 +58,8 @@ public class LaserBeam{
 
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser)
     {
-        Debug.Log("Hit tag: " + hitInfo.collider.gameObject.tag);
-        Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
+        //Debug.Log("Hit tag: " + hitInfo.collider.gameObject.tag);
+        //Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
 
         // TO DO: update tag for tiles, as tiles increase in number this condition will be hard to maintain
         if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" || hitInfo.collider.gameObject.tag == "Mirror")
@@ -69,6 +73,12 @@ public class LaserBeam{
         {
             laserIndices.Add(hitInfo.point);
             UpdateLaser();
+        }
+    }
+
+    void CheckEndpoint(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
+        if (hitInfo.collider.gameObject.tag == "Endpoint") {
+            endpoint = 1;
         }
     }
 }

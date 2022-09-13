@@ -15,9 +15,9 @@ public class MovePrototype2 : MonoBehaviour
     void Start() {
         mainCamera = Camera.main;
         initialPos = transform.position;
-        Debug.Log("Initial Pos: " + initialPos);
+        //Debug.Log("Initial Pos: " + initialPos);
         screenInitialPos = mainCamera.WorldToScreenPoint(transform.position);
-        Debug.Log("Screen Pos: " + screenInitialPos);
+        //Debug.Log("Screen Pos: " + screenInitialPos);
     }
 
     void OnMouseDrag() {
@@ -33,15 +33,15 @@ public class MovePrototype2 : MonoBehaviour
 
         Vector3 NewWorldPosition = mainCamera.ScreenToWorldPoint(ScreenPosition);   //screen coordinates of the mouse on the screen, but in world coordinates
         rb.velocity = (NewWorldPosition - transform.position) * speed * Time.deltaTime; //Set the velocity of the tile
-        Debug.Log("ScreenPosition: " + ScreenPosition);
-        Debug.Log("Transform Position: " + transform.position);
-        Debug.Log("Position: " + NewWorldPosition);
+        //Debug.Log("ScreenPosition: " + ScreenPosition);
+        //Debug.Log("Transform Position: " + transform.position);
+        //Debug.Log("Position: " + NewWorldPosition);
     }
 
     void Update() {
         if (Input.GetMouseButtonUp(0)) {
             rb.velocity = new Vector3(0, 0, 0); //Set velocity to 0 when the left mouse button is released
-            Debug.Log("Left click");
+            //.Log("Left click");
         }
     }
 }

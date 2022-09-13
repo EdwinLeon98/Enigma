@@ -6,16 +6,20 @@ public class ShootLaser : MonoBehaviour{
     
     public Material material;
     LaserBeam beam;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    GameObject currentBeam;
+    public GameObject completeLevelUI;
+    public int Endpoints = 1;
 
     // Update is called once per frame
-    void Update(){
+    void Update() { 
         Destroy(GameObject.Find("Laser Beam"));
-        beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material);   
+        beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material);
+
+        //Debug.Log("Beam endpoint: " + beam.endpoint);
+
+        if (beam.endpoint == Endpoints) {
+            //Debug.Log("Game End");
+            completeLevelUI.SetActive(true);
+        }
     }
 }
