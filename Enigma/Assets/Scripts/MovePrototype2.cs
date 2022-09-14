@@ -9,6 +9,7 @@ public class MovePrototype2 : MonoBehaviour
     private Vector3 screenInitialPos;
     private Vector3 ScreenPosition;
     private float speed = 1000;
+    private int numberOfMoves= 0;
     public Rigidbody rb;
 
     // Start is called before the first frame update
@@ -42,6 +43,9 @@ public class MovePrototype2 : MonoBehaviour
         if (Input.GetMouseButtonUp(0)) {
             rb.velocity = new Vector3(0, 0, 0); //Set velocity to 0 when the left mouse button is released
             //.Log("Left click");
+            numberOfMoves+=1;
+            //Debug.Log("Move Counter: " + numberOfMoves);
+
         }
     }
 }
