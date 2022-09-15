@@ -13,12 +13,12 @@ public class MoveCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-          displayText= displayMoves.GetComponent<TextMeshProUGUI>();
+          displayText = displayMoves.GetComponent<TextMeshProUGUI>();
     }   
 
     // Update is called once per frame
     void Update()
     {
-        displayText.text= MovePrototype2.numberOfMoves.ToString();
+        displayText.text = "Moves: " + MovePrototype2.numberOfMoves.ToString();
     }
 }
