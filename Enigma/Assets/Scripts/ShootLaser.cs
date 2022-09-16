@@ -14,8 +14,12 @@ public class ShootLaser : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update(){ 
         Destroy(GameObject.Find("Laser Beam"));
-        beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material);   
+        Destroy(GameObject.Find("Laser2 Beam"));
+        Debug.Log(gameObject.transform.position);
+        beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material);  
+        
+        
     }
 }
