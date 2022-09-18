@@ -39,9 +39,11 @@ public class MovePrototype2 : MonoBehaviour
         //Debug.Log("ScreenPosition: " + ScreenPosition);
         //Debug.Log("Transform Position: " + transform.position);
         //Debug.Log("Position: " + NewWorldPosition);
-        if (newDrag) {
-            numberOfMoves += 1;
-            newDrag = false;
+        if (!GameObject.Find("LevelComplete")) {
+            if (newDrag) {
+                numberOfMoves += 1;
+                newDrag = false;
+            }
         }
     }
 

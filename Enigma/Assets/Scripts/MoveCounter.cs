@@ -19,6 +19,10 @@ public class MoveCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        displayText.text = "Moves: " + MovePrototype2.numberOfMoves.ToString();
+        //if (!GameObject.Find("LevelComplete")) {
+            displayText.text = "Moves: " + MovePrototype2.numberOfMoves.ToString();
+        //}
+        Debug.Log("# of Moves: " + MovePrototype2.numberOfMoves);
     }
 }
+
