@@ -5,21 +5,26 @@ using UnityEngine;
 public class ShootLaser : MonoBehaviour{
     
     public Material material;
-    LaserBeam beam;
+    EdwinLaser beam;
+    EdwinLaser beam2;
+    string name;
+    Vector3 pos;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pos = gameObject.transform.position;
+        pos.y = pos.y - 0.01f;
     }
 
     // Update is called once per frame
     void Update(){ 
         Destroy(GameObject.Find("Laser Beam"));
-        Destroy(GameObject.Find("Laser2 Beam"));
+        Destroy(GameObject.Find("Laser Beam 2"));
         Debug.Log(gameObject.transform.position);
-        beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material);  
-        
-        
+        name = "Laser Beam";
+        beam = new EdwinLaser(gameObject.transform.position, gameObject.transform.right, material, name, Color.red);
+        name = "Laser Beam 2";
+        beam2 = new EdwinLaser(pos, gameObject.transform.right, material, name, Color.green);
     }
 }

@@ -123,7 +123,7 @@ public class LaserBeam{
 
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser){
         Debug.Log("Hit tag: " + hitInfo.collider.gameObject.tag);
-        Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
+        //Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
 
         if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" || hitInfo.collider.gameObject.tag == "Mirror" || hitInfo.collider.gameObject.tag == "Splitter"){
             Vector3 pos = hitInfo.point;

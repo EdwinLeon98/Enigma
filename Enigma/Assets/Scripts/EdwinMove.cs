@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePrototype2 : MonoBehaviour
+public class EdwinMove : MonoBehaviour
 {
     private Camera mainCamera;
     private Vector3 initialPos;
