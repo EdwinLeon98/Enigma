@@ -12,21 +12,24 @@ public class LaserBeam{
         {"Air", 1.0f},
         {"Glass", 1.5f}
     };
-    public bool endpoint;
+    public bool endpoint1;
+    public bool endpoint2;
     Vector3 newpos;
 
-    public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, Color color, bool endpoint) {
+    public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, Color color, bool endpoint1, bool endpoint2) {
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
         this.laserObj.name = name;
         this.pos = pos;
         this.dir = dir;
-        this.endpoint = endpoint;
+        this.endpoint1 = endpoint1;
+        this.endpoint2 = endpoint2;
 
         this.laser = this.laserObj.AddComponent(typeof(LineRenderer)) as LineRenderer;
         this.laser.startWidth = 0.08f;
         this.laser.endWidth = 0.08f;
         this.laser.material = material;
+        Debug.Log("Color:" + color);
         this.laser.startColor = color;
         this.laser.endColor = color;
 
@@ -85,11 +88,17 @@ public class LaserBeam{
         else if (hitInfo.collider.gameObject.tag == "Splitter") {
             if (laserObj.name == "Laser Beam 2") {
                 Vector3 pos = hitInfo.point;
-                newpos = Split(direction, -hitInfo.normal);
-                newpos.x = 1;
-                Vector3 dir = newpos;
-                Debug.Log("Pos: " + newpos);
-                Debug.Log("Split Return: " + Split(direction, -hitInfo.normal));
+                Vector3 dir = direction;
+                //newpos = Split(direction, -hitInfo.normal);
+                //if (newpos.z >= 0) {
+                //    newpos.x = direction.x;
+                //}
+                //else {
+                //    newpos.x = -1;
+                //}
+                //Vector3 dir = newpos;
+                //Debug.Log("Pos: " + newpos);
+                //Debug.Log("Split Return: " + Split(direction, -hitInfo.normal));
                 CastRay(pos, dir, laser);
                 UpdateLaser();
             }
@@ -106,9 +115,12 @@ public class LaserBeam{
     }
 
     void CheckEndpoint(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
-        if (hitInfo.collider.gameObject.name == "Endpoint1" || hitInfo.collider.gameObject.name == "Endpoint2") {
-            endpoint = true;
+        if (hitInfo.collider.gameObject.name == "Endpoint1") {
+            endpoint1 = true;
             Debug.Log("Endpoint set to true: " + hitInfo.collider.gameObject.name);
+        }
+        else if (hitInfo.collider.gameObject.name == "Endpoint2") {
+            endpoint2 = true;
         }
     }
 }

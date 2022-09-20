@@ -11,6 +11,8 @@ public class ShootLaser : MonoBehaviour{
     string name; //Name of the beam
     Vector3 pos; //Position of the second beam
     public GameObject completeLevelUI;
+    public Color Laser1Color;
+    public Color Laser2Color;
 
     void Start() {
         pos = gameObject.transform.position;
@@ -25,17 +27,29 @@ public class ShootLaser : MonoBehaviour{
         }
 
         name = "Laser Beam";
-        beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material, name, Color.red, false);
+        beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material, name, Laser1Color, false, false);
 
         if (NumberOfLasers == 2) {
             name = "Laser Beam 2";
-            beam2 = new LaserBeam(pos, gameObject.transform.right, material, name, Color.green, false);
+            beam2 = new LaserBeam(pos, gameObject.transform.right, material, name, Laser2Color, false, false);
             Debug.Log("Laser 2 is Active");
         }
         //Debug.Log("Beam endpoint: " + beam.endpoint);
-        if (beam.endpoint) {
+        if (beam.endpoint1) {
             if (NumberOfLasers == 2) {
-                if (beam2.endpoint) {
+                if (beam2.endpoint2) {
+                    Debug.Log("Game End");
+                    completeLevelUI.SetActive(true);
+                }
+            }
+            else {
+                Debug.Log("Game End");
+                completeLevelUI.SetActive(true);
+            }
+        }
+        else if (beam.endpoint2) {
+            if (NumberOfLasers == 2) {
+                if (beam2.endpoint1) {
                     Debug.Log("Game End");
                     completeLevelUI.SetActive(true);
                 }
