@@ -39,9 +39,11 @@ public class MovePrototype2 : MonoBehaviour
         //Debug.Log("ScreenPosition: " + ScreenPosition);
         //Debug.Log("Transform Position: " + transform.position);
         //Debug.Log("Position: " + NewWorldPosition);
-        if (newDrag) {
-            numberOfMoves += 1;
-            newDrag = false;
+        if (!GameObject.Find("LevelComplete")) {
+            if (newDrag) {
+                numberOfMoves += 1;
+                newDrag = false;
+            }
         }
     }
 
@@ -49,6 +51,7 @@ public class MovePrototype2 : MonoBehaviour
         if (Input.GetMouseButtonUp(0)) {
             rb.velocity = new Vector3(0, 0, 0); //Set velocity to 0 when the left mouse button is released
             //Debug.Log("Left click");
+            
             newDrag = true;
         }
     }
