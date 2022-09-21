@@ -51,6 +51,7 @@ public class MovePrototype2 : MonoBehaviour
         if (Input.GetMouseButtonUp(0)) {
             rb.velocity = new Vector3(0, 0, 0); //Set velocity to 0 when the left mouse button is released
             //Debug.Log("Left click");
+            
             newDrag = true;
         }
     }
