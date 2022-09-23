@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootLaser : MonoBehaviour{
-    
+
     public Material material;
     public int NumberOfLasers;
     LaserBeam beam;
@@ -20,7 +20,7 @@ public class ShootLaser : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update() { 
+    void Update() {
         Destroy(GameObject.Find("Laser Beam"));
         if (NumberOfLasers == 2) {
             Destroy(GameObject.Find("Laser Beam 2"));
