@@ -11,13 +11,13 @@ public class TileText : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         //Debug.Log("Child: " + child);
-        Debug.Log("Parent Position: " + parent.transform.position);
+        // Debug.Log("Parent Position: " + parent.transform.position);
         initialPos = parent.transform.position;
     }
 
     // Update is called once per frame
     void LateUpdate() {
-        Debug.Log("Parent Position: " + parent.transform.position);
+        // Debug.Log("Parent Position: " + parent.transform.position);
 
         if (initialPos != parent.transform.position && Input.GetMouseButtonUp(0)) {
             child.SetActive(false);

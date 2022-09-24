@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System;
 
 public class UpdateAnalytics : MonoBehaviour
 {
@@ -28,16 +29,17 @@ public class UpdateAnalytics : MonoBehaviour
 
     public void Send()
     {
-        StartCoroutine(Post(_sessionID.ToString(), Metrics.moves.ToString(), Metrics.level.ToString()));
+        StartCoroutine(Post(_sessionID.ToString(), Metrics.moves.ToString(), Metrics.level, String.Format("{0:0.00}", Metrics.float_minutes)));
     }
 
-    private IEnumerator Post(string sessionID, string moves, string level)
+    private IEnumerator Post(string sessionID, string moves, string level, string minutes)
     {
         // Create form and enter responses
         WWWForm form = new WWWForm();
         form.AddField("entry.1129034070", sessionID);
         form.AddField("entry.712653030", level);
         form.AddField("entry.338609209", moves);
+        form.AddField("entry.1281315444", minutes);
 
         // Send POST request and verify the result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
@@ -50,7 +52,7 @@ public class UpdateAnalytics : MonoBehaviour
             }
             else
             {
-                Debug.Log("Form upload complete");
+                // Debug.Log("Form upload complete");
             }
         }
     }

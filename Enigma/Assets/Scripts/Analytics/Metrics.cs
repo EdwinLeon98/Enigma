@@ -8,7 +8,9 @@ public class Metrics : MonoBehaviour
     // This class is only used to store the metrics variables
     public static int moves = 0;
     public static bool gameEnded = false;
-    public static int level = 1;
+    public static string level;
+    public static float float_minutes;
+    public static bool collectAnalytics = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,5 +22,10 @@ public class Metrics : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public static void CalculateMinutes(int minutes, int seconds) {
+        Debug.Log("Got minutes: " + minutes.ToString() + " and seconds: " + seconds.ToString());
+        float_minutes = (float)minutes + (float)(seconds/60.0);
     }
 }
