@@ -7,14 +7,14 @@ using TMPro;
 
 public class MoveCounter : MonoBehaviour
 {
-    private TMP_Text displayText; 
-    public GameObject displayMoves;  
-    
+    private TMP_Text displayText;
+    public GameObject displayMoves;
+
     // Start is called before the first frame update
     void Start()
     {
           displayText = displayMoves.GetComponent<TextMeshProUGUI>();
-    }   
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,7 +22,6 @@ public class MoveCounter : MonoBehaviour
         //if (!GameObject.Find("LevelComplete")) {
             displayText.text = "Moves: " + MovePrototype2.numberOfMoves.ToString();
         //}
-        Debug.Log("# of Moves: " + MovePrototype2.numberOfMoves);
+        // Debug.Log("# of Moves: " + MovePrototype2.numberOfMoves);
     }
 }
-
