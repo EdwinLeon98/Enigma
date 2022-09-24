@@ -25,7 +25,7 @@ public class Metrics : MonoBehaviour
     }
 
     public static void CalculateMinutes(int minutes, int seconds) {
-        Debug.Log("Got minutes: " + minutes.ToString() + " and seconds: " + seconds.ToString());
+        // Debug.Log("Got minutes: " + minutes.ToString() + " and seconds: " + seconds.ToString());
         float_minutes = (float)minutes + (float)(seconds/60.0);
     }
 }
