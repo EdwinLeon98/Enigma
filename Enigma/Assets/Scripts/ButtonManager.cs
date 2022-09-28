@@ -33,6 +33,8 @@ public class ButtonManager : MonoBehaviour
             Metrics.collectAnalytics = false;
         }
 
+        PauseGame.unpause = true;
+
         SceneManager.LoadScene(level);
     }
 }
