@@ -9,7 +9,7 @@ public class MovePrototype2 : MonoBehaviour
     private Vector3 initialPos;
     private Vector3 screenInitialPos;
     private Vector3 ScreenPosition;
-    private float speed = 1000;
+    private float speed = 500;
     public static int numberOfMoves = 0;
     private bool newDrag = true;
     public Rigidbody rb;
