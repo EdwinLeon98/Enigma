@@ -115,7 +115,7 @@ public class LaserBeam{
     }
 
     void CheckEndpoint(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
-        if (hitInfo.collider.gameObject.name == "Endpoint1") {
+        if (hitInfo.collider.gameObject.name == "Endpoint1" || hitInfo.collider.gameObject.tag == "Lightbulb") {
             endpoint1 = true;
             // Debug.Log("Endpoint set to true: " + hitInfo.collider.gameObject.name);
         }
