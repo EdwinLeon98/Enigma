@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Collider))]
-public class Move : MonoBehaviour
+public class MovePrototype3 : MonoBehaviour
 {
     private Camera mainCamera;
     private float CameraZDistance;

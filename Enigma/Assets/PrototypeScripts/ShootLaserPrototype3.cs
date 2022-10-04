@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootLaser : MonoBehaviour
+public class ShootLaserPrototype3 : MonoBehaviour
 {
     public Material material;
-    LaserBeam beam;
+    LaserBeamPrototype3 beam;
 
     // Update is called once per frame
     void Update()
@@ -14,6 +14,6 @@ public class ShootLaser : MonoBehaviour
         {
             Destroy(beam.laserObj);
         }
-        beam = new LaserBeam(gameObject.transform.position,gameObject.transform.right,material);
+        beam = new LaserBeamPrototype3(gameObject.transform.position,gameObject.transform.right,material);
     }
 }

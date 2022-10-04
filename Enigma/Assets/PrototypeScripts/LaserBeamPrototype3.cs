@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserBeam
+public class LaserBeamPrototype3
 {
     Vector3 pos,dir;
 
@@ -16,7 +16,7 @@ public class LaserBeam
         {"Glass",1.5f}
     };
 
-    public LaserBeam(Vector3 pos, Vector3 dir, Material material)
+    public LaserBeamPrototype3(Vector3 pos, Vector3 dir, Material material)
     {
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
