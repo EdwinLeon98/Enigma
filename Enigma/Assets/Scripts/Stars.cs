@@ -14,14 +14,6 @@ public class Stars : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        Debug.Log("Level Number: " + ButtonManager.levelNumber);
-        Debug.Log("Got Star 1: " + GetScore.gotStar1);
-        Debug.Log("Got Star 2: " + GetScore.gotStar2);
-        Debug.Log("Got Star 3: " + GetScore.gotStar3);
-        Debug.Log("Prev Stars 1: " + prevStars1);
-        Debug.Log("Prev Stars 2: " + prevStars2);
-        Debug.Log("Prev Stars 3: " + prevStars3);
-
         if (gameObject.name == "Level1Stars") {
             LoadStars(prevStars1);
         }
