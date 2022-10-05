@@ -115,12 +115,27 @@ public class LaserBeam{
     }
 
     void CheckEndpoint(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
-        if (hitInfo.collider.gameObject.name == "Endpoint1" || hitInfo.collider.gameObject.tag == "Lightbulb") {
+        if (hitInfo.collider.gameObject.name == "Endpoint1") {
             endpoint1 = true;
+            // Debug.Log("Endpoint1 true");
             // Debug.Log("Endpoint set to true: " + hitInfo.collider.gameObject.name);
         }
         else if (hitInfo.collider.gameObject.name == "Endpoint2") {
+            // Debug.Log("Endpoint2 true");
             endpoint2 = true;
         }
+        // else{
+        //     endpoint1=false;
+        // }
+        // else{
+        //     if (hitInfo.collider.gameObject.name != "Endpoint1"){
+        //         Debug.Log("Endpoint1 false");
+        //         endpoint1 = false;
+        //     }
+        //     else if (hitInfo.collider.gameObject.name != "Endpoint2"){
+        //         Debug.Log("Endpoint2 false");
+        //         endpoint2 = false;
+        //     }
+        // }
     }
 }

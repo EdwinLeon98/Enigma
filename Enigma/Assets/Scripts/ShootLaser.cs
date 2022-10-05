@@ -42,6 +42,7 @@ public class ShootLaser : MonoBehaviour{
        
         if (beam.endpoint1) {
             end1=true;
+            Debug.Log("end1 true");
             // GetComponent<MeshRenderer>().material.color = Color.yellow;
             if (NumberOfLasers == 2) {
                 if (beam2.endpoint2) {
@@ -50,10 +51,16 @@ public class ShootLaser : MonoBehaviour{
                 }
             }
             else {
+                Debug.Log("end1 laser-prachi");
                 completeLevelUI.SetActive(true);
                 UpdateMetrics();
             }
         }
+        // else if (!beam.endpoint1){
+        //     Debug.Log("end1 false");
+        //     end1=false;
+        // }
+
         else if (beam.endpoint2) {
             end2=true;
             // GetComponent<MeshRenderer>().material.color = Color.yellow;
@@ -67,6 +74,9 @@ public class ShootLaser : MonoBehaviour{
                 completeLevelUI.SetActive(true);
                 UpdateMetrics();
             }
+        }
+        else if(!beam.endpoint2){
+            end2=false;
         }
     }
 
