@@ -9,6 +9,7 @@ public class ShootLaser : MonoBehaviour{
     public static bool end2 = false;
     public Material material;
     public int NumberOfLasers;
+    public static int nl;
     LaserBeam beam;
     LaserBeam beam2;
     string name; //Name of the beam
@@ -19,6 +20,7 @@ public class ShootLaser : MonoBehaviour{
     void Start() {
         pos = gameObject.transform.position;
         pos.y = pos.y - 0.01f;
+        nl = NumberOfLasers;
     }
 
     // Update is called once per frame

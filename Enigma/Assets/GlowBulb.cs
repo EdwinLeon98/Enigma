@@ -14,18 +14,24 @@ public class GlowBulb : MonoBehaviour
         temp2 = lightbulb2.GetComponent<MeshRenderer>().material;
     }
     void Update(){
-        if (ShootLaser.end1==true){
-        temp.color = Color.yellow;
+        if (ShootLaser.nl==1){
+            if (ShootLaser.end1==true){
+                temp.color = Color.yellow;
+            }
+            if (ShootLaser.end2==true){
+                temp2.color = Color.yellow;
+            }
         }
-       
-        // else{
-        //     temp.color = Color.white;
-        // }
-        if (ShootLaser.end2==true){
-        temp2.color = Color.yellow;
+        else if (ShootLaser.nl==2)
+        {
+            if (ShootLaser.end1==true){
+                temp.color = Color.yellow;
+            }
+            if (ShootLaser.end2==true){
+                temp2.color = Color.yellow;
+            }
+        
         }
-        // else (ShootLaser.end2==false){
-        //     temp.color = Color.white;
-        // }
+        
     }
 }
