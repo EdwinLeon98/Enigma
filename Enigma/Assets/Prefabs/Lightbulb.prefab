@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8752037129793668993}
   - component: {fileID: 4129974054218658739}
   - component: {fileID: 230981793804934879}
-  m_Layer: 0
-  m_Name: Cylinder
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: Endpoint1
+  m_TagString: Endpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2867234931209707617}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.254, y: -0, z: 0.232}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalPosition: {x: -0, y: -0, z: -0.37}
+  m_LocalScale: {x: 0.3, y: 0.2, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2489967155044725069}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 23b90ced65cd5a149b34bda9ee1d90cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,9 +110,10 @@ GameObject:
   - component: {fileID: 8216443184847702700}
   - component: {fileID: 2672233330666381221}
   - component: {fileID: 1750137975882794808}
-  m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
+  - component: {fileID: 4372753309167008453}
+  m_Layer: 8
+  m_Name: Endpoint1
+  m_TagString: Endpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,8 +126,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6193576608820738876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.249, y: 0, z: 0.354}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2489967155044725069}
@@ -195,6 +196,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4372753309167008453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6193576608820738876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e55ea280afd5401cb323d6fb8a097e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightbulb1: {fileID: 6193576608820738876}
+  material: {fileID: 2100000, guid: dcfbd93d75642e24ab57844d32cab880, type: 2}
 --- !u!1 &7199133064627457804
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +221,7 @@ GameObject:
   - component: {fileID: 2489967155044725069}
   m_Layer: 0
   m_Name: Lightbulb
-  m_TagString: Untagged
+  m_TagString: Endpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7199133064627457804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

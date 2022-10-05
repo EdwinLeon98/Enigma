@@ -677,7 +677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &298725143
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3650,6 +3650,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474159322}
   m_CullTransparentMesh: 1
+--- !u!1 &1487667188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6193576608820738876, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
+  m_PrefabInstance: {fileID: 1621311647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1487667194
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487667188}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1576699148
 GameObject:
   m_ObjectHideFlags: 0
@@ -3719,25 +3740,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1750137975882794808, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2489967155044725069, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2489967155044725069, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2489967155044725069, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2489967155044725069, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2489967155044725069, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.93
+      value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 2489967155044725069, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3745,7 +3770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2489967155044725069, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.55
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2489967155044725069, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3775,13 +3800,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2672233330666381221, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672233330666381221, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dcfbd93d75642e24ab57844d32cab880, type: 2}
+    - target: {fileID: 2672233330666381221, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7a30dd6146f0435db336d8424d922bf, type: 2}
+    - target: {fileID: 2867234931209707617, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
+      propertyPath: m_Name
+      value: Endpoint1
+      objectReference: {fileID: 0}
     - target: {fileID: 2867234931209707617, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2867234931209707617, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_TagString
-      value: Lightbulb
+      value: Endpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372753309167008453, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
+      propertyPath: lightbulb2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193576608820738876, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
+      propertyPath: m_Name
+      value: Endpoint1
       objectReference: {fileID: 0}
     - target: {fileID: 6193576608820738876, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_Layer
@@ -3789,11 +3838,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6193576608820738876, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_TagString
-      value: Lightbulb
+      value: Endpoint
       objectReference: {fileID: 0}
     - target: {fileID: 7199133064627457804, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_Name
-      value: Lightbulb
+      value: Endpoint1
       objectReference: {fileID: 0}
     - target: {fileID: 7199133064627457804, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_Layer
@@ -3801,7 +3850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7199133064627457804, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
       propertyPath: m_TagString
-      value: Lightbulb
+      value: Endpoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad47b3e2b81f943488e7be5f0d44f336, type: 3}
@@ -4091,6 +4140,18 @@ PrefabInstance:
       propertyPath: completeLevelUI
       value: 
       objectReference: {fileID: 1279537110}
+    - target: {fileID: 6926607231833252658, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
+      propertyPath: material_lightbulb.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926607231833252658, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
+      propertyPath: material_lightbulb.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 6926607231833252658, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
+      propertyPath: material_lightbulb.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7a30dd6146f0435db336d8424d922bf, type: 2}
     - target: {fileID: 6971672047935686342, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
       propertyPath: m_Name
       value: Laser

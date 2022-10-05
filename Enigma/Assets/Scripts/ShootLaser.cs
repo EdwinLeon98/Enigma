@@ -5,6 +5,8 @@ using System;
 
 public class ShootLaser : MonoBehaviour{
 
+    public static bool end1 = false;
+    public static bool end2 = false;
     public Material material;
     public int NumberOfLasers;
     LaserBeam beam;
@@ -14,7 +16,6 @@ public class ShootLaser : MonoBehaviour{
     public GameObject completeLevelUI;
     public Color Laser1Color;
     public Color Laser2Color;
-
     void Start() {
         pos = gameObject.transform.position;
         pos.y = pos.y - 0.01f;
@@ -22,6 +23,8 @@ public class ShootLaser : MonoBehaviour{
 
     // Update is called once per frame
     void Update() {
+        // end1=false;
+        // end2=false;
         Destroy(GameObject.Find("Laser Beam"));
         if (NumberOfLasers == 2) {
             Destroy(GameObject.Find("Laser Beam 2"));
@@ -36,7 +39,10 @@ public class ShootLaser : MonoBehaviour{
             // Debug.Log("Laser 2 is Active");
         }
         //Debug.Log("Beam endpoint: " + beam.endpoint);
+       
         if (beam.endpoint1) {
+            end1=true;
+            // GetComponent<MeshRenderer>().material.color = Color.yellow;
             if (NumberOfLasers == 2) {
                 if (beam2.endpoint2) {
                     completeLevelUI.SetActive(true);
@@ -49,6 +55,8 @@ public class ShootLaser : MonoBehaviour{
             }
         }
         else if (beam.endpoint2) {
+            end2=true;
+            // GetComponent<MeshRenderer>().material.color = Color.yellow;
             if (NumberOfLasers == 2) {
                 if (beam2.endpoint1) {
                     completeLevelUI.SetActive(true);

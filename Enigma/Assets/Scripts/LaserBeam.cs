@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserBeam{
-
+    
     Vector3 pos, dir;
     GameObject laserObj;
     LineRenderer laser;
@@ -15,7 +15,7 @@ public class LaserBeam{
     public bool endpoint1;
     public bool endpoint2;
     Vector3 newpos;
-
+    
     public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, Color color, bool endpoint1, bool endpoint2) {
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();

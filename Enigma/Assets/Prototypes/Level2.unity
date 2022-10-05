@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366753, g: 0.48427093, b: 0.5645238, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2120,6 +2120,7 @@ GameObject:
   - component: {fileID: 822081784}
   - component: {fileID: 822081783}
   - component: {fileID: 822081782}
+  - component: {fileID: 822081785}
   m_Layer: 8
   m_Name: Endpoint1
   m_TagString: Endpoint
@@ -2206,6 +2207,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822081780}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &822081785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822081780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e55ea280afd5401cb323d6fb8a097e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightbulb1: {fileID: 822081780}
+  lightbulb2: {fileID: 891180460}
+  yellow_color: {fileID: 0}
 --- !u!1 &827680894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,6 +2475,7 @@ GameObject:
   - component: {fileID: 891180464}
   - component: {fileID: 891180463}
   - component: {fileID: 891180462}
+  - component: {fileID: 891180465}
   m_Layer: 8
   m_Name: Endpoint2
   m_TagString: Endpoint
@@ -2545,6 +2562,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891180460}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &891180465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891180460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e55ea280afd5401cb323d6fb8a097e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightbulb1: {fileID: 822081780}
+  lightbulb2: {fileID: 891180460}
+  yellow_color: {fileID: 0}
 --- !u!1001 &917067661
 PrefabInstance:
   m_ObjectHideFlags: 0
