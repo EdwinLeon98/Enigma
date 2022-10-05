@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 
 public class ButtonManager : MonoBehaviour
 {
+    public static int levelNumber;
 
     public void ButtonMoveScene(string level) {
         MovePrototype2.numberOfMoves = 0;
@@ -34,7 +35,22 @@ public class ButtonManager : MonoBehaviour
         }
 
         PauseGame.unpause = true;
-
+        SetLevelNumber(level);
         SceneManager.LoadScene(level);
+    }
+
+    public void SetLevelNumber(string level) {
+        if(level == "Level0") {
+            levelNumber = 1;
+        }
+        else if(level == "Level1") {
+            levelNumber = 2;
+        }
+        else if(level == "Level2") {
+            levelNumber = 3;
+        }
+        else {
+            //levelNumber = 0;
+        }
     }
 }
