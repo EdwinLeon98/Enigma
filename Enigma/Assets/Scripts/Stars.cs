@@ -27,6 +27,7 @@ public class Stars : MonoBehaviour
         if (gameObject.name == "Level4Stars") {
             LoadStars(prevStars4);
         }
+        Debug.Log("Level Number: " + ButtonManager.levelNumber);
 
         if (ButtonManager.levelNumber == 1) {
             if (gameObject.name == "Level1Stars") {

@@ -49,6 +49,9 @@ public class ButtonManager : MonoBehaviour
         else if(level == "Level2") {
             levelNumber = 3;
         }
+        else if (level == "Lahari") {
+            levelNumber = 4;
+        }
         else {
             //levelNumber = 0;
         }

@@ -39,7 +39,7 @@ public class GetScore : MonoBehaviour
     void Update()
     {
         score.text = "Score: " + RatingSystem.score;
-        if(RatingSystem.score >= Star1score) {
+        if(RatingSystem.score >= Star3score) {
             ChangeColor(star3Image);
             ChangeColor(star2Image);
             ChangeColor(star1Image);
