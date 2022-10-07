@@ -38,16 +38,16 @@ public class ButtonManager : MonoBehaviour
     }
 
     public void SetLevelNumber(string level) {
-        if(level == "Level0") {
+        if(level == "Level1") {
             levelNumber = 1;
         }
-        else if(level == "Level1") {
+        else if(level == "Level2") {
             levelNumber = 2;
         }
-        else if(level == "Level2") {
+        else if(level == "Level3") {
             levelNumber = 3;
         }
-        else if (level == "Lahari") {
+        else if (level == "Level4") {
             levelNumber = 4;
         }
         else {
