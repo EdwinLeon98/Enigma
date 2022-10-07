@@ -14,12 +14,10 @@ public class ButtonManager : MonoBehaviour
         TimerCounter.mins = 0;
         TimerCounter.secs = 0;
         TimerCounter.timer = 0;
-        String temp = level;
 
-        // Extract the level number from the level string.
-        // The format of level variable is: "Level1", "Level2"
-        Metrics.level = Regex.Match(temp, @"\d+").Value;
-        // Debug.Log("Level: " + Metrics.level);
+        // Set the level name
+        Metrics.level = level;
+        // Debug.Log("Going to Level: " + Metrics.level);
 
         // When a new level is selected turn off the gameEnded Flag.
         // This will enable sending the data to server once the selected level
@@ -31,7 +29,7 @@ public class ButtonManager : MonoBehaviour
         }
         else {
             // Debug.Log("Not a WebGL build");
-            Metrics.collectAnalytics = false;
+            Metrics.collectAnalytics = true;
         }
 
         PauseGame.unpause = true;
