@@ -11,6 +11,7 @@ public class GetScore : MonoBehaviour
     public int Star1score;
     public int Star2score;
     public int Star3score;
+    //public int[] StarScore;
     GameObject star1;
     GameObject star2;
     GameObject star3;
@@ -23,8 +24,8 @@ public class GetScore : MonoBehaviour
     public static bool gotStar3 = false;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
+        //StarScore = new int[3];
         star1 = GameObject.Find("Star1");
         star2 = GameObject.Find("Star2");
         star3 = GameObject.Find("Star3");
@@ -38,7 +39,7 @@ public class GetScore : MonoBehaviour
     void Update()
     {
         score.text = "Score: " + RatingSystem.score;
-        if(RatingSystem.score >= Star3score) {
+        if(RatingSystem.score >= Star1score) {
             ChangeColor(star3Image);
             ChangeColor(star2Image);
             ChangeColor(star1Image);

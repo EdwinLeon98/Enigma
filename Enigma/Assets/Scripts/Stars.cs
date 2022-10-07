@@ -11,6 +11,7 @@ public class Stars : MonoBehaviour
     public static int prevStars1 = 0;
     public static int prevStars2 = 0;
     public static int prevStars3 = 0;
+    public static int prevStars4 = 0;
 
     // Update is called once per frame
     void Update() {
@@ -22,6 +23,9 @@ public class Stars : MonoBehaviour
         }
         if (gameObject.name == "Level3Stars") {
             LoadStars(prevStars3);
+        }
+        if (gameObject.name == "Level4Stars") {
+            LoadStars(prevStars4);
         }
 
         if (ButtonManager.levelNumber == 1) {
@@ -100,6 +104,34 @@ public class Stars : MonoBehaviour
                     star3.SetActive(true);
                     if (prevStars3 < 3) {
                         prevStars3 = 3;
+                    }
+                    GetScore.gotStar3 = false;
+                }
+                else {
+                    //Do nothing
+                }
+            }
+        }
+        else if (ButtonManager.levelNumber == 4) {
+            if (gameObject.name == "Level4Stars") {
+                if (GetScore.gotStar1) {
+                    star1.SetActive(true);
+                    if (prevStars4 < 1) {
+                        prevStars4 = 1;
+                    }
+                    GetScore.gotStar1 = false;
+                }
+                else if (GetScore.gotStar2) {
+                    star2.SetActive(true);
+                    if (prevStars4 < 2) {
+                        prevStars4 = 2;
+                    }
+                    GetScore.gotStar2 = false;
+                }
+                else if (GetScore.gotStar3) {
+                    star3.SetActive(true);
+                    if (prevStars4 < 3) {
+                        prevStars4 = 3;
                     }
                     GetScore.gotStar3 = false;
                 }
