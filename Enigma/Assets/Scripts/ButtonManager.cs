@@ -29,7 +29,7 @@ public class ButtonManager : MonoBehaviour
         }
         else {
             // Debug.Log("Not a WebGL build");
-            Metrics.collectAnalytics = true;
+            Metrics.collectAnalytics = false;
         }
 
         PauseGame.unpause = true;
