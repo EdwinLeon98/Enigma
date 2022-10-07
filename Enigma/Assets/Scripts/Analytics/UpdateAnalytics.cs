@@ -29,10 +29,18 @@ public class UpdateAnalytics : MonoBehaviour
 
     public void Send()
     {
-        StartCoroutine(Post(_sessionID.ToString(), Metrics.moves.ToString(), Metrics.level, String.Format("{0:0.00}", Metrics.float_minutes)));
+        StartCoroutine(
+            Post(
+                _sessionID.ToString(),
+                Metrics.moves.ToString(),
+                Metrics.level,
+                String.Format("{0:0.00}", Metrics.float_minutes),
+                Metrics.star_rating.ToString(),
+                Metrics.score.ToString()
+            ));
     }
 
-    private IEnumerator Post(string sessionID, string moves, string level, string minutes)
+    private IEnumerator Post(string sessionID, string moves, string level, string minutes, string rating, string score)
     {
         // Create form and enter responses
         WWWForm form = new WWWForm();
@@ -40,6 +48,8 @@ public class UpdateAnalytics : MonoBehaviour
         form.AddField("entry.712653030", level);
         form.AddField("entry.338609209", moves);
         form.AddField("entry.1281315444", minutes);
+        form.AddField("entry.1352818486", rating);
+        form.AddField("entry.1154118958", score);
 
         // Send POST request and verify the result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))

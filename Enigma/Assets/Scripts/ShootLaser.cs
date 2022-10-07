@@ -40,35 +40,21 @@ public class ShootLaser : MonoBehaviour{
             if (NumberOfLasers == 2) {
                 if (beam2.endpoint2) {
                     completeLevelUI.SetActive(true);
-                    UpdateMetrics();
                 }
             }
             else {
                 completeLevelUI.SetActive(true);
-                UpdateMetrics();
             }
         }
         else if (beam.endpoint2) {
             if (NumberOfLasers == 2) {
                 if (beam2.endpoint1) {
                     completeLevelUI.SetActive(true);
-                    UpdateMetrics();
                 }
             }
             else {
                 completeLevelUI.SetActive(true);
-                UpdateMetrics();
             }
-        }
-    }
-
-    void UpdateMetrics() {
-        if(Metrics.collectAnalytics && !Metrics.gameEnded && !String.IsNullOrEmpty(Metrics.level)) {
-            Metrics.moves = MovePrototype2.numberOfMoves;
-            Metrics.gameEnded = true;
-            Metrics.CalculateMinutes(TimerCounter.mins, 10 * TimerCounter.secs + TimerCounter.timer);
-            UpdateAnalytics updater = gameObject.AddComponent<UpdateAnalytics>() as UpdateAnalytics;
-            updater.Send();
         }
     }
 }
