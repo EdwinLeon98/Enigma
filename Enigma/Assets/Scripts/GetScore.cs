@@ -22,6 +22,7 @@ public class GetScore : MonoBehaviour
     public static bool gotStar1 = false;
     public static bool gotStar2 = false;
     public static bool gotStar3 = false;
+    public static int star_rating = 0;
 
     // Start is called before the first frame update
     void Start(){
@@ -44,19 +45,24 @@ public class GetScore : MonoBehaviour
             ChangeColor(star2Image);
             ChangeColor(star1Image);
             gotStar3 = true;
+            star_rating = 3;
         }
         else if(RatingSystem.score < Star3score && RatingSystem.score >= Star2score) {
             ChangeColor(star2Image);
             ChangeColor(star1Image);
             gotStar2 = true;
+            star_rating = 2;
         }
         else if(RatingSystem.score < Star2score && RatingSystem.score >= Star1score) {
             ChangeColor(star1Image);
             gotStar1 = true;
+            star_rating = 1;
         }
         else {
-            //Do Nothing;
+            star_rating = 0;
         }
+        Metrics metrics_instance = gameObject.AddComponent<Metrics>() as Metrics;
+        metrics_instance.UpdateMetricsAndSend();
     }
 
     void ChangeColor(Image image) {
