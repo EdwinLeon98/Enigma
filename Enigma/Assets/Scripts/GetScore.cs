@@ -58,7 +58,7 @@ public class GetScore : MonoBehaviour
             star_rating = 1;
         }
         else {
-            //Do Nothing;
+            star_rating = 0;
         }
         Metrics metrics_instance = gameObject.AddComponent<Metrics>() as Metrics;
         metrics_instance.UpdateMetricsAndSend();
