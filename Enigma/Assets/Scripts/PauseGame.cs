@@ -8,7 +8,7 @@ public class PauseGame : MonoBehaviour
 
     void Update() {
         Time.timeScale = 0;
-        // Debug.Log("Unpause: " + unpause);
+
         if (GameObject.Find("LevelComplete") && unpause) {
             Time.timeScale = 1;
             unpause = false;
