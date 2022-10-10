@@ -13,14 +13,14 @@ public class TimerCounter : MonoBehaviour
     public static int secs = 0;
  
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         displayTimer = Timer.GetComponent<TextMeshProUGUI>();
         StartCoroutine(time());
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (timer < 10) {
             displayTimer.text = "Time: " + mins + ":" + secs + timer.ToString();
