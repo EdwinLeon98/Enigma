@@ -29,7 +29,6 @@ public class LaserBeam{
         this.laser.startWidth = 0.08f;
         this.laser.endWidth = 0.08f;
         this.laser.material = material;
-        // Debug.Log("Color:" + color);
         this.laser.startColor = color;
         this.laser.endColor = color;
 
@@ -117,12 +116,12 @@ public class LaserBeam{
     void CheckEndpoint(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
         if (hitInfo.collider.gameObject.name == "Endpoint1") {
             endpoint1 = true;
-            // Debug.Log("Endpoint1 true");
+            Debug.Log("Endpoint1 true");
             // Debug.Log("Endpoint set to true: " + hitInfo.collider.gameObject.name);
         }
         else if (hitInfo.collider.gameObject.name == "Endpoint2") {
-            // Debug.Log("Endpoint2 true");
             endpoint2 = true;
+            Debug.Log("Endpoint2 true");
         }
         // else{
         //     endpoint1=false;
