@@ -14,10 +14,14 @@ public class ShootLaser : MonoBehaviour{
     public GameObject completeLevelUICanvas;
     public Color Laser1Color;
     public Color Laser2Color;
+    public static bool end1 = false;
+    public static bool end2 = false;
+    public static int nl;
 
     void Start() {
         pos = gameObject.transform.position;
         pos.y = pos.y - 0.01f;
+        nl = NumberOfLasers;
     }
 
     // Update is called once per frame
@@ -37,8 +41,10 @@ public class ShootLaser : MonoBehaviour{
         }
         //Debug.Log("Beam endpoint: " + beam.endpoint);
         if (beam.endpoint1) {
+            end1 = true;
             if (NumberOfLasers == 2) {
                 if (beam2.endpoint2) {
+                    end2 = true;
                     completeLevelUICanvas.SetActive(true);
                 }
             }
@@ -47,8 +53,10 @@ public class ShootLaser : MonoBehaviour{
             }
         }
         else if (beam.endpoint2) {
+            end2 = true;
             if (NumberOfLasers == 2) {
                 if (beam2.endpoint1) {
+                    end1 = true;
                     completeLevelUICanvas.SetActive(true);
                 }
             }
