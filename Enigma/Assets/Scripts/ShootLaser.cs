@@ -65,7 +65,7 @@ public class ShootLaser : MonoBehaviour{
                 completeLevelUICanvas.SetActive(true);
             }
         }
-        else if (beam2.endpoint1) {
+        else if ( NumberOfLasers==2 && beam2.endpoint1 ) {
             end1 = true;
             if (NumberOfLasers == 2) {
                 if (beam.endpoint2) {
@@ -77,7 +77,7 @@ public class ShootLaser : MonoBehaviour{
                 completeLevelUICanvas.SetActive(true);
             }
         }
-        else if (beam2.endpoint2) {
+        else if (NumberOfLasers==2 && beam2.endpoint2) {
             end2 = true;
             if (NumberOfLasers == 2) {
                 if (beam.endpoint1) {
