@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserBeam{
-
+    
     Vector3 pos, dir;
     GameObject laserObj;
     LineRenderer laser;
@@ -15,7 +15,7 @@ public class LaserBeam{
     public bool endpoint1;
     public bool endpoint2;
     Vector3 newpos;
-
+    
     public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, Color color, bool endpoint1, bool endpoint2) {
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
@@ -29,7 +29,6 @@ public class LaserBeam{
         this.laser.startWidth = 0.08f;
         this.laser.endWidth = 0.08f;
         this.laser.material = material;
-        // Debug.Log("Color:" + color);
         this.laser.startColor = color;
         this.laser.endColor = color;
 
@@ -117,10 +116,25 @@ public class LaserBeam{
     void CheckEndpoint(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
         if (hitInfo.collider.gameObject.name == "Endpoint1") {
             endpoint1 = true;
+            Debug.Log("Endpoint1 true");
             // Debug.Log("Endpoint set to true: " + hitInfo.collider.gameObject.name);
         }
         else if (hitInfo.collider.gameObject.name == "Endpoint2") {
             endpoint2 = true;
+            Debug.Log("Endpoint2 true");
         }
+        // else{
+        //     endpoint1=false;
+        // }
+        // else{
+        //     if (hitInfo.collider.gameObject.name != "Endpoint1"){
+        //         Debug.Log("Endpoint1 false");
+        //         endpoint1 = false;
+        //     }
+        //     else if (hitInfo.collider.gameObject.name != "Endpoint2"){
+        //         Debug.Log("Endpoint2 false");
+        //         endpoint2 = false;
+        //     }
+        // }
     }
 }

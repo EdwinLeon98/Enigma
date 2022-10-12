@@ -9,15 +9,19 @@ public class ShootLaser : MonoBehaviour{
     public int NumberOfLasers;
     LaserBeam beam;
     LaserBeam beam2;
-    string name; //Name of the beam
+    string Name; //Name of the beam
     Vector3 pos; //Position of the second beam
-    public GameObject completeLevelUI;
+    public GameObject completeLevelUICanvas;
     public Color Laser1Color;
     public Color Laser2Color;
+    public static bool end1 = false;
+    public static bool end2 = false;
+    public static int nl;
 
     void Start() {
         pos = gameObject.transform.position;
         pos.y = pos.y - 0.01f;
+        nl = NumberOfLasers;
     }
 
     // Update is called once per frame
@@ -27,33 +31,62 @@ public class ShootLaser : MonoBehaviour{
             Destroy(GameObject.Find("Laser Beam 2"));
         }
 
-        name = "Laser Beam";
-        beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material, name, Laser1Color, false, false);
+        Name = "Laser Beam";
+        end1 = false;
+        beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material, Name, Laser1Color, false, false);
 
         if (NumberOfLasers == 2) {
-            name = "Laser Beam 2";
-            beam2 = new LaserBeam(pos, gameObject.transform.right, material, name, Laser2Color, false, false);
-            // Debug.Log("Laser 2 is Active");
+            Name = "Laser Beam 2";
+            end2 = false;
+            beam2 = new LaserBeam(pos, gameObject.transform.right, material, Name, Laser2Color, false, false);
         }
-        //Debug.Log("Beam endpoint: " + beam.endpoint);
+       
         if (beam.endpoint1) {
+            end1 = true;
             if (NumberOfLasers == 2) {
                 if (beam2.endpoint2) {
-                    completeLevelUI.SetActive(true);
+                    end2 = true;
+                    completeLevelUICanvas.SetActive(true);
                 }
             }
             else {
-                completeLevelUI.SetActive(true);
+                completeLevelUICanvas.SetActive(true);
             }
         }
         else if (beam.endpoint2) {
+            end2 = true;
             if (NumberOfLasers == 2) {
                 if (beam2.endpoint1) {
-                    completeLevelUI.SetActive(true);
+                    end1 = true;
+                    completeLevelUICanvas.SetActive(true);
                 }
             }
             else {
-                completeLevelUI.SetActive(true);
+                completeLevelUICanvas.SetActive(true);
+            }
+        }
+        else if ( NumberOfLasers==2 && beam2.endpoint1 ) {
+            end1 = true;
+            if (NumberOfLasers == 2) {
+                if (beam.endpoint2) {
+                    end2 = true;
+                    completeLevelUICanvas.SetActive(true);
+                }
+            }
+            else {
+                completeLevelUICanvas.SetActive(true);
+            }
+        }
+        else if (NumberOfLasers==2 && beam2.endpoint2) {
+            end2 = true;
+            if (NumberOfLasers == 2) {
+                if (beam.endpoint1) {
+                    end1 = true;
+                    completeLevelUICanvas.SetActive(true);
+                }
+            }
+            else {
+                completeLevelUICanvas.SetActive(true);
             }
         }
     }
