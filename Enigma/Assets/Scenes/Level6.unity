@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5916a1333e41e774caed471b509688c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeInSecs: 10
+  minTimeInSecs: 40
 --- !u!114 &58618467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdfb35366259764095d9af5ed7986f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMoves: 5
+  minMoves: 10
 --- !u!114 &555001916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4277,7 +4277,6 @@ GameObject:
   - component: {fileID: 1566915610}
   - component: {fileID: 1566915609}
   - component: {fileID: 1566915608}
-  - component: {fileID: 1566915607}
   m_Layer: 5
   m_Name: LevelComplete
   m_TagString: Untagged
@@ -4285,20 +4284,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1566915607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566915606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84a76e9a9ea4d8429385dc4840f0923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minMoves: 15
-  minTime: 90
 --- !u!114 &1566915608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4533,7 +4518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1617194138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4608,7 +4593,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: StartScreen
+          m_StringArgument: Level7
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1617194140

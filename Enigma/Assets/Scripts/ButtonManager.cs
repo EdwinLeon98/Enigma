@@ -15,7 +15,6 @@ public class ButtonManager : MonoBehaviour
         TimerCounter.secs = 0;
         TimerCounter.timer = 0;
 
-        Debug.Log("Scene name: " + SceneManager.GetActiveScene().name);
         if (SceneManager.GetActiveScene().name == "Level1") {
             levelNumber = 1;
         }
@@ -27,6 +26,24 @@ public class ButtonManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "Level4") {
             levelNumber = 4;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level5") {
+            levelNumber = 5;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level6") {
+            levelNumber = 6;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level7") {
+            levelNumber = 7;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level8") {
+            levelNumber = 8;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level9") {
+            levelNumber = 9;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level10") {
+            levelNumber = 10;
         }
         else {
             levelNumber = 0;
