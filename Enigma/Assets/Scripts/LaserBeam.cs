@@ -80,7 +80,7 @@ public class LaserBeam{
         //Debug.Log("Hit tag: " + hitInfo.collider.gameObject.tag);
         //Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
         if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" 
-            || hitInfo.collider.gameObject.tag == "Mirror") {
+            || hitInfo.collider.gameObject.tag == "Mirror" || hitInfo.collider.gameObject.tag == "Rotate") {
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
             CastRay(pos, dir, laser);
