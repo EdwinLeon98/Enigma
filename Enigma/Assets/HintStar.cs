@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HintStar : MonoBehaviour
 {
     bool Hints;
+    public static bool[] gotHintStar = new bool[10];
 
     // Update is called once per frame
     void Update() {
@@ -13,6 +14,7 @@ public class HintStar : MonoBehaviour
 
         if (!Hints) {
             gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            gotHintStar[ButtonManager.levelNumber] = true;
         }
     }
 }
