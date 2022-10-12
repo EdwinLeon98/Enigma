@@ -8,153 +8,69 @@ public class Stars : MonoBehaviour
     public GameObject star1;
     public GameObject star2;
     public GameObject star3;
-    public static int prevStars1 = 0;
-    public static int prevStars2 = 0;
-    public static int prevStars3 = 0;
-    public static int prevStars4 = 0;
 
     // Update is called once per frame
     void Update() {
         if (gameObject.name == "Level1Stars") {
-            LoadStars(prevStars1);
+            int x = 1;
+            activateStars(x);
         }
-        if (gameObject.name == "Level2Stars") {
-            LoadStars(prevStars2);
-        }
-        if (gameObject.name == "Level3Stars") {
-            LoadStars(prevStars3);
-        }
-        if (gameObject.name == "Level4Stars") {
-            LoadStars(prevStars4);
-        }
-        Debug.Log("Level Number: " + ButtonManager.levelNumber);
 
-        if (ButtonManager.levelNumber == 1) {
-            if (gameObject.name == "Level1Stars") {
-                if (GetScore.gotStar1) {
-                    star1.SetActive(true);
-                    if (prevStars1 < 1) {
-                        prevStars1 = 1;
-                    }
-                    GetScore.gotStar1 = false;
-                }
-                else if (GetScore.gotStar2) {
-                    star2.SetActive(true);
-                    if (prevStars1 < 2) {
-                        prevStars1 = 2;
-                    }
-                    GetScore.gotStar2 = false;
-                }
-                else if (GetScore.gotStar3) {
-                    star3.SetActive(true);
-                    if (prevStars1 < 3) {
-                        prevStars1 = 3;
-                    }
-                    GetScore.gotStar3 = false;
-                }
-                else {
-                    //Do nothing
-                }
-            }
+        if (gameObject.name == "Level2Stars") {
+            int x = 2;
+            activateStars(x);
         }
-        else if (ButtonManager.levelNumber == 2) {
-            if (gameObject.name == "Level2Stars") {
-                if (GetScore.gotStar1) {
-                    star1.SetActive(true);
-                    if (prevStars2 < 1) {
-                        prevStars2 = 1;
-                    }
-                    GetScore.gotStar1 = false;
-                }
-                else if (GetScore.gotStar2) {
-                    star2.SetActive(true);
-                    if (prevStars2 < 2) {
-                        prevStars2 = 2;
-                    }
-                    GetScore.gotStar2 = false;
-                }
-                else if (GetScore.gotStar3) {
-                    star3.SetActive(true);
-                    if (prevStars2 < 3) {
-                        prevStars2 = 3;
-                    }
-                    GetScore.gotStar3 = false;
-                }
-                else {
-                    //Do nothing
-                }
-            }
+
+        if (gameObject.name == "Level3Stars") {
+            int x = 3;
+            activateStars(x);
         }
-        else if (ButtonManager.levelNumber == 3) {
-            if (gameObject.name == "Level3Stars") {
-                if (GetScore.gotStar1) {
-                    star1.SetActive(true);
-                    if (prevStars3 < 1) {
-                        prevStars3 = 1;
-                    }
-                    GetScore.gotStar1 = false;
-                }
-                else if (GetScore.gotStar2) {
-                    star2.SetActive(true);
-                    if (prevStars3 < 2) {
-                        prevStars3 = 2;
-                    }
-                    GetScore.gotStar2 = false;
-                }
-                else if (GetScore.gotStar3) {
-                    star3.SetActive(true);
-                    if (prevStars3 < 3) {
-                        prevStars3 = 3;
-                    }
-                    GetScore.gotStar3 = false;
-                }
-                else {
-                    //Do nothing
-                }
-            }
+
+        if (gameObject.name == "Level4Stars") {
+            int x = 4;
+            activateStars(x);
         }
-        else if (ButtonManager.levelNumber == 4) {
-            if (gameObject.name == "Level4Stars") {
-                if (GetScore.gotStar1) {
-                    star1.SetActive(true);
-                    if (prevStars4 < 1) {
-                        prevStars4 = 1;
-                    }
-                    GetScore.gotStar1 = false;
-                }
-                else if (GetScore.gotStar2) {
-                    star2.SetActive(true);
-                    if (prevStars4 < 2) {
-                        prevStars4 = 2;
-                    }
-                    GetScore.gotStar2 = false;
-                }
-                else if (GetScore.gotStar3) {
-                    star3.SetActive(true);
-                    if (prevStars4 < 3) {
-                        prevStars4 = 3;
-                    }
-                    GetScore.gotStar3 = false;
-                }
-                else {
-                    //Do nothing
-                }
-            }
+
+        if (gameObject.name == "Level5Stars") {
+            int x = 5;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Level6Stars") {
+            int x = 6;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Level7Stars") {
+            int x = 7;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Level8Stars") {
+            int x = 8;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Level9Stars") {
+            int x = 9;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Level10Stars") {
+            int x = 10;
+            activateStars(x);
         }
     }
 
-    void LoadStars(int prevStars) {
-        if (prevStars == 1) {
+    void activateStars(int levelNum) {
+        if (TimeStar.gotTimeStar[levelNum]) {
             star1.SetActive(true);
         }
-        else if (prevStars == 2) {
+        if (MoveStar.gotMoveStar[levelNum]) {
             star2.SetActive(true);
         }
-        else if (prevStars == 3) {
+        if (HintStar.gotHintStar[levelNum]) {
             star3.SetActive(true);
-        }
-        else {
-            //Do Nothing
         }
     }
 }

@@ -8,13 +8,49 @@ using System.Text.RegularExpressions;
 public class ButtonManager : MonoBehaviour
 {
     public static int levelNumber;
-
-    public void ButtonMoveScene(string level) {
+    
+    void Start() {
         MovePrototype2.numberOfMoves = 0;
         TimerCounter.mins = 0;
         TimerCounter.secs = 0;
         TimerCounter.timer = 0;
 
+        if (SceneManager.GetActiveScene().name == "Level1") {
+            levelNumber = 1;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level2") {
+            levelNumber = 2;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3") {
+            levelNumber = 3;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level4") {
+            levelNumber = 4;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level5") {
+            levelNumber = 5;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level6") {
+            levelNumber = 6;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level7") {
+            levelNumber = 7;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level8") {
+            levelNumber = 8;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level9") {
+            levelNumber = 9;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level10") {
+            levelNumber = 10;
+        }
+        else {
+            levelNumber = 0;
+        }
+    }
+
+    public void ButtonMoveScene(string level) {
         // Set the level name
         Metrics.level = level;
         // Debug.Log("Going to Level: " + Metrics.level);
@@ -33,25 +69,6 @@ public class ButtonManager : MonoBehaviour
         }
 
         PauseGame.unpause = true;
-        SetLevelNumber(level);
         SceneManager.LoadScene(level);
-    }
-
-    public void SetLevelNumber(string level) {
-        if(level == "Level1") {
-            levelNumber = 1;
-        }
-        else if(level == "Level2") {
-            levelNumber = 2;
-        }
-        else if(level == "Level3") {
-            levelNumber = 3;
-        }
-        else if (level == "Level4") {
-            levelNumber = 4;
-        }
-        else {
-            //levelNumber = 0;
-        }
     }
 }

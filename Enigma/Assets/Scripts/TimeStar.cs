@@ -7,6 +7,7 @@ public class TimeStar : MonoBehaviour
 {
     float Time;
     public int minTimeInSecs;
+    public static bool[] gotTimeStar = new bool[20];
 
     // Update is called once per frame
     void Update() {
@@ -14,10 +15,9 @@ public class TimeStar : MonoBehaviour
         Time += TimerCounter.secs * 10;
         Time += TimerCounter.timer;
 
-        Debug.Log(Time);
-
         if (Time < minTimeInSecs) {
             gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            gotTimeStar[ButtonManager.levelNumber] = true;
         }
     }
 }
