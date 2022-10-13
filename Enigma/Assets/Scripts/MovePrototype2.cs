@@ -32,7 +32,7 @@ public class MovePrototype2 : MonoBehaviour
         }
         else if (gameObject.tag == "Rotate"){
             float rotX = Input.GetAxis("Mouse X") * speed * Mathf.Deg2Rad;
-            transform.Rotate(Vector3.up, rotX);
+            transform.Rotate(Vector3.up * Time.deltaTime, rotX);
         }
         else {
             ScreenPosition = screenInitialPos;
