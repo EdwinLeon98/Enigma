@@ -82,7 +82,8 @@ public class LaserBeam{
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
         //Debug.Log("Hit tag: " + hitInfo.collider.gameObject.tag);
         //Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
-        if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" || hitInfo.collider.gameObject.tag == "Mirror") {
+        if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" 
+            || hitInfo.collider.gameObject.tag == "Mirror" || hitInfo.collider.gameObject.tag == "Rotate") {
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
             CastRay(pos, dir, laser);
@@ -91,16 +92,6 @@ public class LaserBeam{
             if (laserObj.name == "Laser Beam 2") {
                 Vector3 pos = hitInfo.point;
                 Vector3 dir = direction;
-                //newpos = Split(direction, -hitInfo.normal);
-                //if (newpos.z >= 0) {
-                //    newpos.x = direction.x;
-                //}
-                //else {
-                //    newpos.x = -1;
-                //}
-                //Vector3 dir = newpos;
-                //Debug.Log("Pos: " + newpos);
-                //Debug.Log("Split Return: " + Split(direction, -hitInfo.normal));
                 CastRay(pos, dir, laser);
                 UpdateLaser();
             }
