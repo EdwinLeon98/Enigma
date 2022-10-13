@@ -6,6 +6,7 @@ public class LaserBeam{
     
     Vector3 pos, dir;
     GameObject laserObj;
+    GameObject portalObj;
     LineRenderer laser;
     List<Vector3> laserIndices = new List<Vector3>();
     Dictionary<string, float> refractiveMaterials = new Dictionary<string, float> {
@@ -15,8 +16,9 @@ public class LaserBeam{
     public bool endpoint1;
     public bool endpoint2;
     Vector3 newpos;
+    public bool isPL;
     
-    public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, Color color, bool endpoint1, bool endpoint2) {
+    public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, Color color, bool endpoint1, bool endpoint2, bool isPL) {
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
         this.laserObj.name = name;
@@ -31,6 +33,7 @@ public class LaserBeam{
         this.laser.material = material;
         this.laser.startColor = color;
         this.laser.endColor = color;
+        this.isPL = isPL;
 
         CastRay(this.pos, this.dir, this.laser);
     }
@@ -107,12 +110,24 @@ public class LaserBeam{
                 CastRay(pos, dir, laser);
             }
         }
+        else if (hitInfo.collider.gameObject.tag == "PortalIn"){
+            laserIndices.Add(hitInfo.point);
+            UpdateLaser();
+
+            // set active an object
+            ShootLaser.activePL = true;
+
+
+        }
         else {
             laserIndices.Add(hitInfo.point);
             UpdateLaser();
+            if(!isPL){
+                ShootLaser.activePL = false;
+            }
         }
     }
-
+    // If laser hits the destination
     void CheckEndpoint(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
         if (hitInfo.collider.gameObject.name == "Endpoint1") {
             endpoint1 = true;
