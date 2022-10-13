@@ -27,8 +27,12 @@ public class MovePrototype2 : MonoBehaviour
         if (gameObject.tag == "Horizontal") {
             ScreenPosition = new Vector3(Input.mousePosition.x, screenInitialPos.y, screenInitialPos.z);//Coordinates of the object in screen space
         }
-        else if (gameObject.tag == "Vertical") {
+        else if(gameObject.tag == "Vertical") {
             ScreenPosition = new Vector3(screenInitialPos.x, Input.mousePosition.y, screenInitialPos.z); //Coordinates of the object in screen space
+        }
+        else if (gameObject.tag == "Rotate"){
+            float rotX = Input.GetAxis("Mouse X") * speed * Mathf.Deg2Rad;
+            transform.Rotate(Vector3.up * Time.deltaTime, rotX);
         }
         else {
             ScreenPosition = screenInitialPos;

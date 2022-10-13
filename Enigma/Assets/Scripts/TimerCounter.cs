@@ -46,7 +46,7 @@ public class TimerCounter : MonoBehaviour
     }  
 
     void timeCount(){
-        if (!(GameObject.Find("LevelComplete"))) {
+        if (!(GameObject.Find("LevelComplete")) && !(GameObject.Find("Tutorial Canvas"))) {
             timer += 1;
         }
     }
