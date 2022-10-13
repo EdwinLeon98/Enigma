@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427135, b: 0.56452316, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -511,7 +511,7 @@ Transform:
   m_Children:
   - {fileID: 1828782071}
   m_Father: {fileID: 798217259}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &234731458
 GameObject:
@@ -903,7 +903,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 798217259}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &281051806
 MeshRenderer:
@@ -970,7 +970,6 @@ GameObject:
   - component: {fileID: 290572077}
   - component: {fileID: 290572076}
   - component: {fileID: 290572078}
-  - component: {fileID: 290572079}
   m_Layer: 6
   m_Name: HT1
   m_TagString: Horizontal
@@ -1055,7 +1054,7 @@ Transform:
   m_Children:
   - {fileID: 1865078472}
   m_Father: {fileID: 798217259}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &290572076
 MonoBehaviour:
@@ -1100,20 +1099,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileCollider: {fileID: 290572072}
   tileBlockerCollider: {fileID: 1865078470}
---- !u!114 &290572079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290572071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1985c81496b10d940bc3f163116448ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  child: {fileID: 0}
-  parent: {fileID: 290572071}
 --- !u!1 &307833639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1408,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 798217259}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &374286282
 MeshRenderer:
@@ -2884,15 +2869,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 824242202}
+  - {fileID: 374286277}
+  - {fileID: 281051801}
   - {fileID: 290572075}
   - {fileID: 827680901}
   - {fileID: 995452312}
   - {fileID: 123395707}
   - {fileID: 1174058840}
   - {fileID: 1160156828}
-  - {fileID: 824242202}
-  - {fileID: 374286277}
-  - {fileID: 281051801}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2927,7 +2912,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 798217259}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &824242204
 MeshRenderer:
@@ -3121,7 +3106,7 @@ Transform:
   m_Children:
   - {fileID: 964532265}
   m_Father: {fileID: 798217259}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &863348968
 GameObject:
@@ -3787,7 +3772,7 @@ Transform:
   m_Children:
   - {fileID: 627349570}
   m_Father: {fileID: 798217259}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025908530
 GameObject:
@@ -4404,7 +4389,7 @@ Transform:
   m_Children:
   - {fileID: 1446749095}
   m_Father: {fileID: 798217259}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1174058833
 GameObject:
@@ -4421,7 +4406,6 @@ GameObject:
   - component: {fileID: 1174058836}
   - component: {fileID: 1174058835}
   - component: {fileID: 1174058834}
-  - component: {fileID: 1174058841}
   m_Layer: 6
   m_Name: VT2
   m_TagString: Vertical
@@ -4549,22 +4533,8 @@ Transform:
   m_Children:
   - {fileID: 589476249}
   m_Father: {fileID: 798217259}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1174058841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174058833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1985c81496b10d940bc3f163116448ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  child: {fileID: 0}
-  parent: {fileID: 1174058833}
 --- !u!1 &1193266303
 GameObject:
   m_ObjectHideFlags: 0
