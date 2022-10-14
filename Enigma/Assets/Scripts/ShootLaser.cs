@@ -41,7 +41,6 @@ public class ShootLaser : MonoBehaviour{
             Destroy(GameObject.Find("Laser Beam 2"));
         }
 
-        // Debug.Log("Destryed?" + GameObject.Find("Sphere/PortalLaserSphere"));
         if (!GameObject.Find("Sphere/PortalLaserSphere")){
              Destroy(GameObject.Find("Portal Laser Beam"));
 

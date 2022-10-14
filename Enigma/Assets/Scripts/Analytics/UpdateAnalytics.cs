@@ -36,11 +36,12 @@ public class UpdateAnalytics : MonoBehaviour
                 Metrics.level,
                 String.Format("{0:0.00}", Metrics.float_minutes),
                 Metrics.star_rating.ToString(),
-                Metrics.score.ToString()
+                Metrics.numRetries.ToString(),
+                Metrics.numHintsUsed.ToString()
             ));
     }
 
-    private IEnumerator Post(string sessionID, string moves, string level, string minutes, string rating, string score)
+    private IEnumerator Post(string sessionID, string moves, string level, string minutes, string rating, string numRetries, string numHintsUsed)
     {
         // Create form and enter responses
         WWWForm form = new WWWForm();
@@ -49,7 +50,8 @@ public class UpdateAnalytics : MonoBehaviour
         form.AddField("entry.338609209", moves);
         form.AddField("entry.1281315444", minutes);
         form.AddField("entry.1352818486", rating);
-        form.AddField("entry.1154118958", score);
+        form.AddField("entry.1154118958", numRetries);
+        form.AddField("entry.1793481479", numHintsUsed);
 
         // Send POST request and verify the result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
@@ -62,7 +64,7 @@ public class UpdateAnalytics : MonoBehaviour
             }
             else
             {
-                // Debug.Log("Form upload complete");
+                Debug.Log("Form upload complete");
             }
         }
     }

@@ -61,15 +61,13 @@ public class ButtonManager : MonoBehaviour
         // When a new level is selected turn off the gameEnded Flag.
         // This will enable sending the data to server once the selected level
         // has ended
-        // Metrics.gameEnded = false;
-        // Metrics.star_rating = 0;
         Metrics.ResetMetrics();
 
         if(Application.platform == RuntimePlatform.WebGLPlayer){
             Metrics.collectAnalytics = true;
         }
         else {
-            Debug.Log("Not a WebGL build");
+            // Debug.Log("Not a WebGL build");
             Metrics.collectAnalytics = false;
         }
 
