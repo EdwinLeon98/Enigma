@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserBeam{
-    
+
     Vector3 pos, dir;
     GameObject laserObj;
     GameObject portalObj;
@@ -17,7 +17,7 @@ public class LaserBeam{
     public bool endpoint2;
     Vector3 newpos;
     public bool isPL;
-    
+
     public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, Color color, bool endpoint1, bool endpoint2, bool isPL) {
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
@@ -82,7 +82,7 @@ public class LaserBeam{
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
         //Debug.Log("Hit tag: " + hitInfo.collider.gameObject.tag);
         //Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
-        if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" 
+        if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal"
             || hitInfo.collider.gameObject.tag == "Mirror" || hitInfo.collider.gameObject.tag == "Rotate") {
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
@@ -122,12 +122,12 @@ public class LaserBeam{
     void CheckEndpoint(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
         if (hitInfo.collider.gameObject.name == "Endpoint1") {
             endpoint1 = true;
-            Debug.Log("Endpoint1 true");
+            // Debug.Log("Endpoint1 true");
             // Debug.Log("Endpoint set to true: " + hitInfo.collider.gameObject.name);
         }
         else if (hitInfo.collider.gameObject.name == "Endpoint2") {
             endpoint2 = true;
-            Debug.Log("Endpoint2 true");
+            // Debug.Log("Endpoint2 true");
         }
         // else{
         //     endpoint1=false;

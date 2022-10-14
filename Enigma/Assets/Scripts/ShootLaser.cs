@@ -29,11 +29,11 @@ public class ShootLaser : MonoBehaviour{
 
     // Update is called once per frame
     void Update() {
-    
+
         if (transform.parent.parent.name == "Laser"){
             Destroy(GameObject.Find("Laser Beam"));
         }
-        
+
         if (transform.parent.parent.name == "PortalLaser"){
             Destroy(GameObject.Find("Portal Laser Beam"));
         }
@@ -41,10 +41,10 @@ public class ShootLaser : MonoBehaviour{
             Destroy(GameObject.Find("Laser Beam 2"));
         }
 
-        Debug.Log("Destryed?" + GameObject.Find("Sphere/PortalLaserSphere"));
+        // Debug.Log("Destryed?" + GameObject.Find("Sphere/PortalLaserSphere"));
         if (!GameObject.Find("Sphere/PortalLaserSphere")){
              Destroy(GameObject.Find("Portal Laser Beam"));
-             
+
         }
 
          if (activePL) {
@@ -93,7 +93,7 @@ public class ShootLaser : MonoBehaviour{
                 completeLevelUICanvas.SetActive(true);
             }
         }
-    
+
         else if ( NumberOfLasers==2 && beam2.endpoint1 ) {
             end1 = true;
             if (NumberOfLasers == 2) {
@@ -122,7 +122,7 @@ public class ShootLaser : MonoBehaviour{
        else if (transform.parent.parent.name == "PortalLaser"){
         if (beam3.endpoint1) {
             end1 = true;
-           
+
                     completeLevelUICanvas.SetActive(true);
          }
        }

@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 public class ButtonManager : MonoBehaviour
 {
     public static int levelNumber;
-    
+
     void Start() {
         MovePrototype2.numberOfMoves = 0;
         TimerCounter.mins = 0;
@@ -51,23 +51,25 @@ public class ButtonManager : MonoBehaviour
         else {
             levelNumber = 0;
         }
+        Metrics.levelNum = levelNumber;
     }
 
     public void ButtonMoveScene(string level) {
         // Set the level name
         Metrics.level = level;
-        // Debug.Log("Going to Level: " + Metrics.level);
 
         // When a new level is selected turn off the gameEnded Flag.
         // This will enable sending the data to server once the selected level
         // has ended
-        Metrics.gameEnded = false;
+        // Metrics.gameEnded = false;
+        // Metrics.star_rating = 0;
+        Metrics.ResetMetrics();
 
         if(Application.platform == RuntimePlatform.WebGLPlayer){
             Metrics.collectAnalytics = true;
         }
         else {
-            // Debug.Log("Not a WebGL build");
+            Debug.Log("Not a WebGL build");
             Metrics.collectAnalytics = false;
         }
 
