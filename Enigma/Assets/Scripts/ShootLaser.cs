@@ -20,15 +20,16 @@ public class ShootLaser : MonoBehaviour{
     public static int nl;
     public static bool activePL = false;
     public GameObject pl;
+    public int order;
 
     void Start() {
         pos = gameObject.transform.position;
         pos.y = pos.y - 0.01f;
         nl = NumberOfLasers;
+        order = 0;
     }
-
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
 
         if (transform.parent.parent.name == "Laser"){
             Destroy(GameObject.Find("Laser Beam"));
@@ -46,84 +47,90 @@ public class ShootLaser : MonoBehaviour{
 
         }
 
-         if (activePL) {
+        if (activePL) {
             pl.SetActive(true);
-        } else {
+        } 
+        else {
             pl.SetActive(false);
         }
 
         if (transform.parent.parent.name == "Laser"){
             Name = "Laser Beam";
             end1 = false;
-            beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material, Name, Laser1Color, false, false, false);
+            order = 1;
+            beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
+                material, Name, Laser1Color, false, false, false, order);
         }
         else if (transform.parent.parent.name == "PortalLaser"){
             Name = "Portal Laser Beam";
             end1 = false;
-            beam3 = new LaserBeam(gameObject.transform.position, gameObject.transform.right, material, Name, Laser1Color, false, false, true);
+            order = 2;
+            beam3 = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
+                material, Name, Laser1Color, false, false, true, order);
         }
         if (NumberOfLasers == 2) {
             Name = "Laser Beam 2";
             end2 = false;
-            beam2 = new LaserBeam(pos, gameObject.transform.right, material, Name, Laser2Color, false, false, false);
-        }
-       if(transform.parent.parent.name == "Laser"){
-        if (beam.endpoint1) {
-            end1 = true;
-            if (NumberOfLasers == 2) {
-                if (beam2.endpoint2) {
-                    end2 = true;
-                    completeLevelUICanvas.SetActive(true);
-                }
-            }
-            else {
-                completeLevelUICanvas.SetActive(true);
-            }
-        }
-        else if (beam.endpoint2) {
-            end2 = true;
-            if (NumberOfLasers == 2) {
-                if (beam2.endpoint1) {
-                    end1 = true;
-                    completeLevelUICanvas.SetActive(true);
-                }
-            }
-            else {
-                completeLevelUICanvas.SetActive(true);
-            }
+            order = 0;
+            beam2 = new LaserBeam(pos, gameObject.transform.right, material, Name, 
+                Laser2Color, false, false, false, order);
         }
 
-        else if ( NumberOfLasers==2 && beam2.endpoint1 ) {
-            end1 = true;
-            if (NumberOfLasers == 2) {
-                if (beam.endpoint2) {
-                    end2 = true;
+        if (transform.parent.parent.name == "Laser") {
+            if (beam.endpoint1) {
+                end1 = true;
+                if (NumberOfLasers == 2) {
+                    if (beam2.endpoint2) {
+                        end2 = true;
+                        completeLevelUICanvas.SetActive(true);
+                    }
+                }
+                else {
                     completeLevelUICanvas.SetActive(true);
                 }
             }
-            else {
-                completeLevelUICanvas.SetActive(true);
-            }
-        }
-        else if (NumberOfLasers==2 && beam2.endpoint2) {
-            end2 = true;
-            if (NumberOfLasers == 2) {
-                if (beam.endpoint1) {
-                    end1 = true;
+            else if (beam.endpoint2) {
+                end2 = true;
+                if (NumberOfLasers == 2) {
+                    if (beam2.endpoint1) {
+                        end1 = true;
+                        completeLevelUICanvas.SetActive(true);
+                    }
+                }
+                else {
                     completeLevelUICanvas.SetActive(true);
                 }
             }
-            else {
+            else if (NumberOfLasers == 2 && beam2.endpoint1) {
+                end1 = true;
+                if (NumberOfLasers == 2) {
+                    if (beam.endpoint2) {
+                        end2 = true;
+                        completeLevelUICanvas.SetActive(true);
+                    }
+                }
+                else {
+                    completeLevelUICanvas.SetActive(true);
+                }
+            }
+            else if (NumberOfLasers == 2 && beam2.endpoint2) {
+                end2 = true;
+                if (NumberOfLasers == 2) {
+                    if (beam.endpoint1) {
+                        end1 = true;
+                        completeLevelUICanvas.SetActive(true);
+                    }
+                }
+                else {
+                    completeLevelUICanvas.SetActive(true);
+                }
+            }
+        }
+        else if (transform.parent.parent.name == "PortalLaser"){
+            if (beam3.endpoint1) {
+                end1 = true;
                 completeLevelUICanvas.SetActive(true);
             }
         }
-       }
-       else if (transform.parent.parent.name == "PortalLaser"){
-        if (beam3.endpoint1) {
-            end1 = true;
-
-                    completeLevelUICanvas.SetActive(true);
-         }
-       }
     }
 }
