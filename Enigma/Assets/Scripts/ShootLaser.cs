@@ -82,11 +82,15 @@ public class ShootLaser : MonoBehaviour{
                 if (NumberOfLasers == 2) {
                     if (beam2.endpoint2) {
                         end2 = true;
-                        completeLevelUICanvas.SetActive(true);
+                        if (GlowBulb.isCharged && GlowBulb.isCharged2) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
                 else {
-                    completeLevelUICanvas.SetActive(true);
+                    if (GlowBulb.isCharged) {
+                        completeLevelUICanvas.SetActive(true);
+                    }
                 }
             }
             else if (beam.endpoint2) {
@@ -94,11 +98,15 @@ public class ShootLaser : MonoBehaviour{
                 if (NumberOfLasers == 2) {
                     if (beam2.endpoint1) {
                         end1 = true;
-                        completeLevelUICanvas.SetActive(true);
+                        if (GlowBulb.isCharged && GlowBulb.isCharged2) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
                 else {
-                    completeLevelUICanvas.SetActive(true);
+                    if (GlowBulb.isCharged) {
+                        completeLevelUICanvas.SetActive(true);
+                    }
                 }
             }
             else if (NumberOfLasers == 2 && beam2.endpoint1) {
@@ -106,11 +114,15 @@ public class ShootLaser : MonoBehaviour{
                 if (NumberOfLasers == 2) {
                     if (beam.endpoint2) {
                         end2 = true;
-                        completeLevelUICanvas.SetActive(true);
+                        if (GlowBulb.isCharged && GlowBulb.isCharged2) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
                 else {
-                    completeLevelUICanvas.SetActive(true);
+                    if (GlowBulb.isCharged) {
+                        completeLevelUICanvas.SetActive(true);
+                    }
                 }
             }
             else if (NumberOfLasers == 2 && beam2.endpoint2) {
@@ -118,18 +130,24 @@ public class ShootLaser : MonoBehaviour{
                 if (NumberOfLasers == 2) {
                     if (beam.endpoint1) {
                         end1 = true;
-                        completeLevelUICanvas.SetActive(true);
+                        if (GlowBulb.isCharged && GlowBulb.isCharged2) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
                 else {
-                    completeLevelUICanvas.SetActive(true);
+                    if (GlowBulb.isCharged) {
+                        completeLevelUICanvas.SetActive(true);
+                    }
                 }
             }
         }
         else if (transform.parent.parent.name == "PortalLaser"){
             if (beam3.endpoint1) {
                 end1 = true;
-                completeLevelUICanvas.SetActive(true);
+                if (GlowBulb.isCharged) {
+                    completeLevelUICanvas.SetActive(true);
+                }
             }
         }
     }
