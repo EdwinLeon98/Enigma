@@ -16,6 +16,7 @@ public class GlowBulb : MonoBehaviour
     bool isCharging;
     bool isCharging2;
     bool finishedCharging;
+    bool finishedCharging2;
     public static bool isCharged;
     public static bool isCharged2;
 
@@ -24,6 +25,7 @@ public class GlowBulb : MonoBehaviour
         temp2 = lightbulb2.GetComponent<Renderer>().material;
         isCharging = false;
         finishedCharging = false;
+        finishedCharging2 = false;
         isCharged = false;
         isCharged2 = false;
     }
@@ -55,7 +57,7 @@ public class GlowBulb : MonoBehaviour
 
         if (ShootLaser.nl == 1) {
             if (ShootLaser.end1 == true){
-                Charging(Time, oldTime, temp2, text);
+                Charging(Time, oldTime, temp, text);
                 if (finishedCharging) {
                     isCharged = true;
                 }
@@ -65,7 +67,6 @@ public class GlowBulb : MonoBehaviour
                 isCharged = false;
                 finishedCharging = false;
             }
-            Debug.Log("Is Charged: " + isCharged);
         }
         else if (ShootLaser.nl == 2) {
             if (ShootLaser.end1 == true) {
@@ -73,19 +74,35 @@ public class GlowBulb : MonoBehaviour
                 if (finishedCharging) {
                     isCharged = true;
                 }
+                if (gameObject.name == "Endpoint1") {
+                    Debug.Log("Finish Charging 1: " + finishedCharging);
+                }
             }
             else {
                 temp.color = Color.white;
+                isCharged = false;
+                finishedCharging = false;
+                if (gameObject.name == "Endpoint1") {
+                    Debug.Log("Finish Charging 1: " + finishedCharging);
+                }
             }
 
             if (ShootLaser.end2 == true) {
-                Charging(Time, oldTime2, temp2, text);
-                if (finishedCharging) {
+                Charging2(Time, oldTime2, temp2, text2);
+                if (finishedCharging2) {
                     isCharged2 = true;
+                }
+                if (gameObject.name == "Endpoint2") {
+                    Debug.Log("Finish Charging 2: " + finishedCharging2);
                 }
             }
             else {
                 temp2.color = Color.white;
+                isCharged2 = false;
+                finishedCharging2 = false;
+                if (gameObject.name == "Endpoint2") {
+                    Debug.Log("Finish Charging 2: " + finishedCharging2);
+                }
             }
         }
     }
@@ -102,6 +119,21 @@ public class GlowBulb : MonoBehaviour
             bulb.color = new Color(1, 1, 0);
             text.SetActive(false);
             finishedCharging = true;
+        }
+    }
+
+    void Charging2(int currentTime, int startTime, Material bulb, GameObject text) {
+        if ((currentTime - startTime) <= 1) {
+            bulb.color = new Color(1, 1, 0.6f);
+            text.SetActive(true);
+        }
+        else if ((currentTime - startTime) <= 2) {
+            bulb.color = new Color(1, 1, 0.3f);
+        }
+        else {
+            bulb.color = new Color(1, 1, 0);
+            text.SetActive(false);
+            finishedCharging2 = true;
         }
     }
 }
