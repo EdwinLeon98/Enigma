@@ -74,17 +74,11 @@ public class GlowBulb : MonoBehaviour
                 if (finishedCharging) {
                     isCharged = true;
                 }
-                if (gameObject.name == "Endpoint1") {
-                    Debug.Log("Finish Charging 1: " + finishedCharging);
-                }
             }
             else {
                 temp.color = Color.white;
                 isCharged = false;
                 finishedCharging = false;
-                if (gameObject.name == "Endpoint1") {
-                    Debug.Log("Finish Charging 1: " + finishedCharging);
-                }
             }
 
             if (ShootLaser.end2 == true) {
@@ -92,17 +86,11 @@ public class GlowBulb : MonoBehaviour
                 if (finishedCharging2) {
                     isCharged2 = true;
                 }
-                if (gameObject.name == "Endpoint2") {
-                    Debug.Log("Finish Charging 2: " + finishedCharging2);
-                }
             }
             else {
                 temp2.color = Color.white;
                 isCharged2 = false;
                 finishedCharging2 = false;
-                if (gameObject.name == "Endpoint2") {
-                    Debug.Log("Finish Charging 2: " + finishedCharging2);
-                }
             }
         }
     }
