@@ -13,6 +13,8 @@ public class GlowBulb : MonoBehaviour
     int oldTime2;
     bool isCharging;
     bool isCharging2;
+    public GameObject text;
+    public GameObject text2;
 
     void Start(){
         temp = lightbulb1.GetComponent<Renderer>().material;
@@ -28,22 +30,26 @@ public class GlowBulb : MonoBehaviour
         if (ShootLaser.end1 == true && !isCharging) {
             oldTime = Time;
             isCharging = true;
+            text.SetActive(true);
         }
         else if (ShootLaser.end1 == false && isCharging) {
             isCharging = false;
+            text.SetActive(false);
         }
 
         if (ShootLaser.end2 == true && !isCharging2) {
             oldTime2 = Time;
             isCharging2 = true;
+            text2.SetActive(true);
         }
         else if (ShootLaser.end2 == false && isCharging2) {
             isCharging2 = false;
+            text.SetActive(false);
         }
 
         if (ShootLaser.nl == 1) {
             if (ShootLaser.end1 == true){
-                Charging(Time, oldTime, temp2);
+                Charging(Time, oldTime, temp2, text);
             }
             else {
                 temp.color = Color.white;
@@ -51,14 +57,14 @@ public class GlowBulb : MonoBehaviour
         }
         else if (ShootLaser.nl == 2) {
             if (ShootLaser.end1 == true) {
-                Charging(Time, oldTime, temp);
+                Charging(Time, oldTime, temp, text);
             }
             else {
                 temp.color = Color.white;
             }
 
             if (ShootLaser.end2 == true) {
-                Charging(Time, oldTime2, temp2);
+                Charging(Time, oldTime2, temp2, text);
             }
             else {
                 temp2.color = Color.white;
@@ -68,15 +74,17 @@ public class GlowBulb : MonoBehaviour
         
     }
 
-    void Charging(int currentTime, int startTime, Material bulb) {
+    void Charging(int currentTime, int startTime, Material bulb, GameObject text) {
         if ((currentTime - startTime) <= 1) {
             bulb.color = new Color(1, 1, 0.6f);
+            text.SetActive(true);
         }
         else if ((currentTime - startTime) <= 2) {
             bulb.color = new Color(1, 1, 0.3f);
         }
         else {
             bulb.color = new Color(1, 1, 0);
+            text.SetActive(false);
         }
     }
 }
