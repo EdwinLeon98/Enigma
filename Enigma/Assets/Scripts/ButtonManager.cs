@@ -48,6 +48,18 @@ public class ButtonManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Level11") {
             levelNumber = 11;
         }
+        else if (SceneManager.GetActiveScene().name == "Level12") {
+            levelNumber = 12;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level13") {
+            levelNumber = 13;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level14") {
+            levelNumber = 14;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level15") {
+            levelNumber = 15;
+        }
         else {
             levelNumber = 0;
         }
