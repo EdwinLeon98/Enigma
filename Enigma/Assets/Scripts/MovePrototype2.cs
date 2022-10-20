@@ -9,7 +9,8 @@ public class MovePrototype2 : MonoBehaviour
     private Vector3 initialPos;
     private Vector3 screenInitialPos;
     private Vector3 ScreenPosition;
-    private float speed = 500;
+    private float speed = 250;
+    private float rotateSpeed = 100;
     public static int numberOfMoves = 0;
     private bool newDrag = true;
     public Rigidbody rb;
@@ -18,21 +19,23 @@ public class MovePrototype2 : MonoBehaviour
     void Start() {
         mainCamera = Camera.main;
         initialPos = transform.position;
-        //Debug.Log("Initial Pos: " + initialPos);
         screenInitialPos = mainCamera.WorldToScreenPoint(transform.position);
-        //Debug.Log("Screen Pos: " + screenInitialPos); 
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     void OnMouseDrag() {
         if (gameObject.tag == "Horizontal") {
+            rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
             ScreenPosition = new Vector3(Input.mousePosition.x, screenInitialPos.y, screenInitialPos.z);//Coordinates of the object in screen space
         }
-        else if(gameObject.tag == "Vertical") {
+        else if(gameObject.tag == "Vertical" || gameObject.tag == "PortalIn" || gameObject.tag == "PortalOut") {
+            rb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
             ScreenPosition = new Vector3(screenInitialPos.x, Input.mousePosition.y, screenInitialPos.z); //Coordinates of the object in screen space
         }
         else if (gameObject.tag == "Rotate"){
-            float rotX = Input.GetAxis("Mouse X") * speed * Mathf.Deg2Rad;
-            transform.Rotate(Vector3.up * Time.deltaTime, rotX);
+            rb.constraints &= ~RigidbodyConstraints.FreezeRotationY;
+            float rotX = Input.GetAxis("Mouse X") * rotateSpeed;
+            rb.AddTorque(transform.up * rotX);
         }
         else {
             ScreenPosition = screenInitialPos;
@@ -40,9 +43,7 @@ public class MovePrototype2 : MonoBehaviour
 
         Vector3 NewWorldPosition = mainCamera.ScreenToWorldPoint(ScreenPosition);   //screen coordinates of the mouse on the screen, but in world coordinates
         rb.velocity = (NewWorldPosition - transform.position) * speed * Time.deltaTime; //Set the velocity of the tile
-        //Debug.Log("ScreenPosition: " + ScreenPosition);
-        //Debug.Log("Transform Position: " + transform.position);
-        //Debug.Log("Position: " + NewWorldPosition);
+
         if (!GameObject.Find("LevelComplete")) {
             if (newDrag) {
                 numberOfMoves += 1;
@@ -53,11 +54,11 @@ public class MovePrototype2 : MonoBehaviour
 
     void Update() {
         if (Input.GetMouseButtonUp(0)) {
-            rb.velocity = new Vector3(0, 0, 0); //Set velocity to 0 when the left mouse button is released
-            //Debug.Log("Left click");
-            
+            rb.velocity = new Vector3(0, 0, 0); //Set velocity to 0 when the left mouse button is released 
+            rb.constraints = RigidbodyConstraints.FreezeAll;
             newDrag = true;
         }
+        rb.angularVelocity = new Vector3(0, 0, 0);
     }
 
 }

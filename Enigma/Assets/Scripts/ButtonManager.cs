@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 public class ButtonManager : MonoBehaviour
 {
     public static int levelNumber;
-    
+
     void Start() {
         MovePrototype2.numberOfMoves = 0;
         TimerCounter.mins = 0;
@@ -45,20 +45,35 @@ public class ButtonManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Level10") {
             levelNumber = 10;
         }
+        else if (SceneManager.GetActiveScene().name == "Level11") {
+            levelNumber = 11;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level12") {
+            levelNumber = 12;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level13") {
+            levelNumber = 13;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level14") {
+            levelNumber = 14;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level15") {
+            levelNumber = 15;
+        }
         else {
             levelNumber = 0;
         }
+        Metrics.levelNum = levelNumber;
     }
 
     public void ButtonMoveScene(string level) {
         // Set the level name
         Metrics.level = level;
-        // Debug.Log("Going to Level: " + Metrics.level);
 
         // When a new level is selected turn off the gameEnded Flag.
         // This will enable sending the data to server once the selected level
         // has ended
-        Metrics.gameEnded = false;
+        Metrics.ResetMetrics();
 
         if(Application.platform == RuntimePlatform.WebGLPlayer){
             Metrics.collectAnalytics = true;

@@ -13,8 +13,11 @@ public class LevelComplete : MonoBehaviour
     }
 
     IEnumerator showScreen() {
-        yield return new WaitForSecondsRealtime(1);
-        completeLevelUI.SetActive(true);
+        //yield return new WaitForSecondsRealtime(1);
+        Metrics metrics_instance = gameObject.AddComponent<Metrics>() as Metrics;
         gameCanvas.SetActive(false);
+        completeLevelUI.SetActive(true);
+        yield return new WaitForSecondsRealtime(1);
+        metrics_instance.UpdateMetricsAndSend();
     }
 }
