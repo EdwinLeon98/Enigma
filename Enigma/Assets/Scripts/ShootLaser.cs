@@ -27,7 +27,10 @@ public class ShootLaser : MonoBehaviour{
         pos.y = pos.y - 0.01f;
         nl = NumberOfLasers;
         order = 0;
+        end1 = false;
+        end2 = false;
     }
+
     // Update is called once per frame
     void FixedUpdate() {
 
@@ -53,7 +56,7 @@ public class ShootLaser : MonoBehaviour{
         else {
             pl.SetActive(false);
         }
-
+        Debug.Log("End: " + end1);
         if (transform.parent.parent.name == "Laser"){
             Name = "Laser Beam";
             end1 = false;
