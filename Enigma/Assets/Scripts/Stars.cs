@@ -93,6 +93,10 @@ public class Stars : MonoBehaviour
             int x = 17;
             activateStars(x);
         }
+        if (gameObject.name == "Level18Stars") {
+            int x = 18;
+            activateStars(x);
+        }
     }
 
     void activateStars(int levelNum) {
