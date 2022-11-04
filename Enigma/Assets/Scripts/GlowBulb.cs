@@ -23,11 +23,16 @@ public class GlowBulb : MonoBehaviour
     void Start(){
         temp = lightbulb1.GetComponent<Renderer>().material;
         temp2 = lightbulb2.GetComponent<Renderer>().material;
+        oldTime = 100;
+        oldTime2 = 100;
         isCharging = false;
-        finishedCharging = false;
-        finishedCharging2 = false;
+        isCharging2 = false;
         isCharged = false;
         isCharged2 = false;
+        finishedCharging = false;
+        finishedCharging2 = false;
+        text.SetActive(false);
+        text2.SetActive(false);
     }
 
     void Update(){
