@@ -13,10 +13,13 @@ public class ShootLaser : MonoBehaviour{
     string Name; //Name of the beam
     Vector3 pos; //Position of the second beam
     public GameObject completeLevelUICanvas;
+    public GameObject gameOverCanvas;
+    public GameObject gameCanvas;
     public Color Laser1Color;
     public Color Laser2Color;
     public static bool end1 = false;
     public static bool end2 = false;
+    public static bool overFlag = false;
     public static int nl;
     public static bool activePL = false;
     public GameObject pl;
@@ -37,7 +40,7 @@ public class ShootLaser : MonoBehaviour{
         if (transform.parent.parent.name == "Laser"){
             Destroy(GameObject.Find("Laser Beam"));
         }
-
+         
         if (transform.parent.parent.name == "PortalLaser"){
             Destroy(GameObject.Find("Portal Laser Beam"));
         }
@@ -62,24 +65,31 @@ public class ShootLaser : MonoBehaviour{
             end1 = false;
             order = 1;
             beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
-                material, Name, Laser1Color, false, false, false, order);
+                material, Name, Laser1Color, false, false, false, order,false);
         }
         else if (transform.parent.parent.name == "PortalLaser"){
             Name = "Portal Laser Beam";
             end1 = false;
             order = 2;
             beam3 = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
-                material, Name, Laser1Color, false, false, true, order);
+                material, Name, Laser1Color, false, false, true, order,false);
         }
         if (NumberOfLasers == 2) {
             Name = "Laser Beam 2";
             end2 = false;
             order = 0;
             beam2 = new LaserBeam(pos, gameObject.transform.right, material, Name, 
-                Laser2Color, false, false, false, order);
+                Laser2Color, false, false, false, order,false);
         }
 
         if (transform.parent.parent.name == "Laser") {
+
+            if(beam.over){
+                // gameCanvas.SetActive(false);
+                new WaitForSecondsRealtime(1);
+                gameOverCanvas.SetActive(true);
+            }
+
             if (beam.endpoint1) {
                 end1 = true;
                 if (NumberOfLasers == 2) {
@@ -91,7 +101,10 @@ public class ShootLaser : MonoBehaviour{
                     }
                 }
                 else {
+                    // console.log(beam.overFlag);
+                    // Debug.Log("Over: " + beam.overFlag);
                     if (GlowBulb.isCharged) {
+
                         completeLevelUICanvas.SetActive(true);
                     }
                 }

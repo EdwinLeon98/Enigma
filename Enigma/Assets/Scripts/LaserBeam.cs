@@ -15,12 +15,13 @@ public class LaserBeam{
     };
     public bool endpoint1;
     public bool endpoint2;
+    public bool over;
     Vector3 newpos;
     public bool isPL;
     public int order;
 
     public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, 
-        Color color, bool endpoint1, bool endpoint2, bool isPL, int order) {
+        Color color, bool endpoint1, bool endpoint2, bool isPL, int order,bool over) {
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
         this.laserObj.name = name;
@@ -37,6 +38,7 @@ public class LaserBeam{
         this.laser.endColor = color;
         this.laser.sortingOrder = order;
         this.isPL = isPL;
+        this.over = over;
 
         CastRay(this.pos, this.dir, this.laser);
     }
@@ -97,6 +99,9 @@ public class LaserBeam{
                 Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
                 CastRay(pos, dir, laser);
             }
+        }
+        else if(hitInfo.collider.gameObject.tag == "GameOver"){
+            over = true;
         }
         else if (hitInfo.collider.gameObject.tag == "PortalIn"){
             laserIndices.Add(hitInfo.point);
