@@ -59,6 +59,7 @@ public class LaserBeam{
         }
 
         CheckEndpoint(hit, dir, laser);
+        CheckGameOver(hit, dir, laser);
     }
 
     void UpdateLaser() {
@@ -100,9 +101,6 @@ public class LaserBeam{
                 CastRay(pos, dir, laser);
             }
         }
-        else if(hitInfo.collider.gameObject.tag == "GameOver"){
-            over = true;
-        }
         else if (hitInfo.collider.gameObject.tag == "PortalIn"){
             laserIndices.Add(hitInfo.point);
             UpdateLaser();
@@ -126,4 +124,10 @@ public class LaserBeam{
             endpoint2 = true;
         }
     }
+    void CheckGameOver(RaycastHit hitInfo, Vector3 direction, LineRenderer laser){
+        if(hitInfo.collider.gameObject.tag == "GameOver"){
+            over = true;
+        }
+    }
+
 }
