@@ -88,7 +88,7 @@ public class ShootLaser : MonoBehaviour{
 
         if (transform.parent.parent.name == "Laser") {
 
-            if(beam.over){
+            if(beam.over || beam2.over || beam3.over){
                 overFlag = true;
                 gameCanvas.SetActive(false);
                 gameOverCanvas.SetActive(true);

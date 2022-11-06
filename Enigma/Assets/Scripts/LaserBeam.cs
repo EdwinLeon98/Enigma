@@ -127,6 +127,7 @@ public class LaserBeam{
     void CheckGameOver(RaycastHit hitInfo, Vector3 direction, LineRenderer laser){
         if(hitInfo.collider.gameObject.tag == "GameOver"){
             over = true;
+            Debug.Log("over True");
         }
     }
 
