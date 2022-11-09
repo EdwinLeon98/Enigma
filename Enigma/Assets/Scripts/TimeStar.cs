@@ -7,7 +7,7 @@ public class TimeStar : MonoBehaviour
 {
     float Time;
     public int minTimeInSecs;
-    public static bool[] gotTimeStar = new bool[20];
+    public static bool[] gotTimeStar = new bool[50];
 
     // Update is called once per frame
     void Update() {

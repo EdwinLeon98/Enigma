@@ -11,78 +11,90 @@ public class Stars : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (gameObject.name == "Level1Stars") {
+        if (gameObject.name == "Basic_Level1Stars") {
             int x = 1;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level2Stars") {
+        if (gameObject.name == "Basic_Level2Stars") {
             int x = 2;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level3Stars") {
+        if (gameObject.name == "Basic_Level3Stars") {
             int x = 3;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level4Stars") {
+        if (gameObject.name == "Rotation_Level1Stars") {
             int x = 4;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level5Stars") {
+        if (gameObject.name == "Rotation_Level2Stars") {
             int x = 5;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level6Stars") {
+        if (gameObject.name == "Rotation_Level3Stars") {
             int x = 6;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level7Stars") {
+        if (gameObject.name == "Basic_Level4Stars") {
             int x = 7;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level8Stars") {
+        if (gameObject.name == "Splitter_Level1Stars") {
             int x = 8;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level9Stars") {
+        if (gameObject.name == "Splitter_Level6Stars") {
             int x = 9;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level10Stars") {
+        if (gameObject.name == "Splitter_Level2Stars") {
             int x = 10;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level11Stars") {
+        if (gameObject.name == "Splitter_Level3Stars") {
             int x = 11;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level12Stars") {
+        if (gameObject.name == "Splitter_Level4Stars") {
             int x = 12;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level13Stars") {
+        if (gameObject.name == "Splitter_Level7Stars") {
             int x = 13;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level14Stars") {
+        if (gameObject.name == "Splitter_Level5Stars") {
             int x = 14;
             activateStars(x);
         }
 
-        if (gameObject.name == "Level15Stars") {
+        if (gameObject.name == "Portals_Level1Stars") {
             int x = 15;
+            activateStars(x);
+        }
+        if (gameObject.name == "Portals_Level2Stars") {
+            int x = 16;
+            activateStars(x);
+        }
+        if (gameObject.name == "Portals_Level3Stars") {
+            int x = 17;
+            activateStars(x);
+        }
+        if (gameObject.name == "Blackhole_Level1Stars") {
+            int x = 18;
             activateStars(x);
         }
     }

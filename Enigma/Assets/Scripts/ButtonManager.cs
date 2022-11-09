@@ -15,50 +15,59 @@ public class ButtonManager : MonoBehaviour
         TimerCounter.secs = 0;
         TimerCounter.timer = 0;
 
-        if (SceneManager.GetActiveScene().name == "Level1") {
+        if (SceneManager.GetActiveScene().name == "Basic_Level1") {
             levelNumber = 1;
         }
-        else if (SceneManager.GetActiveScene().name == "Level2") {
+        else if (SceneManager.GetActiveScene().name == "Basic_Level2") {
             levelNumber = 2;
         }
-        else if (SceneManager.GetActiveScene().name == "Level3") {
+        else if (SceneManager.GetActiveScene().name == "Basic_Level3") {
             levelNumber = 3;
         }
-        else if (SceneManager.GetActiveScene().name == "Level4") {
+        else if (SceneManager.GetActiveScene().name == "Rotation_Level1") {
             levelNumber = 4;
         }
-        else if (SceneManager.GetActiveScene().name == "Level5") {
+        else if (SceneManager.GetActiveScene().name == "Rotation_Level2") {
             levelNumber = 5;
         }
-        else if (SceneManager.GetActiveScene().name == "Level6") {
+        else if (SceneManager.GetActiveScene().name == "Rotation_Level3") {
             levelNumber = 6;
         }
-        else if (SceneManager.GetActiveScene().name == "Level7") {
+        else if (SceneManager.GetActiveScene().name == "Basic_Level4") {
             levelNumber = 7;
         }
-        else if (SceneManager.GetActiveScene().name == "Level8") {
+        else if (SceneManager.GetActiveScene().name == "Splitter_Level1") {
             levelNumber = 8;
         }
-        else if (SceneManager.GetActiveScene().name == "Level9") {
+        else if (SceneManager.GetActiveScene().name == "Splitter_Level6") {
             levelNumber = 9;
         }
-        else if (SceneManager.GetActiveScene().name == "Level10") {
+        else if (SceneManager.GetActiveScene().name == "Splitter_Level2") {
             levelNumber = 10;
         }
-        else if (SceneManager.GetActiveScene().name == "Level11") {
+        else if (SceneManager.GetActiveScene().name == "Splitter_Level3") {
             levelNumber = 11;
         }
-        else if (SceneManager.GetActiveScene().name == "Level12") {
+        else if (SceneManager.GetActiveScene().name == "Splitter_Level4") {
             levelNumber = 12;
         }
-        else if (SceneManager.GetActiveScene().name == "Level13") {
+        else if (SceneManager.GetActiveScene().name == "Splitter_Level7") {
             levelNumber = 13;
         }
-        else if (SceneManager.GetActiveScene().name == "Level14") {
+        else if (SceneManager.GetActiveScene().name == "Splitter_Level5") {
             levelNumber = 14;
         }
-        else if (SceneManager.GetActiveScene().name == "Level15") {
+        else if (SceneManager.GetActiveScene().name == "Portals_Level1") {
             levelNumber = 15;
+        }
+        else if (SceneManager.GetActiveScene().name == "Portals_Level2") {
+            levelNumber = 16;
+        }
+        else if (SceneManager.GetActiveScene().name == "Portals_Level3") {
+            levelNumber = 17;
+        }
+        else if (SceneManager.GetActiveScene().name == "Blackhole_Level1") {
+            levelNumber = 18;
         }
         else {
             levelNumber = 0;
