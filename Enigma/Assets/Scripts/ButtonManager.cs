@@ -69,6 +69,24 @@ public class ButtonManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Blackhole_Level1") {
             levelNumber = 18;
         }
+           else if (SceneManager.GetActiveScene().name == "Blackhole_Level2") {
+            levelNumber = 19;
+        }
+           else if (SceneManager.GetActiveScene().name == "Blackhole_Level3") {
+            levelNumber = 20;
+        }
+           else if (SceneManager.GetActiveScene().name == "Blackhole_Level4") {
+            levelNumber = 21;
+        }
+           else if (SceneManager.GetActiveScene().name == "Tracking_Level1") {
+            levelNumber = 22;
+        }
+           else if (SceneManager.GetActiveScene().name == "Tracking_Level2") {
+            levelNumber = 23;
+        }
+           else if (SceneManager.GetActiveScene().name == "Tracking_Level3") {
+            levelNumber = 24;
+        }
         else {
             levelNumber = 0;
         }

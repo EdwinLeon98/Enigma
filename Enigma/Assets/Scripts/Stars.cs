@@ -97,6 +97,30 @@ public class Stars : MonoBehaviour
             int x = 18;
             activateStars(x);
         }
+             if (gameObject.name == "Blackhole_Level2Stars") {
+            int x = 19;
+            activateStars(x);
+        }
+        if (gameObject.name == "Blackhole_Level3Stars") {
+            int x = 20;
+            activateStars(x);
+        }
+         if (gameObject.name == "Blackhole_Level4Stars") {
+            int x = 21;
+            activateStars(x);
+        }
+        if (gameObject.name == "Tracking_Level1Stars") {
+            int x = 22;
+            activateStars(x);
+        }
+        if (gameObject.name == "Tracking_Level2Stars") {
+            int x = 23;
+            activateStars(x);
+        }
+        if (gameObject.name == "Tracking_Level3Stars") {
+            int x = 24;
+            activateStars(x);
+        }
     }
 
     void activateStars(int levelNum) {
