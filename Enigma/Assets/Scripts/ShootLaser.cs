@@ -115,13 +115,19 @@ public class ShootLaser : MonoBehaviour{
                         if (GlowBulb.isCharged && GlowBulb.isCharged2) {
                             completeLevelUICanvas.SetActive(true);
                         }
+                        if (ColorChangeBulb.isCharged && ColorChangeBulb.isCharged2) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
                 else {
                     // console.log(beam.overFlag);
                     // Debug.Log("Over: " + beam.overFlag);
                     if (GlowBulb.isCharged) {
+                        completeLevelUICanvas.SetActive(true);
+                    }
 
+                    if (ColorChangeBulb.isCharged) { 
                         completeLevelUICanvas.SetActive(true);
                     }
                 }
@@ -134,10 +140,18 @@ public class ShootLaser : MonoBehaviour{
                         if (GlowBulb.isCharged && GlowBulb.isCharged2) {
                             completeLevelUICanvas.SetActive(true);
                         }
+
+                        if (ColorChangeBulb.isCharged && ColorChangeBulb.isCharged2) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
                 else {
                     if (GlowBulb.isCharged) {
+                        completeLevelUICanvas.SetActive(true);
+                    }
+
+                    if (ColorChangeBulb.isCharged) {
                         completeLevelUICanvas.SetActive(true);
                     }
                 }
@@ -150,10 +164,18 @@ public class ShootLaser : MonoBehaviour{
                         if (GlowBulb.isCharged && GlowBulb.isCharged2) {
                             completeLevelUICanvas.SetActive(true);
                         }
+
+                        if (ColorChangeBulb.isCharged && ColorChangeBulb.isCharged2) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
                 else {
                     if (GlowBulb.isCharged) {
+                        completeLevelUICanvas.SetActive(true);
+                    }
+
+                    if (ColorChangeBulb.isCharged) {
                         completeLevelUICanvas.SetActive(true);
                     }
                 }
@@ -166,10 +188,18 @@ public class ShootLaser : MonoBehaviour{
                         if (GlowBulb.isCharged && GlowBulb.isCharged2) {
                             completeLevelUICanvas.SetActive(true);
                         }
+
+                        if (ColorChangeBulb.isCharged && ColorChangeBulb.isCharged2) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
                 else {
                     if (GlowBulb.isCharged) {
+                        completeLevelUICanvas.SetActive(true);
+                    }
+
+                    if (ColorChangeBulb.isCharged) {
                         completeLevelUICanvas.SetActive(true);
                     }
                 }
