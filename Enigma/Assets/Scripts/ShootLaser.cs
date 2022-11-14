@@ -17,6 +17,8 @@ public class ShootLaser : MonoBehaviour{
     public GameObject gameCanvas;
     public Color Laser1Color;
     public Color Laser2Color;
+    public Color ChangeColor;
+    public static Color newColor;
     public static bool end1 = false;
     public static bool end2 = false;
     public static bool overFlag = false;
@@ -24,6 +26,7 @@ public class ShootLaser : MonoBehaviour{
     public static bool activePL = false;
     public GameObject pl;
     public int order;
+    public static bool changeColor = false;
 
     void Start() {
         pos = gameObject.transform.position;
@@ -33,6 +36,7 @@ public class ShootLaser : MonoBehaviour{
         end1 = false;
         end2 = false;
         overFlag = false;
+        newColor = ChangeColor;
     }
 
     // Update is called once per frame
@@ -60,11 +64,13 @@ public class ShootLaser : MonoBehaviour{
         else {
             pl.SetActive(false);
         }
+
         // Debug.Log("End: " + end1);
         if (transform.parent.parent.name == "Laser"){
             Name = "Laser Beam";
             end1 = false;
             overFlag = false;
+            changeColor = false;
             order = 1;
             beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
                 material, Name, Laser1Color, false, false, false, order,false);
@@ -172,9 +178,9 @@ public class ShootLaser : MonoBehaviour{
         else if (transform.parent.parent.name == "PortalLaser"){
             if (beam3.over){
                 // Debug.Log(beam2);
-            overFlag = true;
-            gameCanvas.SetActive(false);
-            gameOverCanvas.SetActive(true);
+                overFlag = true;
+                gameCanvas.SetActive(false);
+                gameOverCanvas.SetActive(true);
             }
 
             if (beam3.endpoint1) {
