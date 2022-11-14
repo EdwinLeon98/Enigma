@@ -9,6 +9,8 @@ public class MovePrototype2 : MonoBehaviour
     private Vector3 initialPos;
     private Vector3 screenInitialPos;
     private Vector3 ScreenPosition;
+    public float MoveSpeed = 250;
+    public float RotatingSpeed = 100;
     private float speed = 250;
     private float rotateSpeed = 100;
     public static int numberOfMoves = 0;
@@ -21,6 +23,8 @@ public class MovePrototype2 : MonoBehaviour
         initialPos = transform.position;
         screenInitialPos = mainCamera.WorldToScreenPoint(transform.position);
         rb.constraints = RigidbodyConstraints.FreezeAll;
+        speed = MoveSpeed;
+        rotateSpeed = RotatingSpeed;
     }
 
     void OnMouseDrag() {
