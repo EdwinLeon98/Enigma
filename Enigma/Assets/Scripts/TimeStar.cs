@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeStar : MonoBehaviour
 {
     float Time;
     public int minTimeInSecs;
-    public static bool[] gotTimeStar = new bool[20];
+    public static bool[] gotTimeStar = new bool[50];
 
     // Update is called once per frame
     void Update() {
@@ -17,7 +18,21 @@ public class TimeStar : MonoBehaviour
 
         if (Time < minTimeInSecs) {
             gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-            gotTimeStar[ButtonManager.levelNumber] = true;
+            if (!((SceneManager.GetActiveScene().name == "Tracking_Level1") || (SceneManager.GetActiveScene().name == "Tracking_Level2")
+                || (SceneManager.GetActiveScene().name == "Tracking_Level3"))) {
+                gotTimeStar[ButtonManager.levelNumber] = true;
+            }
+            else {
+                if (gameObject.name == "Star1") {
+                    gotTimeStar[ButtonManager.levelNumber] = true;
+                }
+                else if (gameObject.name == "Star2") {
+                    MoveStar.gotMoveStar[ButtonManager.levelNumber] = true;
+                }
+                else if (gameObject.name == "Star3") {
+                    HintStar.gotHintStar[ButtonManager.levelNumber] = true;
+                }
+            }
         }
     }
 }

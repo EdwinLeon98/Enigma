@@ -32,6 +32,7 @@ public class ShootLaser : MonoBehaviour{
         order = 0;
         end1 = false;
         end2 = false;
+        overFlag = false;
     }
 
     // Update is called once per frame
@@ -59,10 +60,11 @@ public class ShootLaser : MonoBehaviour{
         else {
             pl.SetActive(false);
         }
-        Debug.Log("End: " + end1);
+        // Debug.Log("End: " + end1);
         if (transform.parent.parent.name == "Laser"){
             Name = "Laser Beam";
             end1 = false;
+            overFlag = false;
             order = 1;
             beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
                 material, Name, Laser1Color, false, false, false, order,false);
@@ -70,6 +72,7 @@ public class ShootLaser : MonoBehaviour{
         else if (transform.parent.parent.name == "PortalLaser"){
             Name = "Portal Laser Beam";
             end1 = false;
+            overFlag = false;
             order = 2;
             beam3 = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
                 material, Name, Laser1Color, false, false, true, order,false);
@@ -77,6 +80,7 @@ public class ShootLaser : MonoBehaviour{
         if (NumberOfLasers == 2) {
             Name = "Laser Beam 2";
             end2 = false;
+            overFlag = false;
             order = 0;
             beam2 = new LaserBeam(pos, gameObject.transform.right, material, Name, 
                 Laser2Color, false, false, false, order,false);
@@ -85,11 +89,18 @@ public class ShootLaser : MonoBehaviour{
         if (transform.parent.parent.name == "Laser") {
 
             if(beam.over){
-                // gameCanvas.SetActive(false);
-                new WaitForSecondsRealtime(1);
+                overFlag = true;
+                gameCanvas.SetActive(false);
                 gameOverCanvas.SetActive(true);
+                
             }
-
+            if(beam2!=null){
+                    if(beam2.over){
+                        overFlag = true;
+                        gameCanvas.SetActive(false);
+                        gameOverCanvas.SetActive(true);
+                    }
+                }
             if (beam.endpoint1) {
                 end1 = true;
                 if (NumberOfLasers == 2) {
@@ -159,6 +170,13 @@ public class ShootLaser : MonoBehaviour{
             }
         }
         else if (transform.parent.parent.name == "PortalLaser"){
+            if (beam3.over){
+                // Debug.Log(beam2);
+            overFlag = true;
+            gameCanvas.SetActive(false);
+            gameOverCanvas.SetActive(true);
+            }
+
             if (beam3.endpoint1) {
                 end1 = true;
                 if (GlowBulb.isCharged) {
@@ -166,5 +184,6 @@ public class ShootLaser : MonoBehaviour{
                 }
             }
         }
+        
     }
 }
