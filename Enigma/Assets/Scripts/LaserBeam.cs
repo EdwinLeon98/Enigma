@@ -134,6 +134,15 @@ public class LaserBeam{
             UpdateLaser();
             ShootLaser.activePL = true;
         }
+        else if (hitInfo.collider.gameObject.tag == "ColorChanger") {
+            ShootLaser.changeColor = true;
+            laser.startColor = ShootLaser.newColor;
+            laser.endColor = ShootLaser.newColor;
+            Vector3 pos = hitInfo.point;
+            Vector3 dir = direction;
+            CastRay(pos, dir, laser);
+            UpdateLaser();
+        }
         else {
             laserIndices.Add(hitInfo.point);
             UpdateLaser();
