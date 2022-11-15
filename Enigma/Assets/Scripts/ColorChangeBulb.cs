@@ -45,7 +45,7 @@ public class ColorChangeBulb : MonoBehaviour
             isCharging = true;
             text.SetActive(true);
         }
-        else if (ShootLaser.end1 == false && isCharging) {
+        else if (ShootLaser.end1 == false && isCharging && ShootLaser.changeColor == true) {
             isCharging = false;
             text.SetActive(false);
         }
@@ -55,7 +55,7 @@ public class ColorChangeBulb : MonoBehaviour
             isCharging2 = true;
             text2.SetActive(true);
         }
-        else if (ShootLaser.end2 == false && isCharging2) {
+        else if (ShootLaser.end2 == false && isCharging2 && ShootLaser.changeColor == true) {
             isCharging2 = false;
             text2.SetActive(false);
         }
