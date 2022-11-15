@@ -11,7 +11,7 @@ public class LaserBeam{
     List<Vector3> laserIndices = new List<Vector3>();
     Dictionary<string, float> refractiveMaterials = new Dictionary<string, float> {
         {"Air", 1.0f},
-        {"Glass", 1.5f}
+        {"Glass", 1.75f}
     };
     public bool endpoint1;
     public bool endpoint2;
@@ -81,6 +81,12 @@ public class LaserBeam{
         return refractedVector;
     }
 
+    Vector3 Refract(float mu_1, float mu_2, Vector3 norm, Vector3 incident){
+        incident.Normalize();
+        Vector3 refractedVector = (mu_1/mu_2 * Vector3.Cross(norm, Vector3.Cross(-norm, incident)) - norm * Mathf.Sqrt(1- Vector3.Dot(Vector3.Cross(norm, incident) * (mu_1/mu_2 * mu_1/mu_2), Vector3.Cross(norm, incident)))).normalized;
+        return refractedVector;
+    }
+
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
         if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal"
             || hitInfo.collider.gameObject.tag == "Mirror" || hitInfo.collider.gameObject.tag == "Rotate") {
@@ -100,6 +106,28 @@ public class LaserBeam{
                 Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
                 CastRay(pos, dir, laser);
             }
+        }
+        else if (hitInfo.collider.gameObject.tag == "Refractor") {
+            Debug.Log("Hit");
+            Vector3 pos = hitInfo.point;
+            laserIndices.Add(pos);
+            
+            // point not on box collider
+            Vector3 newPos = new Vector3(
+                Mathf.Abs(direction.x)/(direction.x+0.00001f) * 0.001f + pos.x,
+                Mathf.Abs(direction.y)/(direction.y+0.00001f) * 0.001f + pos.y,
+                Mathf.Abs(direction.z)/(direction.z+0.00001f) * 0.001f + pos.z
+                );
+            
+            float mu_1 = refractiveMaterials["Air"];
+            float mu_2 = refractiveMaterials["Glass"];
+
+
+            Vector3 norm = hitInfo.normal;
+            Vector3 incident = direction;
+
+            Vector3 refractedVector = Refract(mu_1, mu_2, norm, incident);
+            CastRay(newPos, refractedVector, laser);
         }
         else if (hitInfo.collider.gameObject.tag == "PortalIn"){
             laserIndices.Add(hitInfo.point);
