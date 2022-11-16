@@ -7,6 +7,7 @@ public class LaserBeam{
     Vector3 pos, dir;
     GameObject laserObj;
     GameObject portalObj;
+
     LineRenderer laser;
     List<Vector3> laserIndices = new List<Vector3>();
     Dictionary<string, float> refractiveMaterials = new Dictionary<string, float> {
@@ -19,6 +20,7 @@ public class LaserBeam{
     Vector3 newpos;
     public bool isPL;
     public int order;
+    // Animator anim;
 
     public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, 
         Color color, bool endpoint1, bool endpoint2, bool isPL, int order,bool over) {
@@ -39,6 +41,8 @@ public class LaserBeam{
         this.laser.sortingOrder = order;
         this.isPL = isPL;
         this.over = over;
+        // anim = this.laserObj.AddComponent(typeof(Animator)) as Animator;
+        // anim = this.laserObj.GetComponent<Animator>();
 
         CastRay(this.pos, this.dir, this.laser);
     }
@@ -142,6 +146,25 @@ public class LaserBeam{
             Vector3 dir = direction;
             CastRay(pos, dir, laser);
             UpdateLaser();
+        }
+        else if(hitInfo.collider.gameObject.tag == "Key"){
+            
+
+
+            GameObject key = hitInfo.collider.gameObject;
+            key.SetActive(false);
+            Debug.Log(GameObject.Find("Cube_But"));
+            GameObject.Find("Cube_But").GetComponent<Animator>().Play("Button_Press");
+            GameObject.Find("Bulb").SetActive(true);
+            // Debug.Log(key);
+            // Animator anim = key.GetComponent<Animator>();
+            // anim.Play("Button_Press");
+            GameObject.Find("Try").GetComponent<Animator>().Play("tryyy");
+            // GameObject.Find("Bulb").GetComponent<Animator>().Play("bulb_coming");
+            // UpdateLaser();
+            // Debug.Log(anim);
+
+            // CastRay(pos, dir, laser);
         }
         else {
             laserIndices.Add(hitInfo.point);
