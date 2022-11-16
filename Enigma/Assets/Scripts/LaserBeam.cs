@@ -155,11 +155,11 @@ public class LaserBeam{
             key.SetActive(false);
             Debug.Log(GameObject.Find("Cube_But"));
             GameObject.Find("Cube_But").GetComponent<Animator>().Play("Button_Press");
-            GameObject.Find("Bulb").SetActive(true);
+            // GameObject.Find("Bulb").SetActive(true);
             // Debug.Log(key);
             // Animator anim = key.GetComponent<Animator>();
             // anim.Play("Button_Press");
-            GameObject.Find("Try").GetComponent<Animator>().Play("tryyy");
+            GameObject.Find("Door").GetComponent<Animator>().Play("Door_Animation");
             // GameObject.Find("Bulb").GetComponent<Animator>().Play("bulb_coming");
             // UpdateLaser();
             // Debug.Log(anim);
