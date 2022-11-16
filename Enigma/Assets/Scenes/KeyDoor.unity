@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: 'Drag: Left or Right'
+  message: 
 --- !u!1 &149917575
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1932729467720336867, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.36
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: 1932729467720336867, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
       propertyPath: m_LocalPosition.y
@@ -844,6 +844,34 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4196858272723518846, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.157
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196858272723518846, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.619
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196858272723518846, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.47685397
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196858272723518846, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.522121
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196858272723518846, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.522121
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196858272723518846, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.47685397
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196858272723518846, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -95.189
+      objectReference: {fileID: 0}
     - target: {fileID: 4945167971537133270, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
       propertyPath: m_Name
       value: Cube_But
@@ -871,6 +899,10 @@ PrefabInstance:
     - target: {fileID: 6182833471959468602, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076070411900875687, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
@@ -1062,8 +1094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7426c1474492b394eb81227e7260a147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 14
-  maxMoves: 5
+  maxTime: 40
+  maxMoves: 7
   Time1: 0
   Time2: 0
   Time3: 0
@@ -2274,8 +2306,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512142552}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01999998, y: 3.0449998, z: -0.94000006}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.01999998, y: 3.0449998, z: -0.9400002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2517,7 +2549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667193174}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.57, y: 0.02, z: -1}
+  m_LocalPosition: {x: -1.65, y: 0.02, z: -1}
   m_LocalScale: {x: 2.1, y: 0.1, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2815,7 +2847,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Basic_Level1
+          m_StringArgument: KeyDoor
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &712505316
@@ -3554,7 +3586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027548844}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.23300004, y: 1.4010004, z: -0.0030666639}
+  m_LocalPosition: {x: 0.23, y: 2.84, z: -0.0030666639}
   m_LocalScale: {x: 1.7265652, y: 0.23738867, z: 0.47398573}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4221,8 +4253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7426c1474492b394eb81227e7260a147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 14
-  maxMoves: 5
+  maxTime: 40
+  maxMoves: 7
   Time1: 0
   Time2: 0
   Time3: 0
@@ -4483,7 +4515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: 'Drag: Up or Down'
+  message: 
 --- !u!1 &1364288298
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,6 +5454,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1654834078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5732052395750917225, guid: 5c328be87d24f46d0802d83eb3983293, type: 3}
+  m_PrefabInstance: {fileID: 184043782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1654834082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654834078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: Trying shooting Laser here
 --- !u!1 &1738970344
 GameObject:
   m_ObjectHideFlags: 0
@@ -5515,7 +5565,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Basic_Level1
+          m_StringArgument: KeyDoor
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1738970347
@@ -5782,7 +5832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8663783317559840917, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.94832367
+      value: 0.94189346
       objectReference: {fileID: 0}
     - target: {fileID: 8663783317559840917, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5790,7 +5840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8663783317559840917, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.31730464
+      value: -0.3359119
       objectReference: {fileID: 0}
     - target: {fileID: 8663783317559840917, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5802,7 +5852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8663783317559840917, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -37
+      value: -39.256
       objectReference: {fileID: 0}
     - target: {fileID: 8663783317559840917, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -6471,8 +6521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7426c1474492b394eb81227e7260a147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 14
-  maxMoves: 5
+  maxTime: 40
+  maxMoves: 7
   Time1: 0
   Time2: 0
   Time3: 0
