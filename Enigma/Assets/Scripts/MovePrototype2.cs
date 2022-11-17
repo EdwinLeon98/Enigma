@@ -32,7 +32,7 @@ public class MovePrototype2 : MonoBehaviour
             rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
             ScreenPosition = new Vector3(Input.mousePosition.x, screenInitialPos.y, screenInitialPos.z);//Coordinates of the object in screen space
         }
-        else if(gameObject.tag == "Vertical" || gameObject.tag == "PortalIn" || gameObject.tag == "PortalOut") {
+        else if(gameObject.tag == "Vertical" || gameObject.tag == "PortalIn" || gameObject.tag == "PortalOut" || gameObject.tag == "VerticalRefractor") {
             rb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
             ScreenPosition = new Vector3(screenInitialPos.x, Input.mousePosition.y, screenInitialPos.z); //Coordinates of the object in screen space
         }
