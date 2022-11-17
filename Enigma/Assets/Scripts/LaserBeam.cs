@@ -111,7 +111,7 @@ public class LaserBeam{
                 CastRay(pos, dir, laser);
             }
         }
-        else if (hitInfo.collider.gameObject.tag == "VerticalRefractor") {
+        else if (hitInfo.collider.gameObject.tag == "VerticalRefractor" || hitInfo.collider.gameObject.tag == "HorizontalRefractor") {
             Debug.Log("Hit");
             Vector3 pos = hitInfo.point;
             laserIndices.Add(pos);
