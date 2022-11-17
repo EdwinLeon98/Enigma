@@ -28,7 +28,7 @@ public class MovePrototype2 : MonoBehaviour
     }
 
     void OnMouseDrag() {
-        if (gameObject.tag == "Horizontal") {
+        if (gameObject.tag == "Horizontal" || gameObject.tag == "HorizontalRefractor") {
             rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
             ScreenPosition = new Vector3(Input.mousePosition.x, screenInitialPos.y, screenInitialPos.z);//Coordinates of the object in screen space
         }
