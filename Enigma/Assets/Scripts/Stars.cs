@@ -97,7 +97,7 @@ public class Stars : MonoBehaviour
             int x = 18;
             activateStars(x);
         }
-             if (gameObject.name == "Blackhole_Level2Stars") {
+        if (gameObject.name == "Blackhole_Level2Stars") {
             int x = 19;
             activateStars(x);
         }
