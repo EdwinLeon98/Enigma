@@ -87,6 +87,51 @@ public class ButtonManager : MonoBehaviour
            else if (SceneManager.GetActiveScene().name == "Tracking_Level3") {
             levelNumber = 24;
         }
+        else if (SceneManager.GetActiveScene().name == "Key&Door_Level1") {
+            levelNumber = 25;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Dark_Level1") {
+            levelNumber = 26;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Dark_Level2") {
+            levelNumber = 27;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Dark_Level3") {
+            levelNumber = 28;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Compatibility_Level1") {
+            levelNumber = 29;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Compatibility_Level2") {
+            levelNumber = 30;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Compatibility_Level3") {
+            levelNumber = 31;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Refraction_Level1") {
+            levelNumber = 32;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Refraction_Level2") {
+            levelNumber = 33;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Refraction_Level3") {
+            levelNumber = 34;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Oscillator_Level1") {
+            levelNumber = 35;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Oscillator_Level2") {
+            levelNumber = 36;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Oscillator_Level3") {
+            levelNumber = 37;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Stopper_Level1") {
+            levelNumber = 38;
+        }
+                   else if (SceneManager.GetActiveScene().name == "Stopper_Level2") {
+            levelNumber = 39;
+        }
         else {
             levelNumber = 0;
         }

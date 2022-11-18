@@ -121,6 +121,66 @@ public class Stars : MonoBehaviour
             int x = 24;
             activateStars(x);
         }
+        if (gameObject.name == "Key&Door_Level1Stars") {
+            int x = 25;
+            activateStars(x);
+        }
+        if (gameObject.name == "Dark_Level1Stars") {
+            int x = 26;
+            activateStars(x);
+        }
+        if (gameObject.name == "Dark_Level2Stars") {
+            int x = 27;
+            activateStars(x);
+        }
+        if (gameObject.name == "Dark_Level3Stars") {
+            int x = 28;
+            activateStars(x);
+        }
+        if (gameObject.name == "Compatibility_Level1Stars") {
+            int x = 29;
+            activateStars(x);
+        }
+        if (gameObject.name == "Compatibility_Level2Stars") {
+            int x = 30;
+            activateStars(x);
+        }    
+        if (gameObject.name == "Compatibility_Level3Stars") {
+            int x = 31;
+            activateStars(x);
+        }
+        if (gameObject.name == "Refraction_Level1Stars") {
+            int x = 32;
+            activateStars(x);
+        }
+        if (gameObject.name == "Refraction_Level2Stars") {
+            int x = 33;
+            activateStars(x);
+        }
+        if (gameObject.name == "Refraction_Level3Stars") {
+            int x = 34;
+            activateStars(x);
+        } 
+        if (gameObject.name == "Oscillator_Level1Stars") {
+            int x = 35;
+            activateStars(x);
+        }
+        if (gameObject.name == "Oscillator_Level2Stars") {
+            int x = 36;
+            activateStars(x);
+        }
+        if (gameObject.name == "Oscillator_Level3Stars") {
+            int x = 37;
+            activateStars(x);
+        }
+        if (gameObject.name == "Stopper_Level1Stars") {
+            int x = 38;
+            activateStars(x);
+        }
+        if (gameObject.name == "Stopper_Level2Stars") {
+            int x = 39;
+            activateStars(x);
+        }
     }
 
     void activateStars(int levelNum) {
