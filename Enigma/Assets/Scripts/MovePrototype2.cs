@@ -9,8 +9,6 @@ public class MovePrototype2 : MonoBehaviour
     private Vector3 initialPos;
     private Vector3 screenInitialPos;
     private Vector3 ScreenPosition;
-    public float MoveSpeed = 250;
-    public float RotatingSpeed = 100;
     private float speed = 250;
     private float rotateSpeed = 100;
     public static int numberOfMoves = 0;
@@ -23,8 +21,8 @@ public class MovePrototype2 : MonoBehaviour
         initialPos = transform.position;
         screenInitialPos = mainCamera.WorldToScreenPoint(transform.position);
         rb.constraints = RigidbodyConstraints.FreezeAll;
-        speed = MoveSpeed;
-        rotateSpeed = RotatingSpeed;
+        speed = TileSpeed.tileSpeed;
+        rotateSpeed = TileSpeed.rotationSpeed;
     }
 
     void OnMouseDrag() {
@@ -48,7 +46,7 @@ public class MovePrototype2 : MonoBehaviour
         Vector3 NewWorldPosition = mainCamera.ScreenToWorldPoint(ScreenPosition);   //screen coordinates of the mouse on the screen, but in world coordinates
         rb.velocity = (NewWorldPosition - transform.position) * speed * Time.deltaTime; //Set the velocity of the tile
 
-        if (!GameObject.Find("LevelComplete")) {
+        if (!(GameObject.Find("LevelComplete") || GameObject.Find("Settings"))) {
             if (newDrag) {
                 numberOfMoves += 1;
                 newDrag = false;
@@ -57,12 +55,22 @@ public class MovePrototype2 : MonoBehaviour
     }
 
     void Update() {
+        speed = TileSpeed.tileSpeed;
+        rotateSpeed = TileSpeed.rotationSpeed;
+
         if (Input.GetMouseButtonUp(0)) {
             rb.velocity = new Vector3(0, 0, 0); //Set velocity to 0 when the left mouse button is released 
             rb.constraints = RigidbodyConstraints.FreezeAll;
             newDrag = true;
         }
         rb.angularVelocity = new Vector3(0, 0, 0);
+
+        Debug.Log("Tile Speed: " + speed);
+        Debug.Log("Rotate Speed: " + rotateSpeed);
+    }
+
+    public void AdjustSpeed(float newSpeed) {
+        speed = newSpeed;
     }
 
 }
