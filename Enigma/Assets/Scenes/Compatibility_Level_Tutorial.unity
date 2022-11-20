@@ -700,8 +700,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 226.41, y: 47.0281}
-  m_SizeDelta: {x: 172.81, y: 135.9439}
+  m_AnchoredPosition: {x: 245.90437, y: 46}
+  m_SizeDelta: {x: 211.7993, y: 159.9373}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223140666
 MonoBehaviour:
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game ends if Death Star is hit!
+  m_text: The light bulb gets charged only when compatible laser color hits it
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1809,7 +1809,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 558837293}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: ButtonMoveScene
         m_Mode: 5
@@ -1818,7 +1818,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Blackhole_Level1
+          m_StringArgument: Compatibility_Level1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &508420099
@@ -2059,8 +2059,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 226.40593, y: -124.99151}
-  m_SizeDelta: {x: 172.812, y: 139.9832}
+  m_AnchoredPosition: {x: 245.9, y: -109}
+  m_SizeDelta: {x: 211.81, y: 141.4828}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669251373
 MonoBehaviour:
@@ -4469,7 +4469,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Avoid the Death Star
+  m_text: The transformer will change the laser to make it compatible with the light
+    bulb
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
