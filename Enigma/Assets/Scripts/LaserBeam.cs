@@ -111,7 +111,7 @@ public class LaserBeam{
                 CastRay(pos, dir, laser);
             }
         }
-        else if (hitInfo.collider.gameObject.tag == "Refractor") {
+        else if (hitInfo.collider.gameObject.tag == "VerticalRefractor" || hitInfo.collider.gameObject.tag == "HorizontalRefractor") {
             Debug.Log("Hit");
             Vector3 pos = hitInfo.point;
             laserIndices.Add(pos);
@@ -132,6 +132,25 @@ public class LaserBeam{
 
             Vector3 refractedVector = Refract(mu_1, mu_2, norm, incident);
             CastRay(newPos, refractedVector, laser);
+            
+            /*
+            Ray ray1 = new Ray(newPos, refractedVector);
+            Vector3 newRayStartPos = ray1.GetPoint(1.2f);
+
+            Ray ray2 = new Ray(newRayStartPos, -refractedVector);
+            RaycastHit hit2;
+
+            if(Physics.Raycast(ray2, out hit2, 1.3f, 1)) {
+                laserIndices.Add(hit2.point);
+            }
+
+            UpdateLaser();
+
+            Vector3 refractedVector2 = Refract(mu_2, mu_1, -hit2.normal, refractedVector);
+
+            CastRay(hit2.point, refractedVector2, laser);
+            */
+
         }
         else if (hitInfo.collider.gameObject.tag == "PortalIn"){
             laserIndices.Add(hitInfo.point);
