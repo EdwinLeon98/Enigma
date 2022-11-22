@@ -1114,6 +1114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9a2c6cd610cb343841029d80e99bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 250
+  RotatingSpeed: 100
   rb: {fileID: 258575495}
 --- !u!54 &258575495
 Rigidbody:
@@ -7809,6 +7811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9a2c6cd610cb343841029d80e99bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 250
+  RotatingSpeed: 100
   rb: {fileID: 855281008}
 --- !u!54 &855281008
 Rigidbody:
@@ -9285,6 +9289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9a2c6cd610cb343841029d80e99bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 250
+  RotatingSpeed: 100
   rb: {fileID: 1147890254}
 --- !u!54 &1147890254
 Rigidbody:
@@ -9755,6 +9761,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9a2c6cd610cb343841029d80e99bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 250
+  RotatingSpeed: 100
   rb: {fileID: 1296256336}
 --- !u!54 &1296256336
 Rigidbody:
@@ -11239,6 +11247,7 @@ GameObject:
   - component: {fileID: 1907861371}
   - component: {fileID: 1907861370}
   - component: {fileID: 1907861369}
+  - component: {fileID: 1907861374}
   m_Layer: 5
   m_Name: GameOverCanvas
   m_TagString: Untagged
@@ -11342,6 +11351,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1907861374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907861368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681fce0a1b609544f92befa45be38fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1916164542
 GameObject:
   m_ObjectHideFlags: 0
