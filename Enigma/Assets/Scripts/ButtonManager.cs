@@ -156,7 +156,6 @@ public class ButtonManager : MonoBehaviour
         }
 
         PauseGame.unpause = true;
-        Time.timeScale = 1;
         SceneManager.LoadScene(level);
     }
 }
