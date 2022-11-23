@@ -17,8 +17,8 @@ public class ColorChangeBulb : MonoBehaviour
     //bool isCharging2;
     bool finishedCharging;
     //bool finishedCharging2;
-    public static bool isCharged;
-    public static bool isCharged2;
+    public static bool isColorCharged;
+    //public static bool isColorCharged2;
 
     void Start(){
         temp = lightbulb1.GetComponent<Renderer>().material;
@@ -27,8 +27,8 @@ public class ColorChangeBulb : MonoBehaviour
         //oldTime2 = 100;
         isCharging = false;
         //isCharging2 = false;
-        isCharged = false;
-        isCharged2 = false;
+        isColorCharged = false;
+        //isColorCharged2 = false;
         finishedCharging = false;
         //finishedCharging2 = false;
         text.SetActive(false);
@@ -75,13 +75,13 @@ public class ColorChangeBulb : MonoBehaviour
         if (ShootLaser.end1 == true && ShootLaser.changeColor == true){
             Charging(Time, oldTime, temp, text);
             if (finishedCharging) {
-                isCharged = true;
+                isColorCharged = true;
                 Debug.Log("Finished charging");
             }
         }
         else {
             temp.color = Color.white;
-            isCharged = false;
+            isColorCharged = false;
             finishedCharging = false;
         }
         //}

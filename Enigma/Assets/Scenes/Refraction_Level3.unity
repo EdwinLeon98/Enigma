@@ -1807,7 +1807,6 @@ GameObject:
   - component: {fileID: 317439354}
   - component: {fileID: 317439353}
   - component: {fileID: 317439352}
-  - component: {fileID: 317439351}
   m_Layer: 6
   m_Name: VR1
   m_TagString: VerticalRefractor
@@ -1815,19 +1814,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &317439351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317439350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: 'Drag: Up or Down'
 --- !u!114 &317439352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4150,7 +4136,6 @@ GameObject:
   - component: {fileID: 1109749641}
   - component: {fileID: 1109749640}
   - component: {fileID: 1109749639}
-  - component: {fileID: 1109749638}
   m_Layer: 6
   m_Name: HR1
   m_TagString: HorizontalRefractor
@@ -4174,19 +4159,6 @@ Transform:
   m_Father: {fileID: 1647588399}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1109749638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109749636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: 'Drag: Left or Right'
 --- !u!114 &1109749639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6245,7 +6217,6 @@ GameObject:
   - component: {fileID: 1665612423}
   - component: {fileID: 1665612422}
   - component: {fileID: 1665612421}
-  - component: {fileID: 1665612420}
   m_Layer: 6
   m_Name: HR2
   m_TagString: HorizontalRefractor
@@ -6269,19 +6240,6 @@ Transform:
   m_Father: {fileID: 1647588399}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1665612420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665612418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: 'Drag: Left or Right'
 --- !u!114 &1665612421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6913,6 +6871,10 @@ PrefabInstance:
     - target: {fileID: 6926607231833252658, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
       propertyPath: completeLevelUI
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926607231833252658, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
+      propertyPath: changeColorLevel
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6926607231833252658, guid: 421a7d689b0874e47986419cfc6d80e7, type: 3}
       propertyPath: completeLevelUICanvas
@@ -7694,7 +7656,6 @@ GameObject:
   - component: {fileID: 2018930173}
   - component: {fileID: 2018930172}
   - component: {fileID: 2018930171}
-  - component: {fileID: 2018930170}
   m_Layer: 6
   m_Name: VR2
   m_TagString: VerticalRefractor
@@ -7702,19 +7663,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2018930170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018930169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: 'Drag: Up or Down'
 --- !u!114 &2018930171
 MonoBehaviour:
   m_ObjectHideFlags: 0

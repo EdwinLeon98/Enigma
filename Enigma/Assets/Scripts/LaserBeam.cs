@@ -115,7 +115,7 @@ public class LaserBeam{
             }
         }
         else if (hitInfo.collider.gameObject.tag == "VerticalRefractor" || hitInfo.collider.gameObject.tag == "HorizontalRefractor") {
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
             Vector3 pos = hitInfo.point;
             laserIndices.Add(pos);
             
