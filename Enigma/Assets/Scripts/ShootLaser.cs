@@ -215,6 +215,13 @@ public class ShootLaser : MonoBehaviour{
             }
         }
         else if (transform.parent.parent.name == "PortalLaser"){
+             Debug.Log("Animportal"+beam3.anim);
+            if(beam3.anim){
+                Debug.Log("Anim");
+                GameObject.Find("Cube (1)").SetActive(false);
+                GameObject.Find("Cube_But").GetComponent<Animator>().Play(anim1);
+                GameObject.Find("Door").GetComponent<Animator>().Play(anim2);
+            }
             if (beam3.over){
                 // Debug.Log(beam2);
                 overFlag = true;

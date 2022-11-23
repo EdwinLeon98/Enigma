@@ -213,6 +213,7 @@ public class LaserBeam{
     }
     void CheckKeyHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser){
         if(hitInfo.collider.gameObject.tag == "Key"){
+             Debug.Log("AnimKeyval");
             anim = true;
         }
     }
