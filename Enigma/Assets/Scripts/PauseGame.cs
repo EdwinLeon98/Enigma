@@ -13,5 +13,10 @@ public class PauseGame : MonoBehaviour
             Time.timeScale = 1;
             unpause = false;
         }
+
+        if (GameObject.Find("GameOver") && unpause) {
+            Time.timeScale = 1;
+            unpause = false;
+        }
     }
 }
