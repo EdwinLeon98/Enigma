@@ -132,6 +132,9 @@ public class ButtonManager : MonoBehaviour
                    else if (SceneManager.GetActiveScene().name == "Stopper_Level2") {
             levelNumber = 39;
         }
+        else if (SceneManager.GetActiveScene().name == "Stopper_Level3") {
+            levelNumber = 40;
+        }
         else {
             levelNumber = 0;
         }
