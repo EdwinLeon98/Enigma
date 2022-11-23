@@ -18,9 +18,10 @@ public class CopyScore : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        if (!((SceneManager.GetActiveScene().name == "Tracking_Level1") || (SceneManager.GetActiveScene().name == "Tracking_Level2") 
-            || (SceneManager.GetActiveScene().name == "Tracking_Level3") || (SceneManager.GetActiveScene().name == "Conveyor_Level1")
-            || (SceneManager.GetActiveScene().name == "Conveyor_Level2") || (SceneManager.GetActiveScene().name == "Conveyor_Level3"))) { 
+        if (!((SceneManager.GetActiveScene().name == "Tracking_Level1") || (SceneManager.GetActiveScene().name == "Tracking_Level2")
+                || (SceneManager.GetActiveScene().name == "Tracking_Level3") || (SceneManager.GetActiveScene().name == "Tracking_Level4")
+                || (SceneManager.GetActiveScene().name == "Conveyor_Level1") || (SceneManager.GetActiveScene().name == "Conveyor_Level2")
+                || (SceneManager.GetActiveScene().name == "Conveyor_Level3") || (SceneManager.GetActiveScene().name == "Conveyor_Level4"))) { 
             temp = GameObject.Find("Star1");
             minTime = temp.GetComponent<TimeStar>().minTimeInSecs;
 
@@ -44,8 +45,9 @@ public class CopyScore : MonoBehaviour
     // Update is called once per frame
     void Update() {
         if (!((SceneManager.GetActiveScene().name == "Tracking_Level1") || (SceneManager.GetActiveScene().name == "Tracking_Level2")
-            || (SceneManager.GetActiveScene().name == "Tracking_Level3") || (SceneManager.GetActiveScene().name == "Conveyor_Level1")
-            || (SceneManager.GetActiveScene().name == "Conveyor_Level2") || (SceneManager.GetActiveScene().name == "Conveyor_Level3"))) {
+                || (SceneManager.GetActiveScene().name == "Tracking_Level3") || (SceneManager.GetActiveScene().name == "Tracking_Level4")
+                || (SceneManager.GetActiveScene().name == "Conveyor_Level1") || (SceneManager.GetActiveScene().name == "Conveyor_Level2")
+                || (SceneManager.GetActiveScene().name == "Conveyor_Level3") || (SceneManager.GetActiveScene().name == "Conveyor_Level4"))) {
             if (gameObject.name == "Star1Score") {   //Set score for the first star
                 value.text = "Under " + minTime.ToString() + " secs";
             }

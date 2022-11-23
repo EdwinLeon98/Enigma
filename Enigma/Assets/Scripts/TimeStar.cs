@@ -19,8 +19,9 @@ public class TimeStar : MonoBehaviour
         if (Time < minTimeInSecs) {
             gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
             if (!((SceneManager.GetActiveScene().name == "Tracking_Level1") || (SceneManager.GetActiveScene().name == "Tracking_Level2")
-                || (SceneManager.GetActiveScene().name == "Tracking_Level3") || (SceneManager.GetActiveScene().name == "Conveyor_Level1")
-                || (SceneManager.GetActiveScene().name == "Conveyor_Level2") || (SceneManager.GetActiveScene().name == "Conveyor_Level3"))) {
+                || (SceneManager.GetActiveScene().name == "Tracking_Level3") || (SceneManager.GetActiveScene().name == "Tracking_Level4") 
+                || (SceneManager.GetActiveScene().name == "Conveyor_Level1") || (SceneManager.GetActiveScene().name == "Conveyor_Level2") 
+                || (SceneManager.GetActiveScene().name == "Conveyor_Level3") || (SceneManager.GetActiveScene().name == "Conveyor_Level4"))) {
                 gotTimeStar[ButtonManager.levelNumber] = true;
             }
             else {
