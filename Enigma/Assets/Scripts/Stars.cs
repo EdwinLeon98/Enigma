@@ -181,6 +181,18 @@ public class Stars : MonoBehaviour
             int x = 39;
             activateStars(x);
         }
+        if (gameObject.name == "Stopper_Level3Stars") {
+            int x = 40;
+            activateStars(x);
+        }
+                if (gameObject.name == "Key&Door_Level2Stars") {
+            int x = 41;
+            activateStars(x);
+        }
+            if (gameObject.name == "Key&Door_Level3Stars") {
+            int x = 42;
+            activateStars(x);
+        }
     }
 
     void activateStars(int levelNum) {

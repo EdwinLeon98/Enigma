@@ -27,6 +27,8 @@ public class ShootLaser : MonoBehaviour{
     public GameObject pl;
     public int order;
     public static bool changeColor = false;
+    public String anim1;
+    public String anim2;
 
     void Start() {
         pos = gameObject.transform.position;
@@ -73,7 +75,7 @@ public class ShootLaser : MonoBehaviour{
             changeColor = false;
             order = 1;
             beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
-                material, Name, Laser1Color, false, false, false, order,false);
+                material, Name, Laser1Color, false, false, false, order,false,false);
         }
         else if (transform.parent.parent.name == "PortalLaser"){
             Name = "Portal Laser Beam";
@@ -81,7 +83,7 @@ public class ShootLaser : MonoBehaviour{
             overFlag = false;
             order = 2;
             beam3 = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
-                material, Name, Laser1Color, false, false, true, order,false);
+                material, Name, Laser1Color, false, false, true, order,false,false);
         }
         if (NumberOfLasers == 2) {
             Name = "Laser Beam 2";
@@ -89,11 +91,18 @@ public class ShootLaser : MonoBehaviour{
             overFlag = false;
             order = 0;
             beam2 = new LaserBeam(pos, gameObject.transform.right, material, Name, 
-                Laser2Color, false, false, false, order,false);
+                Laser2Color, false, false, false, order,false,false);
         }
 
         if (transform.parent.parent.name == "Laser") {
 
+
+            if(beam.anim){
+                // Debug.Log("Anim");
+                GameObject.Find("Cube (1)").SetActive(false);
+                GameObject.Find("Cube_But").GetComponent<Animator>().Play(anim1);
+                GameObject.Find("Door").GetComponent<Animator>().Play(anim2);
+            }
             if(beam.over){
                 overFlag = true;
                 gameCanvas.SetActive(false);
