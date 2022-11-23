@@ -95,27 +95,28 @@ public class ShootLaser : MonoBehaviour{
         }
 
         if (transform.parent.parent.name == "Laser") {
-
-
             if(beam.anim){
                 // Debug.Log("Anim");
                 GameObject.Find("Cube (1)").SetActive(false);
                 GameObject.Find("Cube_But").GetComponent<Animator>().Play(anim1);
                 GameObject.Find("Door").GetComponent<Animator>().Play(anim2);
             }
+
             if(beam.over){
                 overFlag = true;
                 gameCanvas.SetActive(false);
                 gameOverCanvas.SetActive(true);
                 
             }
+
             if(beam2!=null){
-                    if(beam2.over){
-                        overFlag = true;
-                        gameCanvas.SetActive(false);
-                        gameOverCanvas.SetActive(true);
-                    }
+                if(beam2.over){
+                    overFlag = true;
+                    gameCanvas.SetActive(false);
+                    gameOverCanvas.SetActive(true);
                 }
+            }
+
             if (beam.endpoint1) {
                 end1 = true;
                 if (NumberOfLasers == 2) {

@@ -9,7 +9,7 @@ public class LaserMovement : MonoBehaviour
     private Vector3 initialPos;
     private Vector3 screenInitialPos;
     private Vector3 ScreenPosition;
-    private float speed = 50;
+    private float speed = 100;
     //private float rotateSpeed = 100;
     private bool newDrag = true;
     public Rigidbody rb;
