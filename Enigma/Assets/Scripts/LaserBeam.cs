@@ -115,7 +115,7 @@ public class LaserBeam{
             }
         }
         else if (hitInfo.collider.gameObject.tag == "VerticalRefractor" || hitInfo.collider.gameObject.tag == "HorizontalRefractor") {
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
             Vector3 pos = hitInfo.point;
             laserIndices.Add(pos);
             
@@ -213,7 +213,7 @@ public class LaserBeam{
     }
     void CheckKeyHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser){
         if(hitInfo.collider.gameObject.tag == "Key"){
-             Debug.Log("AnimKeyval");
+             //Debug.Log("AnimKeyval");
             anim = true;
         }
     }

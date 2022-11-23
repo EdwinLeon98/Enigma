@@ -65,8 +65,8 @@ public class MovePrototype2 : MonoBehaviour
         }
         rb.angularVelocity = new Vector3(0, 0, 0);
 
-        Debug.Log("Tile Speed: " + speed);
-        Debug.Log("Rotate Speed: " + rotateSpeed);
+        //Debug.Log("Tile Speed: " + speed);
+        //Debug.Log("Rotate Speed: " + rotateSpeed);
     }
 
     public void AdjustSpeed(float newSpeed) {

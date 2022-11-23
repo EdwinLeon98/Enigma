@@ -84,7 +84,7 @@ public class Stars : MonoBehaviour
         if (gameObject.name == "Portals_Level1Stars") {
             int x = 15;
             activateStars(x);
-        }
+        } 
         if (gameObject.name == "Portals_Level2Stars") {
             int x = 16;
             activateStars(x);
@@ -185,11 +185,11 @@ public class Stars : MonoBehaviour
             int x = 40;
             activateStars(x);
         }
-                if (gameObject.name == "Key&Door_Level2Stars") {
+        if (gameObject.name == "Key&Door_Level2Stars") {
             int x = 41;
             activateStars(x);
         }
-            if (gameObject.name == "Key&Door_Level3Stars") {
+        if (gameObject.name == "Key&Door_Level3Stars") {
             int x = 42;
             activateStars(x);
         }
