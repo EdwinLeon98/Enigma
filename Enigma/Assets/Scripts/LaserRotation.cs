@@ -9,12 +9,6 @@ public class LaserRotation : MonoBehaviour
     private bool newRotation = true;
     public static Vector3 oldRotation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

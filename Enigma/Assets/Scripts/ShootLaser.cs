@@ -95,7 +95,6 @@ public class ShootLaser : MonoBehaviour{
                 Laser2Color, false, false, false, order,false,false);
         }
 
-        Debug.Log("End1: " + end1);
         if (transform.parent.parent.name == "Laser") {
             if(beam.anim){
                 // Debug.Log("Anim");

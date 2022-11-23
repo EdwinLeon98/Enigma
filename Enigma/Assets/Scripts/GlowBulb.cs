@@ -48,7 +48,7 @@ public class GlowBulb : MonoBehaviour
             text.SetActive(true);
             if(chargingLight!=null)
             chargingLight.SetActive(true);
-            Debug.Log("Charging");
+            //Debug.Log("Charging");
         }
         else if (ShootLaser.end1 == false && isCharging) {
             isCharging = false;
@@ -78,14 +78,14 @@ public class GlowBulb : MonoBehaviour
                 Charging(Time, oldTime, temp, text);
                 if (finishedCharging) {
                     isCharged = true;
-                    Debug.Log("Done Charging");
+                    //Debug.Log("Done Charging");
                 }
             }
             else {
                 temp.color = Color.white;
                 isCharged = false;
                 finishedCharging = false;
-                Debug.Log("Not Charging");
+                //Debug.Log("Not Charging");
             }
         }
         else if (ShootLaser.nl == 2) {
@@ -132,9 +132,6 @@ public class GlowBulb : MonoBehaviour
             bulb.color = new Color(1, 1, 0);
             text.SetActive(false);
             finishedCharging = true;
-//            if(chargingLight!=null)
-//            chargingLight.SetActive(false);
-
         }
     }
 
@@ -156,10 +153,6 @@ public class GlowBulb : MonoBehaviour
             bulb.color = new Color(1, 1, 0);
             text.SetActive(false);
             finishedCharging2 = true;
-//            if(chargingLight2!=null)
-//            chargingLight2.SetActive(false);
-
-
         }
     }
 }
