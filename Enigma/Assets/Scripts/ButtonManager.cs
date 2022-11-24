@@ -141,10 +141,13 @@ public class ButtonManager : MonoBehaviour
                 else if (SceneManager.GetActiveScene().name == "Key&Door_Level3") {
             levelNumber = 42;
         }
+                else if (SceneManager.GetActiveScene().name == "Oscillator_Level4") {
+            levelNumber = 43;
+        }
         else {
             levelNumber = 0;
         }
-               
+
         Metrics.levelNum = levelNumber;
     }
 
