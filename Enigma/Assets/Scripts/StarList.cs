@@ -23,8 +23,10 @@ public class StarList : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (!((SceneManager.GetActiveScene().name == "Tracking_Level1") || (SceneManager.GetActiveScene().name == "Tracking_Level2") 
-            || (SceneManager.GetActiveScene().name == "Tracking_Level3"))) {
+        if (!((SceneManager.GetActiveScene().name == "Tracking_Level1") || (SceneManager.GetActiveScene().name == "Tracking_Level2")
+                || (SceneManager.GetActiveScene().name == "Tracking_Level3") || (SceneManager.GetActiveScene().name == "Tracking_Level4")
+                || (SceneManager.GetActiveScene().name == "Conveyor_Level1") || (SceneManager.GetActiveScene().name == "Conveyor_Level2")
+                || (SceneManager.GetActiveScene().name == "Conveyor_Level3") || (SceneManager.GetActiveScene().name == "Conveyor_Level4"))) {
             if (gameObject.name == "StarImage1Text") {
                 Time = TimerCounter.mins * 60;
                 Time += TimerCounter.secs * 10;

@@ -27,6 +27,9 @@ public class ShootLaser : MonoBehaviour{
     public GameObject pl;
     public int order;
     public static bool changeColor = false;
+    public String anim1;
+    public String anim2;
+    public bool changeColorLevel;
 
     void Start() {
         pos = gameObject.transform.position;
@@ -73,7 +76,7 @@ public class ShootLaser : MonoBehaviour{
             changeColor = false;
             order = 1;
             beam = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
-                material, Name, Laser1Color, false, false, false, order,false);
+                material, Name, Laser1Color, false, false, false, order,false,false);
         }
         else if (transform.parent.parent.name == "PortalLaser"){
             Name = "Portal Laser Beam";
@@ -81,7 +84,7 @@ public class ShootLaser : MonoBehaviour{
             overFlag = false;
             order = 2;
             beam3 = new LaserBeam(gameObject.transform.position, gameObject.transform.right, 
-                material, Name, Laser1Color, false, false, true, order,false);
+                material, Name, Laser1Color, false, false, true, order,false,false);
         }
         if (NumberOfLasers == 2) {
             Name = "Laser Beam 2";
@@ -89,10 +92,16 @@ public class ShootLaser : MonoBehaviour{
             overFlag = false;
             order = 0;
             beam2 = new LaserBeam(pos, gameObject.transform.right, material, Name, 
-                Laser2Color, false, false, false, order,false);
+                Laser2Color, false, false, false, order,false,false);
         }
 
         if (transform.parent.parent.name == "Laser") {
+            if(beam.anim){
+                // Debug.Log("Anim");
+                GameObject.Find("Cube (1)").SetActive(false);
+                GameObject.Find("Cube_But").GetComponent<Animator>().Play(anim1);
+                GameObject.Find("Door").GetComponent<Animator>().Play(anim2);
+            }
 
             if(beam.over){
                 overFlag = true;
@@ -100,13 +109,15 @@ public class ShootLaser : MonoBehaviour{
                 gameOverCanvas.SetActive(true);
                 
             }
+
             if(beam2!=null){
-                    if(beam2.over){
-                        overFlag = true;
-                        gameCanvas.SetActive(false);
-                        gameOverCanvas.SetActive(true);
-                    }
+                if(beam2.over){
+                    overFlag = true;
+                    gameCanvas.SetActive(false);
+                    gameOverCanvas.SetActive(true);
                 }
+            }
+
             if (beam.endpoint1) {
                 end1 = true;
                 if (NumberOfLasers == 2) {
@@ -115,20 +126,20 @@ public class ShootLaser : MonoBehaviour{
                         if (GlowBulb.isCharged && GlowBulb.isCharged2) {
                             completeLevelUICanvas.SetActive(true);
                         }
-                        if (ColorChangeBulb.isCharged && ColorChangeBulb.isCharged2) {
-                            completeLevelUICanvas.SetActive(true);
-                        }
                     }
                 }
                 else {
                     // console.log(beam.overFlag);
                     // Debug.Log("Over: " + beam.overFlag);
-                    if (GlowBulb.isCharged) {
-                        completeLevelUICanvas.SetActive(true);
+                    if (!changeColorLevel) {
+                        if (GlowBulb.isCharged) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
-
-                    if (ColorChangeBulb.isCharged) { 
-                        completeLevelUICanvas.SetActive(true);
+                    else {
+                        if (ColorChangeBulb.isColorCharged) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
             }
@@ -140,66 +151,47 @@ public class ShootLaser : MonoBehaviour{
                         if (GlowBulb.isCharged && GlowBulb.isCharged2) {
                             completeLevelUICanvas.SetActive(true);
                         }
-
-                        if (ColorChangeBulb.isCharged && ColorChangeBulb.isCharged2) {
-                            completeLevelUICanvas.SetActive(true);
-                        }
                     }
                 }
                 else {
-                    if (GlowBulb.isCharged) {
-                        completeLevelUICanvas.SetActive(true);
+                    if (!changeColorLevel) {
+                        if (GlowBulb.isCharged) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
-
-                    if (ColorChangeBulb.isCharged) {
-                        completeLevelUICanvas.SetActive(true);
+                    else {
+                        if (ColorChangeBulb.isColorCharged) {
+                            completeLevelUICanvas.SetActive(true);
+                        }
                     }
                 }
             }
             else if (NumberOfLasers == 2 && beam2.endpoint1) {
                 end1 = true;
-                if (NumberOfLasers == 2) {
-                    if (beam.endpoint2) {
-                        end2 = true;
-                        if (GlowBulb.isCharged && GlowBulb.isCharged2) {
-                            completeLevelUICanvas.SetActive(true);
-                        }
-
-                        if (ColorChangeBulb.isCharged && ColorChangeBulb.isCharged2) {
-                            completeLevelUICanvas.SetActive(true);
-                        }
-                    }
-                }
-                else {
-                    if (GlowBulb.isCharged) {
-                        completeLevelUICanvas.SetActive(true);
-                    }
-
-                    if (ColorChangeBulb.isCharged) {
+                if (beam.endpoint2) {
+                    end2 = true;
+                    if (GlowBulb.isCharged && GlowBulb.isCharged2) {
                         completeLevelUICanvas.SetActive(true);
                     }
                 }
             }
             else if (NumberOfLasers == 2 && beam2.endpoint2) {
                 end2 = true;
-                if (NumberOfLasers == 2) {
-                    if (beam.endpoint1) {
-                        end1 = true;
-                        if (GlowBulb.isCharged && GlowBulb.isCharged2) {
-                            completeLevelUICanvas.SetActive(true);
-                        }
-
-                        if (ColorChangeBulb.isCharged && ColorChangeBulb.isCharged2) {
-                            completeLevelUICanvas.SetActive(true);
-                        }
+                if (beam.endpoint1) {
+                    end1 = true;
+                    if (GlowBulb.isCharged && GlowBulb.isCharged2) {
+                        completeLevelUICanvas.SetActive(true);
                     }
                 }
-                else {
+            }
+            else {
+                if (!changeColorLevel) {
                     if (GlowBulb.isCharged) {
                         completeLevelUICanvas.SetActive(true);
                     }
-
-                    if (ColorChangeBulb.isCharged) {
+                }
+                else {
+                    if (ColorChangeBulb.isColorCharged) {
                         completeLevelUICanvas.SetActive(true);
                     }
                 }

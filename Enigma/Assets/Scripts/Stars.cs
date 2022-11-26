@@ -144,7 +144,7 @@ public class Stars : MonoBehaviour
         if (gameObject.name == "Compatibility_Level2Stars") {
             int x = 30;
             activateStars(x);
-        }    
+        }
         if (gameObject.name == "Compatibility_Level3Stars") {
             int x = 31;
             activateStars(x);
@@ -160,7 +160,7 @@ public class Stars : MonoBehaviour
         if (gameObject.name == "Refraction_Level3Stars") {
             int x = 34;
             activateStars(x);
-        } 
+        }
         if (gameObject.name == "Oscillator_Level1Stars") {
             int x = 35;
             activateStars(x);
@@ -179,6 +179,22 @@ public class Stars : MonoBehaviour
         }
         if (gameObject.name == "Stopper_Level2Stars") {
             int x = 39;
+            activateStars(x);
+        }
+        if (gameObject.name == "Stopper_Level3Stars") {
+            int x = 40;
+            activateStars(x);
+        }
+        if (gameObject.name == "Key&Door_Level2Stars") {
+            int x = 41;
+            activateStars(x);
+        }
+        if (gameObject.name == "Key&Door_Level3Stars") {
+            int x = 42;
+            activateStars(x);
+        }
+        if (gameObject.name == "Oscillator_Level4Stars") {
+            int x = 43;
             activateStars(x);
         }
     }

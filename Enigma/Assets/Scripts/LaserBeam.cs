@@ -20,10 +20,11 @@ public class LaserBeam{
     Vector3 newpos;
     public bool isPL;
     public int order;
+    public bool anim;
     // Animator anim;
 
     public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, 
-        Color color, bool endpoint1, bool endpoint2, bool isPL, int order,bool over) {
+        Color color, bool endpoint1, bool endpoint2, bool isPL, int order,bool over,bool anim) {
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
         this.laserObj.name = name;
@@ -41,6 +42,7 @@ public class LaserBeam{
         this.laser.sortingOrder = order;
         this.isPL = isPL;
         this.over = over;
+        this.anim = anim;
         // anim = this.laserObj.AddComponent(typeof(Animator)) as Animator;
         // anim = this.laserObj.GetComponent<Animator>();
 
@@ -64,6 +66,7 @@ public class LaserBeam{
 
         CheckEndpoint(hit, dir, laser);
         CheckGameOver(hit, dir, laser);
+        CheckKeyHit(hit, dir, laser);
     }
 
     void UpdateLaser() {
@@ -112,7 +115,7 @@ public class LaserBeam{
             }
         }
         else if (hitInfo.collider.gameObject.tag == "VerticalRefractor" || hitInfo.collider.gameObject.tag == "HorizontalRefractor") {
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
             Vector3 pos = hitInfo.point;
             laserIndices.Add(pos);
             
@@ -170,15 +173,15 @@ public class LaserBeam{
             
 
 
-            GameObject key = hitInfo.collider.gameObject;
-            key.SetActive(false);
-            Debug.Log(GameObject.Find("Cube_But"));
-            GameObject.Find("Cube_But").GetComponent<Animator>().Play("Button_Press");
+            // GameObject key = hitInfo.collider.gameObject;
+            // key.SetActive(false);
+            // Debug.Log(GameObject.Find("Cube_But"));
+            // GameObject.Find("Cube_But").GetComponent<Animator>().Play("Button_Press");
             // GameObject.Find("Bulb").SetActive(true);
             // Debug.Log(key);
             // Animator anim = key.GetComponent<Animator>();
             // anim.Play("Button_Press");
-            GameObject.Find("Door").GetComponent<Animator>().Play("Door_Animation");
+            // GameObject.Find("Door").GetComponent<Animator>().Play("Door_Animation");
             // GameObject.Find("Bulb").GetComponent<Animator>().Play("bulb_coming");
             // UpdateLaser();
             // Debug.Log(anim);
@@ -206,6 +209,12 @@ public class LaserBeam{
     void CheckGameOver(RaycastHit hitInfo, Vector3 direction, LineRenderer laser){
         if(hitInfo.collider.gameObject.tag == "GameOver"){
             over = true;
+        }
+    }
+    void CheckKeyHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser){
+        if(hitInfo.collider.gameObject.tag == "Key"){
+             //Debug.Log("AnimKeyval");
+            anim = true;
         }
     }
 
