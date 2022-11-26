@@ -61,8 +61,6 @@ public class GetScore : MonoBehaviour
         else {
             star_rating = 0;
         }
-        Metrics metrics_instance = gameObject.AddComponent<Metrics>() as Metrics;
-        metrics_instance.UpdateMetricsAndSend();
     }
 
     void ChangeColor(Image image) {

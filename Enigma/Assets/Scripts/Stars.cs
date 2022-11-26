@@ -8,153 +8,206 @@ public class Stars : MonoBehaviour
     public GameObject star1;
     public GameObject star2;
     public GameObject star3;
-    public static int prevStars1 = 0;
-    public static int prevStars2 = 0;
-    public static int prevStars3 = 0;
-    public static int prevStars4 = 0;
 
     // Update is called once per frame
     void Update() {
-        if (gameObject.name == "Level1Stars") {
-            LoadStars(prevStars1);
+        if (gameObject.name == "Basic_Level1Stars") {
+            int x = 1;
+            activateStars(x);
         }
-        if (gameObject.name == "Level2Stars") {
-            LoadStars(prevStars2);
-        }
-        if (gameObject.name == "Level3Stars") {
-            LoadStars(prevStars3);
-        }
-        if (gameObject.name == "Level4Stars") {
-            LoadStars(prevStars4);
-        }
-        Debug.Log("Level Number: " + ButtonManager.levelNumber);
 
-        if (ButtonManager.levelNumber == 1) {
-            if (gameObject.name == "Level1Stars") {
-                if (GetScore.gotStar1) {
-                    star1.SetActive(true);
-                    if (prevStars1 < 1) {
-                        prevStars1 = 1;
-                    }
-                    GetScore.gotStar1 = false;
-                }
-                else if (GetScore.gotStar2) {
-                    star2.SetActive(true);
-                    if (prevStars1 < 2) {
-                        prevStars1 = 2;
-                    }
-                    GetScore.gotStar2 = false;
-                }
-                else if (GetScore.gotStar3) {
-                    star3.SetActive(true);
-                    if (prevStars1 < 3) {
-                        prevStars1 = 3;
-                    }
-                    GetScore.gotStar3 = false;
-                }
-                else {
-                    //Do nothing
-                }
-            }
+        if (gameObject.name == "Basic_Level2Stars") {
+            int x = 2;
+            activateStars(x);
         }
-        else if (ButtonManager.levelNumber == 2) {
-            if (gameObject.name == "Level2Stars") {
-                if (GetScore.gotStar1) {
-                    star1.SetActive(true);
-                    if (prevStars2 < 1) {
-                        prevStars2 = 1;
-                    }
-                    GetScore.gotStar1 = false;
-                }
-                else if (GetScore.gotStar2) {
-                    star2.SetActive(true);
-                    if (prevStars2 < 2) {
-                        prevStars2 = 2;
-                    }
-                    GetScore.gotStar2 = false;
-                }
-                else if (GetScore.gotStar3) {
-                    star3.SetActive(true);
-                    if (prevStars2 < 3) {
-                        prevStars2 = 3;
-                    }
-                    GetScore.gotStar3 = false;
-                }
-                else {
-                    //Do nothing
-                }
-            }
+
+        if (gameObject.name == "Basic_Level3Stars") {
+            int x = 3;
+            activateStars(x);
         }
-        else if (ButtonManager.levelNumber == 3) {
-            if (gameObject.name == "Level3Stars") {
-                if (GetScore.gotStar1) {
-                    star1.SetActive(true);
-                    if (prevStars3 < 1) {
-                        prevStars3 = 1;
-                    }
-                    GetScore.gotStar1 = false;
-                }
-                else if (GetScore.gotStar2) {
-                    star2.SetActive(true);
-                    if (prevStars3 < 2) {
-                        prevStars3 = 2;
-                    }
-                    GetScore.gotStar2 = false;
-                }
-                else if (GetScore.gotStar3) {
-                    star3.SetActive(true);
-                    if (prevStars3 < 3) {
-                        prevStars3 = 3;
-                    }
-                    GetScore.gotStar3 = false;
-                }
-                else {
-                    //Do nothing
-                }
-            }
+
+        if (gameObject.name == "Rotation_Level1Stars") {
+            int x = 4;
+            activateStars(x);
         }
-        else if (ButtonManager.levelNumber == 4) {
-            if (gameObject.name == "Level4Stars") {
-                if (GetScore.gotStar1) {
-                    star1.SetActive(true);
-                    if (prevStars4 < 1) {
-                        prevStars4 = 1;
-                    }
-                    GetScore.gotStar1 = false;
-                }
-                else if (GetScore.gotStar2) {
-                    star2.SetActive(true);
-                    if (prevStars4 < 2) {
-                        prevStars4 = 2;
-                    }
-                    GetScore.gotStar2 = false;
-                }
-                else if (GetScore.gotStar3) {
-                    star3.SetActive(true);
-                    if (prevStars4 < 3) {
-                        prevStars4 = 3;
-                    }
-                    GetScore.gotStar3 = false;
-                }
-                else {
-                    //Do nothing
-                }
-            }
+
+        if (gameObject.name == "Rotation_Level2Stars") {
+            int x = 5;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Rotation_Level3Stars") {
+            int x = 6;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Basic_Level4Stars") {
+            int x = 7;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Splitter_Level1Stars") {
+            int x = 8;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Splitter_Level6Stars") {
+            int x = 9;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Splitter_Level2Stars") {
+            int x = 10;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Splitter_Level3Stars") {
+            int x = 11;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Splitter_Level4Stars") {
+            int x = 12;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Splitter_Level7Stars") {
+            int x = 13;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Splitter_Level5Stars") {
+            int x = 14;
+            activateStars(x);
+        }
+
+        if (gameObject.name == "Portals_Level1Stars") {
+            int x = 15;
+            activateStars(x);
+        }
+        if (gameObject.name == "Portals_Level2Stars") {
+            int x = 16;
+            activateStars(x);
+        }
+        if (gameObject.name == "Portals_Level3Stars") {
+            int x = 17;
+            activateStars(x);
+        }
+        if (gameObject.name == "Blackhole_Level1Stars") {
+            int x = 18;
+            activateStars(x);
+        }
+        if (gameObject.name == "Blackhole_Level2Stars") {
+            int x = 19;
+            activateStars(x);
+        }
+        if (gameObject.name == "Blackhole_Level3Stars") {
+            int x = 20;
+            activateStars(x);
+        }
+         if (gameObject.name == "Blackhole_Level4Stars") {
+            int x = 21;
+            activateStars(x);
+        }
+        if (gameObject.name == "Tracking_Level1Stars") {
+            int x = 22;
+            activateStars(x);
+        }
+        if (gameObject.name == "Tracking_Level2Stars") {
+            int x = 23;
+            activateStars(x);
+        }
+        if (gameObject.name == "Tracking_Level3Stars") {
+            int x = 24;
+            activateStars(x);
+        }
+        if (gameObject.name == "Key&Door_Level1Stars") {
+            int x = 25;
+            activateStars(x);
+        }
+        if (gameObject.name == "Dark_Level1Stars") {
+            int x = 26;
+            activateStars(x);
+        }
+        if (gameObject.name == "Dark_Level2Stars") {
+            int x = 27;
+            activateStars(x);
+        }
+        if (gameObject.name == "Dark_Level3Stars") {
+            int x = 28;
+            activateStars(x);
+        }
+        if (gameObject.name == "Compatibility_Level1Stars") {
+            int x = 29;
+            activateStars(x);
+        }
+        if (gameObject.name == "Compatibility_Level2Stars") {
+            int x = 30;
+            activateStars(x);
+        }
+        if (gameObject.name == "Compatibility_Level3Stars") {
+            int x = 31;
+            activateStars(x);
+        }
+        if (gameObject.name == "Refraction_Level1Stars") {
+            int x = 32;
+            activateStars(x);
+        }
+        if (gameObject.name == "Refraction_Level2Stars") {
+            int x = 33;
+            activateStars(x);
+        }
+        if (gameObject.name == "Refraction_Level3Stars") {
+            int x = 34;
+            activateStars(x);
+        }
+        if (gameObject.name == "Oscillator_Level1Stars") {
+            int x = 35;
+            activateStars(x);
+        }
+        if (gameObject.name == "Oscillator_Level2Stars") {
+            int x = 36;
+            activateStars(x);
+        }
+        if (gameObject.name == "Oscillator_Level3Stars") {
+            int x = 37;
+            activateStars(x);
+        }
+        if (gameObject.name == "Stopper_Level1Stars") {
+            int x = 38;
+            activateStars(x);
+        }
+        if (gameObject.name == "Stopper_Level2Stars") {
+            int x = 39;
+            activateStars(x);
+        }
+        if (gameObject.name == "Stopper_Level3Stars") {
+            int x = 40;
+            activateStars(x);
+        }
+        if (gameObject.name == "Key&Door_Level2Stars") {
+            int x = 41;
+            activateStars(x);
+        }
+        if (gameObject.name == "Key&Door_Level3Stars") {
+            int x = 42;
+            activateStars(x);
+        }
+        if (gameObject.name == "Oscillator_Level4Stars") {
+            int x = 43;
+            activateStars(x);
         }
     }
 
-    void LoadStars(int prevStars) {
-        if (prevStars == 1) {
+    void activateStars(int levelNum) {
+        if (TimeStar.gotTimeStar[levelNum]) {
             star1.SetActive(true);
         }
-        else if (prevStars == 2) {
+        if (MoveStar.gotMoveStar[levelNum]) {
             star2.SetActive(true);
         }
-        else if (prevStars == 3) {
+        if (HintStar.gotHintStar[levelNum]) {
             star3.SetActive(true);
-        }
-        else {
-            //Do Nothing
         }
     }
 }

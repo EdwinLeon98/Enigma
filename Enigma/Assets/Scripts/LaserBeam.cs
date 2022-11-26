@@ -6,17 +6,25 @@ public class LaserBeam{
 
     Vector3 pos, dir;
     GameObject laserObj;
+    GameObject portalObj;
+
     LineRenderer laser;
     List<Vector3> laserIndices = new List<Vector3>();
     Dictionary<string, float> refractiveMaterials = new Dictionary<string, float> {
         {"Air", 1.0f},
-        {"Glass", 1.5f}
+        {"Glass", 1.75f}
     };
     public bool endpoint1;
     public bool endpoint2;
+    public bool over;
     Vector3 newpos;
+    public bool isPL;
+    public int order;
+    public bool anim;
+    // Animator anim;
 
-    public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, Color color, bool endpoint1, bool endpoint2) {
+    public LaserBeam(Vector3 pos, Vector3 dir, Material material, string name, 
+        Color color, bool endpoint1, bool endpoint2, bool isPL, int order,bool over,bool anim) {
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
         this.laserObj.name = name;
@@ -29,9 +37,14 @@ public class LaserBeam{
         this.laser.startWidth = 0.08f;
         this.laser.endWidth = 0.08f;
         this.laser.material = material;
-        // Debug.Log("Color:" + color);
         this.laser.startColor = color;
         this.laser.endColor = color;
+        this.laser.sortingOrder = order;
+        this.isPL = isPL;
+        this.over = over;
+        this.anim = anim;
+        // anim = this.laserObj.AddComponent(typeof(Animator)) as Animator;
+        // anim = this.laserObj.GetComponent<Animator>();
 
         CastRay(this.pos, this.dir, this.laser);
     }
@@ -42,10 +55,6 @@ public class LaserBeam{
         Ray ray = new Ray(pos,dir);
         RaycastHit hit;
         int layerMask = 321;
-        //if(laserObj.name == "Laser Beam 2") {
-        //    Debug.Log("layermask");
-        //    layerMask = 320;
-        //}
 
         if (Physics.Raycast(ray, out hit, 100, layerMask)){
             CheckHit(hit,dir,laser);
@@ -56,6 +65,8 @@ public class LaserBeam{
         }
 
         CheckEndpoint(hit, dir, laser);
+        CheckGameOver(hit, dir, laser);
+        CheckKeyHit(hit, dir, laser);
     }
 
     void UpdateLaser() {
@@ -77,10 +88,15 @@ public class LaserBeam{
         return refractedVector;
     }
 
+    Vector3 Refract(float mu_1, float mu_2, Vector3 norm, Vector3 incident){
+        incident.Normalize();
+        Vector3 refractedVector = (mu_1/mu_2 * Vector3.Cross(norm, Vector3.Cross(-norm, incident)) - norm * Mathf.Sqrt(1- Vector3.Dot(Vector3.Cross(norm, incident) * (mu_1/mu_2 * mu_1/mu_2), Vector3.Cross(norm, incident)))).normalized;
+        return refractedVector;
+    }
+
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
-        //Debug.Log("Hit tag: " + hitInfo.collider.gameObject.tag);
-        //Debug.Log("Hit layer: " + hitInfo.collider.gameObject.layer);
-        if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal" || hitInfo.collider.gameObject.tag == "Mirror") {
+        if (hitInfo.collider.gameObject.tag == "Vertical" || hitInfo.collider.gameObject.tag == "Horizontal"
+            || hitInfo.collider.gameObject.tag == "Mirror" || hitInfo.collider.gameObject.tag == "Rotate") {
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
             CastRay(pos, dir, laser);
@@ -89,16 +105,6 @@ public class LaserBeam{
             if (laserObj.name == "Laser Beam 2") {
                 Vector3 pos = hitInfo.point;
                 Vector3 dir = direction;
-                //newpos = Split(direction, -hitInfo.normal);
-                //if (newpos.z >= 0) {
-                //    newpos.x = direction.x;
-                //}
-                //else {
-                //    newpos.x = -1;
-                //}
-                //Vector3 dir = newpos;
-                //Debug.Log("Pos: " + newpos);
-                //Debug.Log("Split Return: " + Split(direction, -hitInfo.normal));
                 CastRay(pos, dir, laser);
                 UpdateLaser();
             }
@@ -108,19 +114,108 @@ public class LaserBeam{
                 CastRay(pos, dir, laser);
             }
         }
+        else if (hitInfo.collider.gameObject.tag == "VerticalRefractor" || hitInfo.collider.gameObject.tag == "HorizontalRefractor") {
+            //Debug.Log("Hit");
+            Vector3 pos = hitInfo.point;
+            laserIndices.Add(pos);
+            
+            // point not on box collider
+            Vector3 newPos = new Vector3(
+                Mathf.Abs(direction.x)/(direction.x+0.00001f) * 0.001f + pos.x,
+                Mathf.Abs(direction.y)/(direction.y+0.00001f) * 0.001f + pos.y,
+                Mathf.Abs(direction.z)/(direction.z+0.00001f) * 0.001f + pos.z
+                );
+            
+            float mu_1 = refractiveMaterials["Air"];
+            float mu_2 = refractiveMaterials["Glass"];
+
+
+            Vector3 norm = hitInfo.normal;
+            Vector3 incident = direction;
+
+            Vector3 refractedVector = Refract(mu_1, mu_2, norm, incident);
+            CastRay(newPos, refractedVector, laser);
+            
+            /*
+            Ray ray1 = new Ray(newPos, refractedVector);
+            Vector3 newRayStartPos = ray1.GetPoint(1.2f);
+
+            Ray ray2 = new Ray(newRayStartPos, -refractedVector);
+            RaycastHit hit2;
+
+            if(Physics.Raycast(ray2, out hit2, 1.3f, 1)) {
+                laserIndices.Add(hit2.point);
+            }
+
+            UpdateLaser();
+
+            Vector3 refractedVector2 = Refract(mu_2, mu_1, -hit2.normal, refractedVector);
+
+            CastRay(hit2.point, refractedVector2, laser);
+            */
+
+        }
+        else if (hitInfo.collider.gameObject.tag == "PortalIn"){
+            laserIndices.Add(hitInfo.point);
+            UpdateLaser();
+            ShootLaser.activePL = true;
+        }
+        else if (hitInfo.collider.gameObject.tag == "ColorChanger") {
+            ShootLaser.changeColor = true;
+            laser.startColor = ShootLaser.newColor;
+            laser.endColor = ShootLaser.newColor;
+            Vector3 pos = hitInfo.point;
+            Vector3 dir = direction;
+            CastRay(pos, dir, laser);
+            UpdateLaser();
+        }
+        else if(hitInfo.collider.gameObject.tag == "Key"){
+            
+
+
+            // GameObject key = hitInfo.collider.gameObject;
+            // key.SetActive(false);
+            // Debug.Log(GameObject.Find("Cube_But"));
+            // GameObject.Find("Cube_But").GetComponent<Animator>().Play("Button_Press");
+            // GameObject.Find("Bulb").SetActive(true);
+            // Debug.Log(key);
+            // Animator anim = key.GetComponent<Animator>();
+            // anim.Play("Button_Press");
+            // GameObject.Find("Door").GetComponent<Animator>().Play("Door_Animation");
+            // GameObject.Find("Bulb").GetComponent<Animator>().Play("bulb_coming");
+            // UpdateLaser();
+            // Debug.Log(anim);
+
+            // CastRay(pos, dir, laser);
+        }
         else {
             laserIndices.Add(hitInfo.point);
             UpdateLaser();
+            if(!isPL){
+                ShootLaser.activePL = false;
+            }
         }
     }
 
+    // If laser hits the destination
     void CheckEndpoint(RaycastHit hitInfo, Vector3 direction, LineRenderer laser) {
         if (hitInfo.collider.gameObject.name == "Endpoint1") {
             endpoint1 = true;
-            // Debug.Log("Endpoint set to true: " + hitInfo.collider.gameObject.name);
         }
         else if (hitInfo.collider.gameObject.name == "Endpoint2") {
             endpoint2 = true;
         }
     }
+    void CheckGameOver(RaycastHit hitInfo, Vector3 direction, LineRenderer laser){
+        if(hitInfo.collider.gameObject.tag == "GameOver"){
+            over = true;
+        }
+    }
+    void CheckKeyHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser){
+        if(hitInfo.collider.gameObject.tag == "Key"){
+             //Debug.Log("AnimKeyval");
+            anim = true;
+        }
+    }
+
 }

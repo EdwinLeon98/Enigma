@@ -12,8 +12,10 @@ public class Retry : MonoBehaviour
          SceneManager.LoadScene(levelName);
          MovePrototype2.numberOfMoves=0;
          TimerCounter.mins=0;
-         TimerCounter.secs=0; 
+         TimerCounter.secs=0;
          TimerCounter.timer=0;
          PauseGame.unpause=true;
+         Metrics.IncrementNumRetries();
+         Metrics.ResetMetricsExceptRetry();
     }
 }
