@@ -98,6 +98,7 @@ public class ShootLaser : MonoBehaviour{
         if (transform.parent.parent.name == "Laser") {
             if(beam.anim){
                 // Debug.Log("Anim");
+                GameObject.Find("Door Light").GetComponent<Light>().enabled = true;
                 GameObject.Find("Cube (1)").SetActive(false);
                 GameObject.Find("Cube_But").GetComponent<Animator>().Play(anim1);
                 GameObject.Find("Door").GetComponent<Animator>().Play(anim2);
