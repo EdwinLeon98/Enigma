@@ -9604,7 +9604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Splitter can't be moved
+  message: 
 --- !u!1 &981899141
 GameObject:
   m_ObjectHideFlags: 0
@@ -12507,7 +12507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdfb35366259764095d9af5ed7986f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMoves: 5
+  minMoves: 10
 --- !u!114 &1698387594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12559,6 +12559,7 @@ GameObject:
   - component: {fileID: 1702246461}
   - component: {fileID: 1702246460}
   - component: {fileID: 1702246459}
+  - component: {fileID: 1702246464}
   m_Layer: 5
   m_Name: GameOverCanvas
   m_TagString: Untagged
@@ -12662,6 +12663,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1702246464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702246458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681fce0a1b609544f92befa45be38fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1704600756
 GameObject:
   m_ObjectHideFlags: 0
@@ -13346,7 +13359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5916a1333e41e774caed471b509688c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeInSecs: 10
+  minTimeInSecs: 35
 --- !u!114 &1858892235
 MonoBehaviour:
   m_ObjectHideFlags: 0
