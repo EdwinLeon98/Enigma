@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class ShootLaser : MonoBehaviour{
@@ -98,12 +99,15 @@ public class ShootLaser : MonoBehaviour{
         if (transform.parent.parent.name == "Laser") {
             if(beam.anim){
                 // Debug.Log("Anim");
-                if(GameObject.Find("Door Light") != null){
+                if (GameObject.Find("Door Light") != null) {
                     GameObject.Find("Door Light").GetComponent<Light>().enabled = true;
                 }
                 GameObject.Find("Cube (1)").SetActive(false);
-                GameObject.Find("Cube_But").GetComponent<Animator>().Play(anim1);
-                GameObject.Find("Door").GetComponent<Animator>().Play(anim2);
+
+                if (!(SceneManager.GetActiveScene().name == "Key&Door_Tutorial")) {
+                    GameObject.Find("Cube_But").GetComponent<Animator>().Play(anim1);
+                    GameObject.Find("Door").GetComponent<Animator>().Play(anim2);
+                }
             }
 
             if(beam.over){
@@ -187,18 +191,18 @@ public class ShootLaser : MonoBehaviour{
                     }
                 }
             }
-            else {
-                if (!changeColorLevel) {
-                    if (GlowBulb.isCharged) {
-                        completeLevelUICanvas.SetActive(true);
-                    }
-                }
-                else {
-                    if (ColorChangeBulb.isColorCharged) {
-                        completeLevelUICanvas.SetActive(true);
-                    }
-                }
-            }
+            //else {
+            //    if (!changeColorLevel) {
+            //        if (GlowBulb.isCharged) {
+            //            completeLevelUICanvas.SetActive(true);
+            //        }
+            //    }
+            //    else {
+            //        if (ColorChangeBulb.isColorCharged) {
+            //            completeLevelUICanvas.SetActive(true);
+            //        }
+            //    }
+            //}
         }
         else if (transform.parent.parent.name == "PortalLaser"){
             if (beam3.over){

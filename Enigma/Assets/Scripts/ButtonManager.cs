@@ -172,4 +172,9 @@ public class ButtonManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(level);
     }
+
+    public void quitGame() {
+        Application.Quit();
+        Debug.Log("Quit Game");
+    }
 }
