@@ -144,6 +144,33 @@ public class ButtonManager : MonoBehaviour
                 else if (SceneManager.GetActiveScene().name == "Oscillator_Level4") {
             levelNumber = 43;
         }
+        else if (SceneManager.GetActiveScene().name == "Compatibility_Level4") {
+            levelNumber = 44;
+        }
+                else if (SceneManager.GetActiveScene().name == "Key&Door_Level4") {
+            levelNumber = 45;
+        }
+        else if (SceneManager.GetActiveScene().name == "Stopper_Level4") {
+            levelNumber = 46;
+        }
+               else if (SceneManager.GetActiveScene().name == "Refraction_Level4") {
+            levelNumber = 47;
+        }
+         else if (SceneManager.GetActiveScene().name == "Dark_Level4") {
+            levelNumber = 48;
+        }
+         else if (SceneManager.GetActiveScene().name == "Conveyor_Level1") {
+            levelNumber = 49;
+        }
+         else if (SceneManager.GetActiveScene().name == "Conveyor_Level2") {
+            levelNumber = 50;
+        }
+         else if (SceneManager.GetActiveScene().name == "Conveyor_Level3") {
+            levelNumber = 51;
+        }
+         else if (SceneManager.GetActiveScene().name == "Conveyor_Level4") {
+            levelNumber = 52;
+        }        
         else {
             levelNumber = 0;
         }
