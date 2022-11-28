@@ -18,10 +18,15 @@ public class PanelChange : MonoBehaviour
     public GameObject refraction;
     public GameObject dark;
     public GameObject conveyor;
+//    public static GameObject openObj;
  // Start is called before the first frame update
     void Start()
     {
-        basic.SetActive(true);
+    
+        Debug.Log("Start is called");
+//        openObj= basic;
+//        openObj.SetActive(true);
+        //basic.SetActive(true);
         rotation.SetActive(false);
         splitter.SetActive(false);
         portals.SetActive(false);
@@ -36,10 +41,17 @@ public class PanelChange : MonoBehaviour
         conveyor.SetActive(false);
         
     }
+    
+    void Update()
+    {
+        Debug.Log("Update is called");
+//        openObj.SetActive(true);
+    }
 
 
     public void panelChangeFunction(GameObject selectedObj)
     {
+//            openObj= selectedObj;
             selectedObj.SetActive(true);
             if(!GameObject.ReferenceEquals( selectedObj, basic))
             basic.SetActive(false);
