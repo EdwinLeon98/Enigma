@@ -197,6 +197,42 @@ public class Stars : MonoBehaviour
             int x = 43;
             activateStars(x);
         }
+        if (gameObject.name == "Compatibility_Level4Stars") {
+            int x = 44;
+            activateStars(x);
+        }
+        if (gameObject.name == "Key&Door_Level4Stars") {
+            int x = 45;
+            activateStars(x);
+        }
+        if (gameObject.name == "Stopper_Level4Stars") {
+            int x = 46;
+            activateStars(x);
+        }
+        if (gameObject.name == "Refraction_Level4Stars") {
+            int x = 47;
+            activateStars(x);
+        }
+        if (gameObject.name == "Dark_Level4Stars") {
+            int x = 48;
+            activateStars(x);
+        }
+        if (gameObject.name == "Conveyor_Level1Stars") {
+            int x = 49;
+            activateStars(x);
+        }
+        if (gameObject.name == "Conveyor_Level2Stars") {
+            int x = 50;
+            activateStars(x);
+        }
+        if (gameObject.name == "Conveyor_Level3Stars") {
+            int x = 51;
+            activateStars(x);
+        }
+        if (gameObject.name == "Conveyor_Level4Stars") {
+            int x = 52;
+            activateStars(x);
+        }
     }
 
     void activateStars(int levelNum) {
