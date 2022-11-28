@@ -44,7 +44,7 @@ public class PanelChange : MonoBehaviour
     
     void Update()
     {
-        Debug.Log("Update is called");
+
 //        openObj.SetActive(true);
     }
 
