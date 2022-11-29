@@ -7,7 +7,7 @@ public class MoveStar : MonoBehaviour
 {
     int Moves;
     public int minMoves;
-    public static bool[] gotMoveStar = new bool[50];
+    public static bool[] gotMoveStar = new bool[60];
 
     // Update is called once per frame
     void Update() {
