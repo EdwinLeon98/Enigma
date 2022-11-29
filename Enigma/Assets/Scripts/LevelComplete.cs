@@ -16,6 +16,9 @@ public class LevelComplete : MonoBehaviour
         //yield return new WaitForSecondsRealtime(1);
         Metrics metrics_instance = gameObject.AddComponent<Metrics>() as Metrics;
         gameCanvas.SetActive(false);
+        if (GameObject.Find("TooltipCanvas")) {
+            GameObject.Find("TooltipCanvas").SetActive(false);
+        }
         completeLevelUI.SetActive(true);
         yield return new WaitForSecondsRealtime(1);
         metrics_instance.UpdateMetricsAndSend();
