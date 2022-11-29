@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HintStar : MonoBehaviour
 {
     bool Hints;
-    public static bool[] gotHintStar = new bool[50];
+    public static bool[] gotHintStar = new bool[60];
 
     // Update is called once per frame
     void Update() {
