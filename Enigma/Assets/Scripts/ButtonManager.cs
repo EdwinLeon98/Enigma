@@ -170,7 +170,13 @@ public class ButtonManager : MonoBehaviour
         }
          else if (SceneManager.GetActiveScene().name == "Conveyor_Level4") {
             levelNumber = 52;
-        }        
+        }    
+         else if (SceneManager.GetActiveScene().name == "Portals_Level4") {
+            levelNumber = 53;
+        }
+         else if (SceneManager.GetActiveScene().name == "Portals_Level5") {
+            levelNumber = 54;
+        }               
         else {
             levelNumber = 0;
         }
