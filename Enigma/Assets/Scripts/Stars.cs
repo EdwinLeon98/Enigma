@@ -241,6 +241,10 @@ public class Stars : MonoBehaviour
             int x = 54;
             activateStars(x);
         }
+        if (gameObject.name == "Refraction_Level5Stars") {
+            int x = 55;
+            activateStars(x);
+        }        
     }
 
     void activateStars(int levelNum) {

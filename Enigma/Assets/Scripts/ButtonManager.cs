@@ -177,6 +177,9 @@ public class ButtonManager : MonoBehaviour
          else if (SceneManager.GetActiveScene().name == "Portals_Level5") {
             levelNumber = 54;
         }               
+         else if (SceneManager.GetActiveScene().name == "Refraction_Level5") {
+            levelNumber = 55;
+        }  
         else {
             levelNumber = 0;
         }
