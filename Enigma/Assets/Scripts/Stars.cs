@@ -15,72 +15,58 @@ public class Stars : MonoBehaviour
             int x = 1;
             activateStars(x);
         }
-
         if (gameObject.name == "Basic_Level2Stars") {
             int x = 2;
             activateStars(x);
         }
-
         if (gameObject.name == "Basic_Level3Stars") {
             int x = 3;
             activateStars(x);
         }
-
         if (gameObject.name == "Rotation_Level1Stars") {
             int x = 4;
             activateStars(x);
         }
-
         if (gameObject.name == "Rotation_Level2Stars") {
             int x = 5;
             activateStars(x);
         }
-
         if (gameObject.name == "Rotation_Level3Stars") {
             int x = 6;
             activateStars(x);
         }
-
         if (gameObject.name == "Basic_Level4Stars") {
             int x = 7;
             activateStars(x);
         }
-
         if (gameObject.name == "Splitter_Level1Stars") {
             int x = 8;
             activateStars(x);
         }
-
         if (gameObject.name == "Splitter_Level6Stars") {
             int x = 9;
             activateStars(x);
         }
-
         if (gameObject.name == "Splitter_Level2Stars") {
             int x = 10;
             activateStars(x);
         }
-
         if (gameObject.name == "Splitter_Level3Stars") {
             int x = 11;
             activateStars(x);
         }
-
         if (gameObject.name == "Splitter_Level4Stars") {
             int x = 12;
             activateStars(x);
         }
-
         if (gameObject.name == "Splitter_Level7Stars") {
             int x = 13;
             activateStars(x);
         }
-
         if (gameObject.name == "Splitter_Level5Stars") {
             int x = 14;
             activateStars(x);
         }
-
         if (gameObject.name == "Portals_Level1Stars") {
             int x = 15;
             activateStars(x);
@@ -105,7 +91,7 @@ public class Stars : MonoBehaviour
             int x = 20;
             activateStars(x);
         }
-         if (gameObject.name == "Blackhole_Level4Stars") {
+        if (gameObject.name == "Blackhole_Level4Stars") {
             int x = 21;
             activateStars(x);
         }

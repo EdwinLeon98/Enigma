@@ -1077,7 +1077,6 @@ GameObject:
   - component: {fileID: 207150300}
   - component: {fileID: 207150299}
   - component: {fileID: 207150298}
-  - component: {fileID: 207150297}
   m_Layer: 6
   m_Name: PT1
   m_TagString: PortalIn
@@ -1099,21 +1098,8 @@ Transform:
   m_Children:
   - {fileID: 920366017}
   m_Father: {fileID: 1647588399}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &207150297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207150295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: Portal Entry
 --- !u!114 &207150298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,7 +1535,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1647588399}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &262836510
 MeshRenderer:
@@ -6785,7 +6771,6 @@ GameObject:
   - component: {fileID: 1392548351}
   - component: {fileID: 1392548350}
   - component: {fileID: 1392548349}
-  - component: {fileID: 1392548348}
   m_Layer: 6
   m_Name: PT2
   m_TagString: PortalOut
@@ -6808,21 +6793,8 @@ Transform:
   - {fileID: 1367173253}
   - {fileID: 1947669749}
   m_Father: {fileID: 1647588399}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1392548348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392548346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3463670e1ca43719a747e8e5df7bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: Portal Exit
 --- !u!114 &1392548349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8207,10 +8179,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2134260462}
+  - {fileID: 262836509}
   - {fileID: 207150296}
   - {fileID: 1392548347}
-  - {fileID: 262836509}
-  - {fileID: 2134260462}
   - {fileID: 796110253}
   - {fileID: 1623076637}
   - {fileID: 207726832}
@@ -9948,7 +9920,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1647588399}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &2134260463
 MeshRenderer:
